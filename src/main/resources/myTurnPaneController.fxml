@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="myTurnPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.myTurn">
+   <children>
+      <ToolBar layoutX="18.0" layoutY="32.0" prefHeight="18.0" prefWidth="417.0">
+        <items>
+          <Button fx:id="taxButton" mnemonicParsing="false" onAction="#taxAction" text="tax" />
+            <Button fx:id="stealButton" mnemonicParsing="false" onAction="#stealAction" text="steal" />
+            <Button fx:id="revealButton" mnemonicParsing="false" onAction="#revealAction" text="pay $3 to reveal" />
+            <Button fx:id="exchangeButton" mnemonicParsing="false" onAction="#exchangeAction" text="exchange" />
+            <Button fx:id="incomeBurron" mnemonicParsing="false" onAction="#incomeAction" text="\$1" />
+            <Button fx:id="foreignAidButton" mnemonicParsing="false" onAction="#foreignAidAction" text="\$2" />
+            <Button fx:id="spesialExchangeButton" mnemonicParsing="false" onAction="#spesialExchangeAction" text="S-exchange" />
+        </items>
+      </ToolBar>
+      <Button fx:id="coupButton" layoutX="18.0" layoutY="80.0" mnemonicParsing="false" onAction="#coupAction" prefHeight="25.0" prefWidth="417.0" text="coup" />
+      <Text layoutX="18.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="your turn :" wrappingWidth="150.908203125" />
+   </children>
+</AnchorPane>

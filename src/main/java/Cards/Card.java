@@ -11,7 +11,16 @@ public  class Card {
     public boolean bluff;
     public String cardId;
     public String name;
+    public CardsTypes type;
 
+
+    public CardsTypes getType() {
+        return type;
+    }
+
+    public void setType(CardsTypes type) {
+        this.type = type;
+    }
 
     public String getName() {
         return name;

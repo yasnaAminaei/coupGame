@@ -23,8 +23,4 @@ public class Income extends Action {
     }
 
 
-
-
-
-
 }

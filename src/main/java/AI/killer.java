@@ -1,6 +1,10 @@
 package AI;
 
+import Actions.Ambassador_Exchange;
+import Actions.Exchange;
 import Cards.Card;
+import Cards.CardsDataBase;
+import Cards.CardsTypes;
 import Cards.Duke;
 import Players.Player;
 import Players.PlayersDataBase;
@@ -23,11 +27,86 @@ public class killer {
 
 
 
+
     public killer(){
-         Player player= PlayersDataBase.searchByPlayerId(id);
-         assert player != null;
          //ArrayList<Card> playersCard = player.getCards();
     }
+
+
+    public void playTheirTurn(){
+        Player player= PlayersDataBase.searchByPlayerId(id);
+        assert player != null;
+        ArrayList<CardsTypes>  cardsTypesArrayList = player.getAliveCardsType();
+        if (cardsTypesArrayList.contains(CardsTypes.Ambassador)){
+            drawTowCardsAndChange(player);
+        }
+        else if (player.getCoins()>=1){
+            drawOneAnChange(player);
+        }
+        else{
+            foreign_Aid(player);
+        }
+    }
+
+
+    /**
+     * if player has ambassador use it to find assassin
+     * @param player draw tow random cards and change the cards
+     */
+
+    public static void drawTowCardsAndChange(Player player){
+        Ambassador_Exchange ambassador_exchange= new Ambassador_Exchange(player);
+        Card[] randomCards = CardsDataBase.chooseTowRandomDeadCard();
+        ArrayList<Card> c = player.getAliveCards();
+        String changedCard = null;
+        String otherCard = null;
+        int size=c.size();
+        if (size==2){
+            if (c.get(0).getType().equals(CardsTypes.Ambassador)){
+                otherCard=c.get(1).getCardId();
+            }
+            else{
+                otherCard=c.get(0).getCardId();
+            }
+        }
+        if (randomCards[0].getType().equals(CardsTypes.Assassin)){
+           changedCard=randomCards[0].cardId;
+        }
+        else if (randomCards[1].getType().equals(CardsTypes.Assassin)){
+            changedCard=randomCards[1].cardId;
+        }
+
+        ambassador_exchange.setFirstCardId(changedCard);
+        ambassador_exchange.setSecondCardId(otherCard);
+
+        ambassador_exchange.doIfDone();
+    }
+
+    /**
+     * pay $1 to draw a card and change
+     * @param player is the AI
+     */
+    public static void drawOneAnChange(Player player){
+
+        Exchange exchange=new Exchange(player);
+        Card random=CardsDataBase.chooseARandomDeadCard();
+        ArrayList<Card> c = player.getAliveCards();
+        String changedCard = null;
+        String otherCard = c.get(0).getCardId();
+        if (random.getType().equals(CardsTypes.Assassin)){
+            changedCard=random.cardId;
+        }
+        exchange.setExchangedCardId(changedCard);
+        exchange.setRandomCardId(otherCard);
+
+        exchange.doIfDone();
+    }
+
+
+    public static void foreign_Aid(Player player){
+
+    }
+
 
 
 

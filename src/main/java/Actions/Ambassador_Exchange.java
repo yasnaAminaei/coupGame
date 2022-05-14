@@ -12,15 +12,26 @@ public class Ambassador_Exchange extends Action{
 
     public Ambassador_Exchange(Player dower) {
         super(dower);
-
     }
 
+
+    public void setSecondCardId(String secondCardId) {
+        this.secondCardId = secondCardId;
+    }
+
+    public void setFirstCardId(String firstCardId) {
+        this.firstCardId = firstCardId;
+    }
 
     @Override
     public void doIfDone() {
         super.doIfDone();
         Player player=getDower();
-        player.setFirstCardId(firstCardId);
-        player.setSecondCardId(secondCardId);
+        if (firstCardId!=null){
+            player.setFirstCardId(firstCardId);
+        }
+        if (secondCardId!=null){
+            player.setSecondCardId(secondCardId);
+        }
     }
 }

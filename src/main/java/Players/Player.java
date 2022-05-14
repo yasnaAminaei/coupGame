@@ -2,6 +2,7 @@ package Players;
 
 import Cards.Card;
 import Cards.CardsDataBase;
+import Cards.CardsTypes;
 
 import java.util.ArrayList;
 
@@ -9,6 +10,20 @@ public class Player {
     public String name;
     public String playerId;
     public int coins;
+    public boolean alive;
+
+    public static Integer getLastPlayerId() {
+        return lastPlayerId;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
     /*
     public ArrayList<String> cardIds;
 
@@ -33,6 +48,31 @@ public class Player {
     }
 
 
+    public ArrayList<Card> getAliveCards(){
+        ArrayList<Card> card=new ArrayList<>();
+        Card first=getFirstCard();
+        Card second=getSecondCard();
+        if (first.isAlive()){
+            card.add(first);
+        }
+        if (second.isAlive()){
+            card.add(second);
+        }
+        return card;
+    }
+    public ArrayList<CardsTypes > getAliveCardsType(){
+        ArrayList<CardsTypes> cardsTypes=new ArrayList<>();
+        Card first=getFirstCard();
+        Card second=getSecondCard();
+        if (first.isAlive()){
+            cardsTypes.add(first.getType());
+        }
+        if (second.isAlive()){
+            cardsTypes.add(second.getType());
+        }
+        return cardsTypes;
+
+    }
 
     public String getFirstCardId() {
         return firstCardId;

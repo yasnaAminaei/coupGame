@@ -26,12 +26,26 @@ public class Exchange extends Action{
     }
 
 
+    public void setExchangedCardId(String exchangedCardId) {
+        this.exchangedCardId = exchangedCardId;
+    }
+
+    public void setRandomCardId(String randomCardId) {
+        this.randomCardId = randomCardId;
+    }
+
     @Override
     public void doIfDone() {
         super.doIfDone();
         Player player=getDower();
         player.addCoins(-1);
-        player.changeCards(exchangedCardId,randomCardId);
+        if (randomCardId!=null){
+            player.setSecondCardId(randomCardId);
+        }
+        if (exchangedCardId!=null){
+            player.setFirstCardId(exchangedCardId);
+        }
+       // player.changeCards(exchangedCardId,randomCardId);
     }
 
 

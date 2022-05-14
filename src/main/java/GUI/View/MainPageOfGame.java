@@ -42,7 +42,6 @@ public class MainPageOfGame {
     @FXML
     private AnchorPane playersPane;
 
-
     @FXML
     private Button startTheGameButton;//todo
 
@@ -60,7 +59,6 @@ public class MainPageOfGame {
     public void initialize() throws IOException {
         this.loadEveryThing();
         this.player = new Player();
-
     }
 
     public void ShowCheatSheet() throws IOException {
@@ -83,15 +81,14 @@ public class MainPageOfGame {
     }
 
     public void ShowPlayerInfo() throws IOException {
-        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/GameTrackerController.fxml");
+        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/PlayerInfo.fxml");
         Parent root=loader.load();
         playersPane.getChildren().add(root);
         playersPane.setVisible(true);
         PlayerInfo x=loader.getController();
         x.showPlayerInfo(player);
+        startTheGameButton.setVisible(false);
     }
-
-
 
 
     public void loadCurrentStateOfGame(){
