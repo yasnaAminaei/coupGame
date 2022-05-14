@@ -181,9 +181,6 @@ public class Player {
 
 
     public Player(){
-        this.playerId=generatePlayerId();
-        this.name="you";
-        this.coins=0;
     }
 
 

@@ -5,6 +5,8 @@ import AI.killer;
 import AI.paranoid;
 import Cards.Card;
 import Cards.CardsDataBase;
+import Players.Player;
+import Players.PlayersDataBase;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.log4j.LogManager;
@@ -27,10 +29,14 @@ public class ReadDefualtData {
 
     }
 
+
+
+
     public static void deSerializeALL() throws FileNotFoundException {
         deSerializeKiller();
         deSerializeParanoid();
         deSerializeCoupper();
+        deSerializeUser();
         deSerializeCard("src/main/java/BuildData/Ambassador1.json");
         deSerializeCard("src/main/java/BuildData/Ambassador2.json");
         deSerializeCard("src/main/java/BuildData/Ambassador3.json");
@@ -54,17 +60,28 @@ public class ReadDefualtData {
     public static void deSerializeKiller() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
         killer killer =gson.fromJson(new FileReader("src/main/java/BuildData/Killer.json"), killer.class);
+        PlayersDataBase.players.add(killer);
     }
 
     public static void deSerializeParanoid() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
         paranoid paranoid =gson.fromJson(new FileReader("src/main/java/BuildData/Paranoid.json"), paranoid.class);
+        PlayersDataBase.players.add(paranoid);
 
     }
 
     public static void deSerializeCoupper() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
         coupper coupper =gson.fromJson(new FileReader("src/main/java/BuildData/Coupper.json"), coupper.class);
+        PlayersDataBase.players.add(coupper);
+
+    }
+
+
+    public static void deSerializeUser() throws FileNotFoundException {
+        Gson gson=new GsonBuilder().setLenient().create();
+        Player player =gson.fromJson(new FileReader("src/main/java/BuildData/User.json"), Player.class);
+        PlayersDataBase.players.add(player);
 
     }
 

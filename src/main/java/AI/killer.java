@@ -23,9 +23,6 @@ public class killer extends AI{
 
 
 
-    public String id;
-
-
 
 
     public killer(){
@@ -34,7 +31,7 @@ public class killer extends AI{
 
 
     public void playTheirTurn(){
-        Player player= PlayersDataBase.searchByPlayerId(id);
+        Player player= PlayersDataBase.searchByPlayerId(this.playerId);
         assert player != null;
         ArrayList<CardsTypes>  cardsTypesArrayList = player.getAliveCardsType();
         if (cardsTypesArrayList.contains(CardsTypes.Ambassador)){

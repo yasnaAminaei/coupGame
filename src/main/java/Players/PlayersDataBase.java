@@ -3,7 +3,7 @@ package Players;
 import java.util.ArrayList;
 
 public class PlayersDataBase {
-    public static ArrayList<Player> players;
+    public static ArrayList<Player> players=new ArrayList<>();
 
 
     public static ArrayList<Player> getPlayers() {

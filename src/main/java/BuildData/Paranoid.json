@@ -1,3 +1,8 @@
 {
-
+"name" : "paranoid AI",
+"playerId" : "2",
+"coins" : "2",
+"alive" : "true",
+"firstCardId" : "Duke1",
+"secondCardId" : "Contessa3"
 }

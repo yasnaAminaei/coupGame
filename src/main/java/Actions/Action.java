@@ -34,11 +34,14 @@ public class Action {
     public Action(Player dower){
         this.dowerId= dower.getPlayerId();
         this.actionId=generateActionId();
-        dower.AddActionIds(actionId);
+        //dower.AddActionIds(actionId);
         stateOfAction=StateOfAction.attempted;
+        /*
         for (Player p : PlayersDataBase.getPlayers()) {
             p.setActionCurrentlyReactingTo(actionId);
         }
+
+         */
 
     }
 

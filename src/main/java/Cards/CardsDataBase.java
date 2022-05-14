@@ -1,13 +1,18 @@
 package Cards;
 
+import GUI.View.MainPageOfGame;
 import Players.Player;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class CardsDataBase {
 
 
-    public static ArrayList<Card> cards;
+    public static Logger log= LogManager.getLogger(CardsDataBase.class);
+
+    public static ArrayList<Card> cards=new ArrayList<>();
 
 
     public static ArrayList<Card> getCards() {
@@ -19,6 +24,7 @@ public class CardsDataBase {
 
     public static Card searchByCardId(String cardId){
         for (Card card : getCards()){
+            log.warn(cardId+" "+card.getCardId());
             String id=card.getCardId();
             if (id.equals(cardId)){
                 return card;

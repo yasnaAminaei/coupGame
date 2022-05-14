@@ -1,8 +1,8 @@
 {
 
-"playerId" : "",
-"alive" : ,
-"cardId" : "Captain2",
+"playerId" : "3",
+"alive" : true,
+"cardId" : "Captain3",
 "name" : "Captain",
 "type" : "Captain"
 

@@ -1,7 +1,7 @@
 {
 
 "playerId" : "",
-"alive" : ,
+"alive" : false,
 "cardId" : "Duke3",
 "name" : "Duke",
 "type" : "Duke"

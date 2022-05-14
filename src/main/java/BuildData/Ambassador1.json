@@ -1,6 +1,6 @@
 {
-"playerId" : "",
-"alive" : ,
+"playerId" : "1",
+"alive" : true,
 "cardId" : "Ambassador1",
 "name" : "Ambassador",
 "type" : "Ambassador"

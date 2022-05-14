@@ -23,7 +23,7 @@ public  class Card {
     }
 
 
-    public String getCardInformation(){
+    public String getCardsInformation(){
         switch (type){
             case Duke -> {
                 return "duck: "+" Tax +$3; block foreign aid";

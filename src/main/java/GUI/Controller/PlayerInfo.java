@@ -13,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 public class PlayerInfo {
@@ -58,6 +59,7 @@ public class PlayerInfo {
             else{
                 firstCard=p.getFirstCard().getNameIfDead();
                 secondCard=p.getSecondCard().getNameIfDead();
+
             }
 
             out.add(new InfoClass(name,cash,firstCard,secondCard));
