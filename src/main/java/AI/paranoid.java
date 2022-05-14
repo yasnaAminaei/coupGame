@@ -1,4 +1,4 @@
 package AI;
 
-public class paranoid {
+public class paranoid extends AI {
 }

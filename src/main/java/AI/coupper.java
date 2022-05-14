@@ -1,6 +1,6 @@
 package AI;
 
-public class coupper {
+public class coupper extends AI {
 
 
 }

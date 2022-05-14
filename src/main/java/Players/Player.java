@@ -8,15 +8,67 @@ import java.util.ArrayList;
 
 public class Player {
 
-
     public String name;
     public String playerId;
     public int coins;
     public boolean alive;
+    public String firstCardId;
+    public String secondCardId;
+
+
+
+
+
+    //getters and setters and simple functions :
+
+    //name :
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // playerId :
+
+    public String getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(String playerId) {
+        this.playerId = playerId;
+    }
+
+    public static Integer lastPlayerId=1;
+    public static String generatePlayerId(){
+        lastPlayerId++;
+        return lastPlayerId+"";
+    }
 
     public static Integer getLastPlayerId() {
         return lastPlayerId;
     }
+
+
+
+    //coins :
+
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public void addCoins(int coins){
+        this.coins+=coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
+    }
+
+    //alive :
 
     public void setAlive(boolean alive) {
         this.alive = alive;
@@ -26,29 +78,8 @@ public class Player {
         return alive;
     }
 
-    /*
-    public ArrayList<String> cardIds;
 
-     */
-
-    public String firstCardId;
-
-    public String secondCardId;
-
-
-    public Player(){
-        this.playerId=generatePlayerId();
-        this.name="you";
-        this.coins=0;
-    }
-
-
-    public static Integer lastPlayerId=1;
-    public static String generatePlayerId(){
-        lastPlayerId++;
-        return lastPlayerId+"";
-    }
-
+    //cards :
 
     public ArrayList<Card> getAliveCards(){
         ArrayList<Card> card=new ArrayList<>();
@@ -62,6 +93,7 @@ public class Player {
         }
         return card;
     }
+
     public ArrayList<CardsTypes > getAliveCardsType(){
         ArrayList<CardsTypes> cardsTypes=new ArrayList<>();
         Card first=getFirstCard();
@@ -83,12 +115,7 @@ public class Player {
     public String getSecondCardId() {
         return secondCardId;
     }
-/*
-    public void setCardIds(ArrayList<String> cardIds) {
-        this.cardIds = cardIds;
-    }
 
- */
 
 
 
@@ -151,76 +178,16 @@ public class Player {
 
     }
 
-    public ArrayList<String> ActionIds;
-
-    public String actionCurrentlyReactingTo;
 
 
-
-    public String getActionCurrentlyReactingTo() {
-        return actionCurrentlyReactingTo;
-    }
-
-    public void setActionCurrentlyReactingTo(String actionCurrentlyReactingTo) {
-        this.actionCurrentlyReactingTo = actionCurrentlyReactingTo;
-    }
-
-    public void AddActionIds(String id) {
-        ActionIds.add(id);
-    }
-
-    public void setActionIds(ArrayList<String> actionIds) {
-        ActionIds = actionIds;
-    }
-
-    public ArrayList<String> getActionIds() {
-        return ActionIds;
+    public Player(){
+        this.playerId=generatePlayerId();
+        this.name="you";
+        this.coins=0;
     }
 
 
 
-    public String getPlayerId() {
-        return playerId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-/*
-    public ArrayList<String> getCardIds() {
-        if (cardIds==null){
-            cardIds=new ArrayList<>();
-        }
-        return cardIds;
-    }
-
- */
-
-    /*
-    public ArrayList<Card> getCards() {
-        return CardsDataBase.returnArrayListOfCardsWithGivenArraylistOfCardIds(getCardIds());
-    }
-
-     */
-
-    public int getCoins() {
-        return coins;
-    }
-
-
-
-    public void addCoins(int coins){
-        this.coins+=coins;
-    }
-
-
-    public void setCoins(int coins) {
-        this.coins = coins;
-    }
 
     public void coup(){
 

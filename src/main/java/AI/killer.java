@@ -11,7 +11,7 @@ import Players.PlayersDataBase;
 
 import java.util.ArrayList;
 
-public class killer {
+public class killer extends AI{
 
     /**
      * قاتل محتاط: این بازیکن به دنبال حمله کردن است اما حاضر به بلوف زدن نیست. در صورتی

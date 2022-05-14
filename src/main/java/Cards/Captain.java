@@ -10,6 +10,8 @@ import java.io.UnsupportedEncodingException;
 public class Captain extends Card {
 
 
+
+
     public static String getCardInformation() {
         return "captain: "+" Steal $2 from another player; blocked by captain and ambassador";
     }

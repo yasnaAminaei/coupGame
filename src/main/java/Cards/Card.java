@@ -23,6 +23,30 @@ public  class Card {
     }
 
 
+    public String getCardInformation(){
+        switch (type){
+            case Duke -> {
+                return "duck: "+" Tax +$3; block foreign aid";
+            }
+            case Assassin -> {
+                return "assassin: "+ " Pay $3 to reveal another player's influence; blocked by contessa";
+            }
+            case Ambassador -> {
+                return "ambassador: "+" Draw two from the deck and exchange your influences";
+            }
+            case Captain -> {
+                return "captain: "+" Steal $2 from another player; blocked by captain and ambassador";
+            }
+            case Contessa -> {
+                return "contessa: "+" Block assassination";
+            }
+            default -> {
+                return "";
+            }
+        }
+    }
+
+
 
     public void setType(CardsTypes type) {
         this.type = type;
@@ -48,9 +72,6 @@ public  class Card {
     public static Logger log= LogManager.getLogger(Card.class);
 
 
-    public static String getCardInformation() {
-        return "";
-    }
 
 
     public String getCardId() {
