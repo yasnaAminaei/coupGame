@@ -7,6 +7,8 @@ import Cards.CardsTypes;
 import java.util.ArrayList;
 
 public class Player {
+
+
     public String name;
     public String playerId;
     public int coins;

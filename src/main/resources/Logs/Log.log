@@ -1,0 +1,3 @@
+2022-05-14 12:27:49.461 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-14 12:27:49.723 [JavaFX Application Thread] INFO  GUI.Controller.CheatSheet - show cheat sheet (game info)
+2022-05-14 12:27:49.739 [JavaFX Application Thread] INFO  GUI.Controller.GameTracker - show game tracker

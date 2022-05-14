@@ -10,6 +10,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -18,6 +20,8 @@ import java.nio.file.Paths;
 public class MainPageOfGame {
 
     //GUI.View.MainPageOfGame
+
+    public static Logger log= LogManager.getLogger(MainPageOfGame.class);
 
 
     Player player;
@@ -50,6 +54,7 @@ public class MainPageOfGame {
 
         //todo
         ShowPlayerInfo();
+
 
     }
 

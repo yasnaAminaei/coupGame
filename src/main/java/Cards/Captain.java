@@ -15,6 +15,10 @@ public class Captain extends Card {
     }
 
 
+    public Captain(){
+        this.type=CardsTypes.Captain;
+    }
+
 
 /*
     public void stealFromAnotherPlayer(Player p) throws FileNotFoundException, UnsupportedEncodingException {

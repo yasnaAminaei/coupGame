@@ -9,6 +9,9 @@ public class Contessa extends Card {
     }
 
 
+    public Contessa(){
+        this.type=CardsTypes.Contessa;
+    }
 
 
 

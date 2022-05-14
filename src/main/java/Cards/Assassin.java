@@ -7,5 +7,9 @@ public class Assassin extends Card{
         return "assassin: "+ " Pay $3 to reveal another player's influence; blocked by contessa";
     }
 
+    public Assassin(){
+        this.type=CardsTypes.Assassin;
+    }
+
 
 }

@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 public  class Card {
     public String playerId;
     public boolean alive;
-    public boolean bluff;
     public String cardId;
     public String name;
     public CardsTypes type;
@@ -17,6 +16,13 @@ public  class Card {
     public CardsTypes getType() {
         return type;
     }
+
+
+    public Card(){
+
+    }
+
+
 
     public void setType(CardsTypes type) {
         this.type = type;
@@ -55,13 +61,6 @@ public  class Card {
         this.cardId = cardId;
     }
 
-    public boolean isBluff() {
-        return bluff;
-    }
-
-    public void setBluff(boolean bluff) {
-        this.bluff = bluff;
-    }
 
     public String getPlayerId() {
         return playerId;
@@ -81,14 +80,6 @@ public  class Card {
 
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
-    }
-
-    public Card(){
-
-    }
-
-    public Card(boolean bluff){
-        this.bluff=bluff;
     }
 
 }

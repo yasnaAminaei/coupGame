@@ -13,7 +13,7 @@ public class Duke extends Card {
 
 
     public Duke(){
-
+        this.type=CardsTypes.Duke;
     }
 
 
