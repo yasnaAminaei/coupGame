@@ -1,8 +1,5 @@
 package GUI.View;
 
-import Actions.ActionKind;
-import Actions.Challenge;
-import Players.Player;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 

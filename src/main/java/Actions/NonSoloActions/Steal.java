@@ -1,5 +1,7 @@
-package Actions;
+package Actions.NonSoloActions;
 
+import Actions.Action;
+import Actions.ActionKind;
 import Players.Player;
 import Players.PlayersDataBase;
 
@@ -13,7 +15,7 @@ public class Steal extends Action {
 
     public Steal(Player dower) {
         super(dower);
-        actionKind=ActionKind.Steal;
+        actionKind= ActionKind.Steal;
     }
 
     @Override

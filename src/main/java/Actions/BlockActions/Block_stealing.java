@@ -1,4 +1,4 @@
-package Actions;
+package Actions.BlockActions;
 
 import Players.Player;
 

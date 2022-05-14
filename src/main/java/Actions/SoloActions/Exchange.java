@@ -1,10 +1,13 @@
-package Actions;
+package Actions.SoloActions;
 
+import Actions.Action;
+import Actions.ActionKind;
+import Actions.StateOfAction;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Players.Player;
 
-public class Exchange extends Action{
+public class Exchange extends Action {
 
     //هر بازیکن در نوبت خود علاوه بر اقدام‌هایی که در بازی اصلی است،
     // باید بتواند با پرداخت یک سکه به خزانه یکی از کارت های خود را تعویض کند.
@@ -21,8 +24,8 @@ public class Exchange extends Action{
 
     public Exchange(Player dower) {
         super(dower);
-        actionKind=ActionKind.Exchange;
-        stateOfAction=StateOfAction.done;
+        actionKind= ActionKind.Exchange;
+        stateOfAction= StateOfAction.done;
     }
 
 

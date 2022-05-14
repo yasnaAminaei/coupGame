@@ -1,6 +1,6 @@
 package AI;
 
-import Actions.Tax;
+import Actions.SoloActions.Tax;
 import Players.Player;
 import Players.PlayersDataBase;
 

@@ -1,5 +1,8 @@
-package Actions;
+package Actions.SoloActions;
 
+import Actions.Action;
+import Actions.ActionKind;
+import Actions.StateOfAction;
 import Players.Player;
 
 public class Income extends Action {
@@ -11,8 +14,8 @@ public class Income extends Action {
 
     public Income(Player dower) {
         super(dower);
-        actionKind=ActionKind.Income;
-        stateOfAction=StateOfAction.done;
+        actionKind= ActionKind.Income;
+        stateOfAction= StateOfAction.done;
     }
 
     @Override

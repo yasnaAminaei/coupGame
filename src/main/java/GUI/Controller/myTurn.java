@@ -1,6 +1,6 @@
 package GUI.Controller;
 
-import Actions.Coup;
+import Actions.NonSoloActions.Coup;
 import Players.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

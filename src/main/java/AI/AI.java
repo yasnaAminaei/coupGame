@@ -1,11 +1,8 @@
 package AI;
 
-import Actions.Income;
-import Cards.CardsTypes;
+import Actions.SoloActions.Income;
 import Players.Player;
 import Players.PlayersDataBase;
-
-import java.util.ArrayList;
 
 public class AI extends Player {
 

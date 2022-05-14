@@ -1,11 +1,10 @@
 package AI;
 
-import Actions.Ambassador_Exchange;
-import Actions.Exchange;
+import Actions.SoloActions.Ambassador_Exchange;
+import Actions.SoloActions.Exchange;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Cards.CardsTypes;
-import Cards.Duke;
 import Players.Player;
 import Players.PlayersDataBase;
 

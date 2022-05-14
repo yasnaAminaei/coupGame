@@ -1,6 +1,9 @@
-package Actions;
+package Actions.BlockActions;
 
-public class BlockActions extends RespondActions{
+import Actions.Action;
+import Actions.RespondActions;
+
+public class BlockActions extends RespondActions {
 
 
 

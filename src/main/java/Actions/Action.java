@@ -50,6 +50,7 @@ public class Action {
 
 
     public ArrayList<CardsTypes> cardsTypesWhichHaveThisAbility(){
+        return new ArrayList<>();
 
     }
 
