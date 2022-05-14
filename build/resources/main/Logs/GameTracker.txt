@@ -1,0 +1,7 @@
+A->B: Coup
+B->A: Assassinate
+A->B: Blocks Assassination
+C->A: Challenge
+A->KILL: Duke
+C->DECK: Ambassador
+D->BANK: Foreign Aid
