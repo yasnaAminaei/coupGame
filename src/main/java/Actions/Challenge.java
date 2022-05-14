@@ -46,6 +46,12 @@ public class Challenge {
         }
     }
 
+    /**
+     *
+     * @param player is the one who had been wrong either bluff or wrong challenge
+     * @return if there is a need of asking which card you wish to burn
+     */
+
     public static boolean removeOneCardFromPlayer(Player player){
         ArrayList<Card> playersAliveCards = player.getAliveCards();
         if (playersAliveCards.size()==2){

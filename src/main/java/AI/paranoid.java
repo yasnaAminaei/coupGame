@@ -12,5 +12,9 @@ public class paranoid extends AI {
     public int turn =0 ;
 
 
+    @Override
+    public void playTheirTurn() {
+        super.playTheirTurn();
+    }
 
 }

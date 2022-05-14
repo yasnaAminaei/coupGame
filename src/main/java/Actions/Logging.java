@@ -27,8 +27,8 @@ public class Logging {
     }
 
     public void StringFormatterLog() throws FileNotFoundException, UnsupportedEncodingException {
-        String firstPlayerName = firstPlayer.getName();
-        String secondPlayerName=secondPlayer.getName();
+        String firstPlayerName = firstPlayer.getPlayerId();
+        String secondPlayerName=secondPlayer.getPlayerId();
         String actionName= action.name();
         String formattedLog= firstPlayerName+" -> "+secondPlayerName+" : "+actionName;
         PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");

@@ -2,10 +2,13 @@ package Actions;
 
 import Cards.Card;
 
+import Cards.CardsTypes;
 import Players.Player;
 import Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+
+import java.util.ArrayList;
 
 public class Action {
 
@@ -42,6 +45,11 @@ public class Action {
         }
 
          */
+
+    }
+
+
+    public ArrayList<CardsTypes> cardsTypesWhichHaveThisAbility(){
 
     }
 

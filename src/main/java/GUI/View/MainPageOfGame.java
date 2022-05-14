@@ -53,14 +53,9 @@ public class MainPageOfGame {
 
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
-        //todo
         ReadDefualtData.deSerializeALL();
         ShowPlayerInfo();
-
-
     }
-
-
 
     @FXML
     public void initialize() throws IOException {
@@ -98,7 +93,7 @@ public class MainPageOfGame {
     }
 
 
-    public void loadCurrentStateOfGame(){
+    public void ShowCurrentStateOfGame(){
 
     }
 

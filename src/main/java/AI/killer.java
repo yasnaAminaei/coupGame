@@ -30,6 +30,7 @@ public class killer extends AI{
     }
 
 
+    @Override
     public void playTheirTurn(){
         Player player= PlayersDataBase.searchByPlayerId(this.playerId);
         assert player != null;
