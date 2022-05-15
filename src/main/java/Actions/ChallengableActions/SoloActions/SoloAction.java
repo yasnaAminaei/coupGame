@@ -2,18 +2,17 @@ package Actions.ChallengableActions.SoloActions;
 
 import Actions.Action;
 import Actions.ActionKind;
+import Actions.ChallengableActions.ChallengeAbleAction;
 import Cards.CardsTypes;
 import Players.Player;
 
-public class SoloAction extends Action {
+public class SoloAction extends ChallengeAbleAction {
 
     //they can't be blocked
 
     // attempt -> ask allow or challenge -> done / fail
 
-    CardsTypes cardsTypes;
 
-    String challengeId;
 
     public SoloAction(Player dower) {
         super(dower);
@@ -21,7 +20,4 @@ public class SoloAction extends Action {
     }
 
 
-    public CardsTypes getCardsTypes() {
-        return cardsTypes;
-    }
 }

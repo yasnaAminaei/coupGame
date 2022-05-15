@@ -20,11 +20,12 @@ public class Action {
     public StateOfAction stateOfAction;
 
 
+    public StateOfAction getStateOfAction() {
+        return stateOfAction;
+    }
 
-    public CardsTypes cardsTypes;
-
-    public CardsTypes getCardsTypes() {
-        return cardsTypes;
+    public ActionKind getActionKind() {
+        return actionKind;
     }
 
     public Player getDower(){

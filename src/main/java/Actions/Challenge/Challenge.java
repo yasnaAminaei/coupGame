@@ -3,6 +3,8 @@ package Actions.Challenge;
 import Actions.Action;
 import Actions.ActionDataBase;
 import Actions.ActionKind;
+import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.StateOfAction;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Cards.CardsTypes;
@@ -12,12 +14,6 @@ import Players.PlayersDataBase;
 import java.util.ArrayList;
 
 public class Challenge extends Action {
-
-    /*
-    public String challengedPlayerId;
-    public CardsTypes challengedCard;
-
-     */
 
 
     public String challengedActionId;
@@ -31,43 +27,17 @@ public class Challenge extends Action {
     }
 
 
-    public boolean getChallengeResult(){
+    public boolean getChallengeResult() {
         Action challengedAction = ActionDataBase.searchByActionId(challengedActionId);
         assert challengedAction != null;
-        Player challengedPlayer =challengedAction.getDower();
-        CardsTypes challengedCard = challengedAction.getCardsTypes();
-        return checkIfPlayerHaveTheCard(challengedPlayer,challengedCard);
-
-    }
-
-    /*
-
-
-    public Challenge(String challengedPlayerId , String challengerId , CardsTypes cardsTypes){
-        this.challengedCard=cardsTypes;
-        this.challengerId=challengerId;
-        this.challengedPlayerId=challengedPlayerId;
-    }
-
-     */
-
-
-    /*
-
-    public void doTheProcessOfChallenge(){
-        Player challengedPlayer= PlayersDataBase.searchByPlayerId(challengedPlayerId);
-        assert challengedPlayer != null;
-        if (checkIfPlayerHaveTheCard(challengedPlayer,challengedCard)){
-
+        Player challengedPlayer = challengedAction.getDower();
+        if (challengedAction instanceof ChallengeAbleAction) {
+            CardsTypes challengedCard = ((ChallengeAbleAction) challengedAction).getCardsTypes();
+            return !checkIfPlayerHaveTheCard(challengedPlayer, challengedCard);
         }
+        return false;
+
     }
-
-     */
-
-
-
-
-
 
 
     public static boolean checkIfPlayerHaveTheCard( Player player , CardsTypes cardTypes){

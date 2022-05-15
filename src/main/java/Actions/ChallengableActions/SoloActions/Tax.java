@@ -1,6 +1,7 @@
 package Actions.ChallengableActions.SoloActions;
 
 import Actions.Challenge.Challenge;
+import Cards.CardsTypes;
 import Players.Player;
 
 public class Tax extends SoloAction {
@@ -11,6 +12,7 @@ public class Tax extends SoloAction {
 
     public Tax(Player dower) {
         super(dower);
+        this.cardsTypes= CardsTypes.Duke;
     }
 
 

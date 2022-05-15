@@ -1,5 +1,6 @@
 package Actions.ChallengableActions.SoloActions;
 
+import Cards.CardsTypes;
 import Players.Player;
 
 public class Ambassador_Exchange extends SoloAction {
@@ -12,6 +13,7 @@ public class Ambassador_Exchange extends SoloAction {
 
     public Ambassador_Exchange(Player dower) {
         super(dower);
+        this.cardsTypes= CardsTypes.Ambassador;
     }
 
 
