@@ -3,7 +3,7 @@ package Actions.SoloActions;
 import Actions.Action;
 import Players.Player;
 
-public class Ambassador_Exchange extends Action {
+public class Ambassador_Exchange extends SoloAction {
 
     //Draw two from the deck and exchange your influences
 

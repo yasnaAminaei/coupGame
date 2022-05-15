@@ -57,6 +57,9 @@ public class CurrentStateOfGame {
     }
 
 
+
+
+
     public void reactIfYouAreNotTheTarget(){//challenge or allow
         boolean challenge = allowOrChallenge();
         if (challenge){

@@ -1,4 +1,4 @@
-package Actions.NonSoloActions;
+package Actions;
 
 import Cards.Card;
 import Cards.CardsDataBase;

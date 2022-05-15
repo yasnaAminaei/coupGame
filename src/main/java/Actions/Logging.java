@@ -12,10 +12,14 @@ public class Logging {
     public Player secondPlayer;
     public ActionKind action;
     public StateOfAction stateOfAction;
+    public String actionId;
 
 
 
-    public Logging(Player firstPlayer, Player secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {
+
+
+    public Logging(String actionId , Player firstPlayer, Player secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {
+        this.actionId=actionId;
         this.firstPlayer=firstPlayer;
         this.secondPlayer=secondPlayer;
         this.action=action;
@@ -30,7 +34,7 @@ public class Logging {
         String firstPlayerName = firstPlayer.getPlayerId();
         String secondPlayerName=secondPlayer.getPlayerId();
         String actionName= action.name();
-        String formattedLog= firstPlayerName+" -> "+secondPlayerName+" : "+actionName;
+        String formattedLog= actionId+" : "+firstPlayerName+" -> "+secondPlayerName+" : "+actionName;
         PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");
         writer.println(formattedLog);
         writer.close();

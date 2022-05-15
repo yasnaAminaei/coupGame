@@ -55,6 +55,7 @@ public class MainPageOfGame {
     void StatrTheGame(ActionEvent event) throws IOException {
         ReadDefualtData.deSerializeALL();
         ShowPlayerInfo();
+        ShowCurrentStateOfGame();
     }
 
     @FXML
@@ -93,7 +94,12 @@ public class MainPageOfGame {
     }
 
 
-    public void ShowCurrentStateOfGame(){
+    public void ShowCurrentStateOfGame() throws IOException {
+        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
+        Parent root=loader.load();
+        CurrentGamePane.getChildren().add(root);
+        CurrentGamePane.setVisible(true);
+        CurrentStateOfGame x=loader.getController();
 
     }
 

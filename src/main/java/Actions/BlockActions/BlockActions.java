@@ -13,9 +13,7 @@ public class BlockActions extends RespondActions {
     }
 
 
-    public void blockIfNotChallenged(){
 
-    }
 
 
 
