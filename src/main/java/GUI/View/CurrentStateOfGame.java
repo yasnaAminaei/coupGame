@@ -1,5 +1,7 @@
 package GUI.View;
 
+import Actions.Action;
+import Actions.CountingActions;
 import GUI.Controller.GameState.*;
 import GUI.Controller.PlayerInfo;
 import Players.Player;
@@ -110,6 +112,16 @@ public class CurrentStateOfGame {
     public void showCurrentStateOfGame() throws IOException {
         if (gameState==null){
             gameState=GameState.MyTurn;
+        }
+        else{
+            Action currentAction= CountingActions.currentAction();
+            if (currentAction==null){
+                gameState=GameState.MyTurn;
+            }
+            else{
+
+            }
+
         }
         String gameStateName=gameState.name();
         switch (gameStateName){

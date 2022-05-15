@@ -1,5 +1,8 @@
 package Actions;
 
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
+import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,24 +11,37 @@ import java.util.Scanner;
 public class CountingActions {
 
 
-    ArrayList<Action> blockActions;
-    ArrayList<Action> challengeActions;
-    ArrayList<Action> allActions;
 
-    public  void lastAction() throws IOException {
+
+    public static Action currentAction() throws IOException {
+        ArrayList<Action> notFinishedActions=CurrentAction();
+        int MaxId=0;
+        for (Action a : notFinishedActions){
+            String id = a.getActionId();
+            int idInt=Integer.parseInt(id);
+            if (idInt> MaxId){
+                MaxId=idInt;
+            }
+        }
+        return ActionDataBase.searchByActionId(MaxId+"");
+    }
+    public static ArrayList<Action> CurrentAction() throws IOException {
 
         Scanner s = new Scanner(new File("src/main/resources/Logs/GameTracker.txt"));
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<Action> arrayList=new ArrayList<>();
         while (s.hasNextLine()){
             String logged= s.nextLine();
             String[] split=logged.split(" : ");
             String id=split[0];
-            list.add(logged);
-
+            Action action =ActionDataBase.searchByActionId(id);
+            assert action != null;
+            StateOfAction stateOfAction = action.getStateOfAction();
+            if (stateOfAction.equals(StateOfAction.attempted)){
+                arrayList.add(action);
+            }
         }
         s.close();
-        int len=list.size();
-
+        return arrayList;
     }
 
 /*
