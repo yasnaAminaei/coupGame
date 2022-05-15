@@ -1,19 +1,15 @@
-package Actions.SoloActions;
+package Actions.NonSoloActions;
 
-import Actions.Action;
-import Actions.ActionKind;
-import Actions.StateOfAction;
+import Actions.ChallengableActions.SoloActions.SoloAction;
 import Players.Player;
 
-public class Foreign_aid extends Action {
+public class Foreign_aid extends SoloAction {
 
     //Foreign aid +$2; blocked by duke
 
 
     public Foreign_aid(Player dower) {
         super(dower);
-        stateOfAction= StateOfAction.attempted;
-        actionKind= ActionKind.Foreign_aid;
     }
 
 

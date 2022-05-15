@@ -1,4 +1,4 @@
-package Actions.SoloActions;
+package Actions.NonChallengeSoloActions;
 
 import Actions.Action;
 import Actions.ActionKind;

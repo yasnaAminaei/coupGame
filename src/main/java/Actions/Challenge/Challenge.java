@@ -1,17 +1,46 @@
-package Actions;
+package Actions.Challenge;
 
+import Actions.Action;
+import Actions.ActionDataBase;
+import Actions.ActionKind;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Cards.CardsTypes;
 import Players.Player;
+import Players.PlayersDataBase;
 
 import java.util.ArrayList;
 
-public class Challenge {
+public class Challenge extends Action {
 
-    public String challengerId;
+    /*
     public String challengedPlayerId;
     public CardsTypes challengedCard;
+
+     */
+
+
+    public String challengedActionId;
+
+
+    public Challenge(Player dower , String challengedActionId ) {
+        super(dower);
+        this.actionKind= ActionKind.Challenge;
+        this.challengedActionId=challengedActionId;
+
+    }
+
+
+    public boolean getChallengeResult(){
+        Action challengedAction = ActionDataBase.searchByActionId(challengedActionId);
+        assert challengedAction != null;
+        Player challengedPlayer =challengedAction.getDower();
+        CardsTypes challengedCard = challengedAction.getCardsTypes();
+        return checkIfPlayerHaveTheCard(challengedPlayer,challengedCard);
+
+    }
+
+    /*
 
 
     public Challenge(String challengedPlayerId , String challengerId , CardsTypes cardsTypes){
@@ -19,6 +48,21 @@ public class Challenge {
         this.challengerId=challengerId;
         this.challengedPlayerId=challengedPlayerId;
     }
+
+     */
+
+
+    /*
+
+    public void doTheProcessOfChallenge(){
+        Player challengedPlayer= PlayersDataBase.searchByPlayerId(challengedPlayerId);
+        assert challengedPlayer != null;
+        if (checkIfPlayerHaveTheCard(challengedPlayer,challengedCard)){
+
+        }
+    }
+
+     */
 
 
 

@@ -1,6 +1,5 @@
-package Actions.SoloActions;
+package Actions.ChallengableActions.SoloActions;
 
-import Actions.Action;
 import Players.Player;
 
 public class Ambassador_Exchange extends SoloAction {

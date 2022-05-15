@@ -3,5 +3,5 @@ package Actions.NonSoloActions;
 public enum NonSoloActionKind {
     Coup
     ,Steal
-    ,Reveal
+    ,Reveal,Foreign_aid
 }

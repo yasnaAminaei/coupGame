@@ -8,8 +8,8 @@ import java.io.UnsupportedEncodingException;
 
 public class Logging {
 
-    public Player firstPlayer;
-    public Player secondPlayer;
+    public String firstPlayer;
+    public String secondPlayer;
     public ActionKind action;
     public StateOfAction stateOfAction;
     public String actionId;
@@ -18,7 +18,7 @@ public class Logging {
 
 
 
-    public Logging(String actionId , Player firstPlayer, Player secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {
+    public Logging(String actionId , String firstPlayer, String secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {
         this.actionId=actionId;
         this.firstPlayer=firstPlayer;
         this.secondPlayer=secondPlayer;
@@ -31,10 +31,8 @@ public class Logging {
     }
 
     public void StringFormatterLog() throws FileNotFoundException, UnsupportedEncodingException {
-        String firstPlayerName = firstPlayer.getPlayerId();
-        String secondPlayerName=secondPlayer.getPlayerId();
         String actionName= action.name();
-        String formattedLog= actionId+" : "+firstPlayerName+" -> "+secondPlayerName+" : "+actionName;
+        String formattedLog= actionId+" : "+firstPlayer+" -> "+secondPlayer+" : "+actionName;
         PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");
         writer.println(formattedLog);
         writer.close();

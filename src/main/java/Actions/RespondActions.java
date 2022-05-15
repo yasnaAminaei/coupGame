@@ -1,6 +1,6 @@
 package Actions;
 
-public class RespondActions {
+public class RespondActions extends Action {
 
 
     public Action action;
@@ -10,6 +10,7 @@ public class RespondActions {
 
 
     public RespondActions(Action action , String responderID){
+        super();
         this.responder=responderID;
         this.action=action;
         stateOfAction=StateOfAction.attempted;

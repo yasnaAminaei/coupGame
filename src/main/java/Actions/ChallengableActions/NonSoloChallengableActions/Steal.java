@@ -1,11 +1,10 @@
-package Actions.NonSoloActions;
+package Actions.ChallengableActions.NonSoloChallengableActions;
 
-import Actions.Action;
-import Actions.ActionKind;
+import Actions.NonSoloActions.NonSoloAction;
 import Players.Player;
 import Players.PlayersDataBase;
 
-public class Steal extends Action {
+public class Steal extends NonSoloAction {
 
     // Steal $2 from another player; blocked by captain and ambassador
 
@@ -15,7 +14,6 @@ public class Steal extends Action {
 
     public Steal(Player dower) {
         super(dower);
-        actionKind= ActionKind.Steal;
     }
 
     @Override

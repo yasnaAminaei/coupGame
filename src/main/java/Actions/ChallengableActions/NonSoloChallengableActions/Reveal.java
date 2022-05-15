@@ -1,8 +1,6 @@
-package Actions.NonSoloActions;
+package Actions.ChallengableActions.NonSoloChallengableActions;
 
 import Actions.Action;
-import Actions.ActionKind;
-import Actions.StateOfAction;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Players.Player;
@@ -18,8 +16,6 @@ public class Reveal extends Action {
 
     public Reveal(Player dower) {
         super(dower);
-        stateOfAction= StateOfAction.attempted;
-        actionKind= ActionKind.Reveal;
     }
 
     @Override

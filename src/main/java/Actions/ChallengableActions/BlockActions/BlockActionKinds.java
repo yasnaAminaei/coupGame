@@ -1,4 +1,4 @@
-package Actions.BlockActions;
+package Actions.ChallengableActions.BlockActions;
 
 public enum BlockActionKinds {
 

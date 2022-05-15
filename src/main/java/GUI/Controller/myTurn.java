@@ -1,5 +1,7 @@
 package GUI.Controller;
 
+import Actions.NonChallengeSoloActions.Exchange;
+import Actions.NonChallengeSoloActions.Income;
 import Actions.NonSoloActions.Coup;
 import Players.Player;
 import javafx.event.ActionEvent;
@@ -7,6 +9,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class myTurn {
 
@@ -55,19 +60,26 @@ public class myTurn {
 
     @FXML
     void coupAction(ActionEvent event) {
-        int coins=player.getCoins();
-        if (coins<7){
-            notEnoughCoinsError();
-        }
-        else {
+        if (haveEnoughCoins(7)){
             new Coup(player);
         }
+    }
 
+
+    public boolean haveEnoughCoins(int neededCoins){
+        int coins=player.getCoins();
+        if (coins<neededCoins){
+            notEnoughCoinsError();
+            return false;
+        }
+        return true;
     }
 
     @FXML
     void exchangeAction(ActionEvent event) {
-
+        if (haveEnoughCoins(1)){
+            new Exchange(player);
+        }
     }
 
     @FXML
@@ -76,8 +88,8 @@ public class myTurn {
     }
 
     @FXML
-    void incomeAction(ActionEvent event) {
-        player.addCoins(1);
+    void incomeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
+        new Income(player);
     }
 
     @FXML
