@@ -63,8 +63,8 @@ public class CurrentStateOfGame {
     public void showAllowOrChallenge() throws IOException {
         FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
         Parent root=loader.load();
-        AllowOrChallengePane.getChildren().add(root);
-        AllowOrChallengePane.setVisible(true);
+        myTurnPane.getChildren().add(root);
+        myTurnPane.setVisible(true);
         ChallengeOrAllow x=loader.getController();
 
     }
@@ -72,8 +72,8 @@ public class CurrentStateOfGame {
     public void showAllowOrChallengeOrBlock() throws IOException {
         FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
         Parent root=loader.load();
-        blockOrAllowOrChallengePane.getChildren().add(root);
-        blockOrAllowOrChallengePane.setVisible(true);
+        myTurnPane.getChildren().add(root);
+        myTurnPane.setVisible(true);
         BlockOrChallengeOrAllow x=loader.getController();
 
     }
@@ -91,8 +91,8 @@ public class CurrentStateOfGame {
     public void showChooseCardsToHave() throws IOException {
         FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
         Parent root=loader.load();
-        ChooseCardToHavePane.getChildren().add(root);
-        ChooseCardToHavePane.setVisible(true);
+        myTurnPane.getChildren().add(root);
+        myTurnPane.setVisible(true);
         ChooseCartsToHave x=loader.getController();
     }
 
@@ -103,14 +103,38 @@ public class CurrentStateOfGame {
         myTurnPane.setVisible(true);
         myTurn x=loader.getController();
         x.setPlayer(player);
-
     }
 
 
 
     public void showCurrentStateOfGame() throws IOException {
-        PlayersTurn();
+        if (gameState==null){
+            gameState=GameState.MyTurn;
+        }
+        String gameStateName=gameState.name();
+        switch (gameStateName){
+            //MyTurn,ChooseCardToBurn,ChooseCardsToHave,ChallengeOrAllow,BlockOrChallengeOrAllow
+            case "MyTurn":
+                PlayersTurn();
+                break;
+            case "ChooseCardToBurn":
+                showChooseCardsToBurn();
+                break;
+            case "ChallengeOrAllow":
+                showAllowOrChallenge();
+                break;
+            case  "BlockOrChallengeOrAllow":
+                showAllowOrChallengeOrBlock();
+                break;
+            case "ChooseCardsToHave":
+                showChooseCardsToHave();
+                break;
+            default:
 
+
+
+        }
+        PlayersTurn();
     }
 
 
