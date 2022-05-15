@@ -11,6 +11,7 @@ public class RespondActions extends Action {
 
     public RespondActions(Action action , String responderID){
         super();
+
         this.responder=responderID;
         this.action=action;
         stateOfAction=StateOfAction.attempted;

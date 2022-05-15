@@ -1,7 +1,7 @@
 package AI;
 
-import Actions.ChallengableActions.SoloActions.Ambassador_Exchange;
-import Actions.NonChallengeSoloActions.Exchange;
+import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
+import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Cards.CardsTypes;

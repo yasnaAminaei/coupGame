@@ -1,5 +1,8 @@
 package AI;
 
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
 public class paranoid extends AI {
 
     /**
@@ -13,7 +16,7 @@ public class paranoid extends AI {
 
 
     @Override
-    public void playTheirTurn() {
+    public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         super.playTheirTurn();
     }
 

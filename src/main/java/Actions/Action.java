@@ -18,7 +18,16 @@ public class Action {
     public String dowerId;
     public ActionKind actionKind;
     public StateOfAction stateOfAction;
+    public String targetIdORName;
 
+    public Action() {
+
+    }
+
+
+    public void setTargetIdORName(String targetIdORName) {
+        this.targetIdORName = targetIdORName;
+    }
 
     public StateOfAction getStateOfAction() {
         return stateOfAction;

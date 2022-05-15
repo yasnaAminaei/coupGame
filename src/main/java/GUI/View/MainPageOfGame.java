@@ -40,22 +40,22 @@ public class MainPageOfGame {
     private AnchorPane CurrentGamePane;
 
     @FXML
-    private AnchorPane GameTrakerPane;
+    public AnchorPane GameTrakerPane;
 
     @FXML
     private AnchorPane informationPane;
 
     @FXML
-    private AnchorPane playersPane;
+    public AnchorPane playersPane;
 
     @FXML
     private Button startTheGameButton;//todo
 
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
-        ReadDefualtData.deSerializeALL();
         ShowPlayerInfo();
         ShowCurrentStateOfGame();
+        ShowGameTracker();
     }
 
     @FXML
@@ -90,7 +90,7 @@ public class MainPageOfGame {
         playersPane.setVisible(true);
         PlayerInfo x=loader.getController();
         x.showPlayerInfo(player);
-        startTheGameButton.setVisible(false);
+        //startTheGameButton.setVisible(false);
     }
 
 
@@ -100,6 +100,7 @@ public class MainPageOfGame {
         CurrentGamePane.getChildren().add(root);
         CurrentGamePane.setVisible(true);
         CurrentStateOfGame x=loader.getController();
+        x.showCurrentStateOfGame();
 
     }
 

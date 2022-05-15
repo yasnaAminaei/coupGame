@@ -2,16 +2,14 @@ package Actions.ChallengableActions;
 
 import Actions.Action;
 import Actions.ActionDataBase;
-import Actions.Challenge.Challenge;
 import Actions.StateOfAction;
+import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Cards.CardsTypes;
 import Players.Player;
 
 public class ChallengeAbleAction extends Action {
 
-
-
-    public String challengeId;
+    public Challenge challenge;
 
     public CardsTypes cardsTypes;
 
@@ -27,8 +25,6 @@ public class ChallengeAbleAction extends Action {
 
 
     public void processTheAction(){
-        Action challenge = ActionDataBase.searchByActionId(challengeId);
-        assert challenge != null;
         StateOfAction stateOfChallenge =challenge.getStateOfAction();
         if (stateOfChallenge.equals(StateOfAction.done)){
             this.stateOfAction=StateOfAction.failed;

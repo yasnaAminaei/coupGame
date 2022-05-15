@@ -1,15 +1,10 @@
 package Actions;
 
-import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.ChallengableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
-import Actions.ChallengableActions.SoloActions.Ambassador_Exchange;
-import Actions.ChallengableActions.SoloActions.SoloAction;
-import Actions.ChallengableActions.SoloActions.Tax;
-import Players.Player;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
+import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
+import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 
 public class Logging {
 
@@ -30,6 +25,7 @@ public class Logging {
         this.actionKind=action.getActionKind();
     }
 
+
     public void setTarget() {
        // BlockAction,NonSoloAction
         // ,Challenge,coup
@@ -44,7 +40,6 @@ public class Logging {
                 this.target="CARDS";
                 break;
             case "SoloAction":
-
                  if (a instanceof Tax){
                      this.target="BANK";
                  }
@@ -59,7 +54,7 @@ public class Logging {
                 break;
             default:
                 if (a instanceof NonSoloChallengeAbleAction){
-                    this.target=((NonSoloChallengeAbleAction) a).getTargetId();
+                    //this.target=((NonSoloChallengeAbleAction) a).getTargetId();
                 }
 
 
@@ -68,12 +63,12 @@ public class Logging {
         }
     }
 
-    /*
+
     public Logging(String actionId , String firstPlayer, String secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {
         this.actionId=actionId;
-        this.firstPlayer=firstPlayer;
-        this.secondPlayer=secondPlayer;
-        this.action=action;
+        this.dower=firstPlayer;
+        this.target=secondPlayer;
+        this.actionKind=action;
         StringFormatterLog();
     }
 
@@ -82,12 +77,24 @@ public class Logging {
     }
 
     public void StringFormatterLog() throws FileNotFoundException, UnsupportedEncodingException {
-        String actionName= action.name();
-        String formattedLog= actionId+" : "+firstPlayer+" -> "+secondPlayer+" : "+actionName;
-        PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");
+        String actionName= actionKind.name();
+        String formattedLog= actionId+" : "+dower+" -> "+target+" : "+actionName+"\n";
+
+
+        try{
+            FileOutputStream fout=new FileOutputStream("src/main/resources/Logs/GameTracker.txt",true);
+            byte b[]=formattedLog.getBytes();//converting string into byte array
+            fout.write(b);
+            fout.close();
+            System.out.println("success...");
+        }catch(Exception e){System.out.println(e);}
+        /*
+        PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");//todo
         writer.println(formattedLog);
         writer.close();
+
+         */
     }
 
- */
+
 }

@@ -1,6 +1,6 @@
 package AI;
 
-import Actions.NonChallengeSoloActions.Income;
+import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Players.Player;
 import Players.PlayersDataBase;
 
