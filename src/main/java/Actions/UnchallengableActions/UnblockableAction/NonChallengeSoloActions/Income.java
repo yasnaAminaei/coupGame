@@ -23,6 +23,12 @@ public class Income extends Action {
         new Logging(actionId,dowerId,"BANK",ActionKind.Income);
     }
 
+
+    @Override
+    public String getTargetIdORName() {
+        return "BANK";
+    }
+
     @Override
     public void doIfDone() {
         super.doIfDone();

@@ -19,5 +19,8 @@ public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
         this.actionKind= ActionKind.NonSoloAction;
     }
 
-
+    @Override
+    public String getTargetIdORName() {
+        return target.getPlayerId();
+    }
 }

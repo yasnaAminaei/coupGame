@@ -25,6 +25,10 @@ public class Action {
     }
 
 
+    public String getTargetIdORName() {
+        return targetIdORName;
+    }
+
     public void setTargetIdORName(String targetIdORName) {
         this.targetIdORName = targetIdORName;
     }

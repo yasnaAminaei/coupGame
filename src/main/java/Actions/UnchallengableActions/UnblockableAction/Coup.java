@@ -11,4 +11,10 @@ public class Coup extends NonSoloAction {
     public Coup(Player dower) {
         super(dower);
     }
+
+
+    @Override
+    public String getTargetIdORName() {
+        return super.getTargetIdORName();
+    }
 }

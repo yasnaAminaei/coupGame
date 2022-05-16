@@ -41,9 +41,10 @@ public class Exchange extends Action {
     }
 
 
-
-
-
+    @Override
+    public String getTargetIdORName() {
+        return "CARDS";
+    }
 
     public void setExchangedCardId(String exchangedCardId) {
         this.exchangedCardId = exchangedCardId;

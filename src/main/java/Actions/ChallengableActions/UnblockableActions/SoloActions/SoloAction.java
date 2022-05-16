@@ -18,4 +18,6 @@ public class SoloAction extends ChallengeAbleAction {
     }
 
 
+
+
 }

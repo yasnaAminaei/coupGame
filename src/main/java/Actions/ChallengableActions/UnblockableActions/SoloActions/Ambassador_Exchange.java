@@ -17,6 +17,11 @@ public class Ambassador_Exchange extends SoloAction {
     }
 
 
+    @Override
+    public String getTargetIdORName() {
+        return "CARDS";
+    }
+
     public void setSecondCardId(String secondCardId) {
         this.secondCardId = secondCardId;
     }

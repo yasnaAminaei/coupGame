@@ -13,6 +13,11 @@ public class Foreign_aid extends SoloAction {
 
 
     @Override
+    public String getTargetIdORName() {
+        return "BANK";
+    }
+
+    @Override
     public void doIfDone() {
         super.doIfDone();
         Player player=getDower();

@@ -17,6 +17,10 @@ public class BlockActions extends NonSoloChallengeAbleAction {
     Action blockedAction;
 
 
+    @Override
+    public String getTargetIdORName() {
+        return blockedAction.getDower().getPlayerId();
+    }
 
     public String getTargetId() {
         Player p = blockedAction.getDower();

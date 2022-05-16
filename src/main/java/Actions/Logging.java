@@ -23,6 +23,7 @@ public class Logging {
         this.dower=action.getDower().getPlayerId();
         this.stateOfAction=action.getStateOfAction();
         this.actionKind=action.getActionKind();
+        setTarget();
     }
 
 
@@ -32,6 +33,7 @@ public class Logging {
         Action a = ActionDataBase.searchByActionId(actionId);
 
         String actionKindName=this.actionKind.name();
+
         switch (actionKindName){
             case "Income":
                 this.target="BANK";
@@ -48,7 +50,6 @@ public class Logging {
                  }
                  break;
             case "coup":
-
                 break;
             case "Challenge":
                 break;
@@ -62,6 +63,8 @@ public class Logging {
 
         }
     }
+
+
 
 
     public Logging(String actionId , String firstPlayer, String secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {

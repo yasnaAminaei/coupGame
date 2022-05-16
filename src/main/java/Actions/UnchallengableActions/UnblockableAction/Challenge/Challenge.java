@@ -25,6 +25,13 @@ public class Challenge extends Action {
 
     }
 
+
+    @Override
+    public String getTargetIdORName() {
+        Player player=challengedAction.getDower();
+        return player.getPlayerId();
+    }
+
     public Challenge(Player dower , ChallengeAbleAction challengedAction ) {
         super(dower);
         this.actionKind= ActionKind.Challenge;

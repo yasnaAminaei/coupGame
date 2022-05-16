@@ -6,6 +6,12 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 public  class Card {
+
+
+    //logger
+    public static Logger log= LogManager.getLogger(Card.class);
+
+
     public String playerId;
     public boolean alive;
     public String cardId;
@@ -23,22 +29,23 @@ public  class Card {
     }
 
 
+
     public String getCardsInformation(){
         switch (type){
             case Duke -> {
-                return "duck: "+" Tax +$3; block foreign aid";
+                return Duke.getCardInformation();
             }
             case Assassin -> {
-                return "assassin: "+ " Pay $3 to reveal another player's influence; blocked by contessa";
+                return Assassin.getCardInformation();
             }
             case Ambassador -> {
-                return "ambassador: "+" Draw two from the deck and exchange your influences";
+                return Ambassador.getCardInformation();
             }
             case Captain -> {
-                return "captain: "+" Steal $2 from another player; blocked by captain and ambassador";
+                return Captain.getCardInformation();
             }
             case Contessa -> {
-                return "contessa: "+" Block assassination";
+                return Contessa.getCardInformation();
             }
             default -> {
                 return "";
@@ -63,16 +70,6 @@ public  class Card {
         }
         return name;
     }
-
-
-
-
-
-
-    public static Logger log= LogManager.getLogger(Card.class);
-
-
-
 
     public String getCardId() {
         return cardId;
