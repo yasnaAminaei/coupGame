@@ -2,6 +2,9 @@ package Actions;
 
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import Cards.Card;
+import Players.Player;
+import Players.PlayersDataBase;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +15,22 @@ public class CountingActions {
 
 
 
+    public static Player whoseTurn;
+
+    public static Card randomCard1;
+
+    public static Card randomCard2;
+
+
+    public static void setWhoseTurn(Player LastTurn) {
+        String id=LastTurn.getPlayerId();
+        int idInt= Integer.parseInt(id);
+        idInt++;
+        if (idInt==5){
+            idInt=1;
+        }
+        whoseTurn= PlayersDataBase.searchByPlayerId(idInt+"");
+    }
 
     public static Action currentAction() throws IOException {
         ArrayList<Action> notFinishedActions=CurrentAction();
@@ -25,6 +44,8 @@ public class CountingActions {
         }
         return ActionDataBase.searchByActionId(MaxId+"");
     }
+
+
     public static ArrayList<Action> CurrentAction() throws IOException {
 
         Scanner s = new Scanner(new File("src/main/resources/Logs/GameTracker.txt"));
