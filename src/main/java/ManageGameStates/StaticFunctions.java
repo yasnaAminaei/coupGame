@@ -1,4 +1,4 @@
-package GUI.Controller;
+package ManageGameStates;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

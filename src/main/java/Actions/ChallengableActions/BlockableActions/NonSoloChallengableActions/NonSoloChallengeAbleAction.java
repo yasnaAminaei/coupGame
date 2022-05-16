@@ -12,6 +12,7 @@ public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
 
 
     Player target;
+
     BlockActions blockAction;
 
     public NonSoloChallengeAbleAction(Player dower) {
