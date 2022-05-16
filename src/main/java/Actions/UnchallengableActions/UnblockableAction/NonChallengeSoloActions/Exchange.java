@@ -4,6 +4,7 @@ import Actions.Action;
 import Actions.ActionKind;
 import Actions.StateOfAction;
 import Cards.Card;
+import Cards.CardsDataBase;
 import Players.Player;
 
 public class Exchange extends Action {
@@ -25,6 +26,8 @@ public class Exchange extends Action {
         super(dower);
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
+        this.randomCardId = CardsDataBase.chooseARandomDeadCard().getCardId();
+        this.exchangedCardId=dower.getAliveCards().get(0).getCardId();
     }
 
 
@@ -33,7 +36,12 @@ public class Exchange extends Action {
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
         this.exchangedCardId=exchangingCard.getCardId();
+        this.randomCardId = CardsDataBase.chooseARandomDeadCard().getCardId();
+        doIfDone();
     }
+
+
+
 
 
 
@@ -51,11 +59,14 @@ public class Exchange extends Action {
         Player player=getDower();
         player.addCoins(-1);
         if (randomCardId!=null){
-            player.setSecondCardId(randomCardId);
+            if (exchangedCardId.equals(player.getFirstCardId())){
+                player.setFirstCardId(randomCardId);
+            }
+            else{
+                player.setSecondCardId(randomCardId);
+            }
         }
-        if (exchangedCardId!=null){
-            player.setFirstCardId(exchangedCardId);
-        }
+
        // player.changeCards(exchangedCardId,randomCardId);
     }
 

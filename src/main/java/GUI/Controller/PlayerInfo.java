@@ -44,6 +44,7 @@ public class PlayerInfo {
 
 
     public ObservableList<InfoClass> settingTableOfPlayersInfo(){
+        this. player=PlayersDataBase.searchByPlayerId("4");
         ObservableList<InfoClass> out= FXCollections.observableArrayList();
         for(Player p : PlayersDataBase.getPlayers()){
             String name=p.getName();

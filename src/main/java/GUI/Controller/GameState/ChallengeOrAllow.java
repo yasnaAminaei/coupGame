@@ -1,12 +1,68 @@
 package GUI.Controller.GameState;
 
+import Actions.Action;
 import Actions.ActionRespond;
+import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.StateOfAction;
+import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
+import Cards.Card;
+import Cards.CardsTypes;
+import ManageGameStates.CountingActions;
+import Players.Player;
+import Players.PlayersDataBase;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class ChallengeOrAllow {
+
+
+    Player player;
+
+
+    public static Logger log= LogManager.getLogger(ChallengeOrAllow.class);
+
+
+    public ChallengeOrAllow(ChallengeAbleAction challengeAbleAction){
+        this.player=PlayersDataBase.searchByPlayerId("4");
+        if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
+            ActionRespond actionRespond=blockOrChallengeOrAllow();
+            if (actionRespond.equals(ActionRespond.challenged)){
+               challengeTheAction(challengeAbleAction);
+            }
+            else{
+                //goto next one
+            }
+        }
+
+    }
+
+
+    public void challengeTheAction(ChallengeAbleAction challengeAbleAction){
+        Challenge challenge =new Challenge(player,challengeAbleAction);
+        boolean result = challenge.getChallengeResult();
+        if (result){
+            Player dower=challengeAbleAction.getDower();
+            ArrayList<Card> cardArrayList=dower.getAliveCards();
+            CardsTypes cardsTypes = challengeAbleAction.getCardsTypes();
+            if (cardsTypes.equals(cardArrayList.get(0).getType())){
+                new Exchange(dower,cardArrayList.get(0));
+            }
+            else{
+                new Exchange(dower,cardArrayList.get(1));
+            }
+        }
+        else{
+            if (Challenge.removeOneCardFromPlayer(player)){
+                new ChooseCartToBurn();
+            }
+        }
+    }
 
 
     public ActionRespond blockOrChallengeOrAllow (){

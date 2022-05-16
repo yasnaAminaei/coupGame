@@ -16,6 +16,7 @@ public class Challenge extends Action {
 
     public String challengedActionId;
 
+    public ChallengeAbleAction challengedAction;
 
     public Challenge(Player dower , String challengedActionId ) {
         super(dower);
@@ -24,6 +25,11 @@ public class Challenge extends Action {
 
     }
 
+    public Challenge(Player dower , ChallengeAbleAction challengedAction ) {
+        super(dower);
+        this.actionKind= ActionKind.Challenge;
+        this.challengedAction=challengedAction;
+    }
 
     public boolean getChallengeResult() {
         Action challengedAction = ActionDataBase.searchByActionId(challengedActionId);
@@ -34,7 +40,6 @@ public class Challenge extends Action {
             return !checkIfPlayerHaveTheCard(challengedPlayer, challengedCard);
         }
         return false;
-
     }
 
 

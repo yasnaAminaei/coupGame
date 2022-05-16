@@ -72,11 +72,7 @@ public class CurrentStateOfGame {
 
 
     public void showChooseCardsToBurn() throws IOException {
-        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
-        Parent root=loader.load();
-        ChooseCardToBurnPane.getChildren().add(root);
-        ChooseCardToBurnPane.setVisible(true);
-        ChooseCartToBurn x=loader.getController();
+        ChooseCartToBurn x=new ChooseCartToBurn();
 
     }
 
@@ -96,7 +92,6 @@ public class CurrentStateOfGame {
 
 
     public void showCurrentStateOfGame() throws IOException {
-        showChooseCardsToHave();
 
         myTurnPane.setVisible(false);
         if (gameState==null){
