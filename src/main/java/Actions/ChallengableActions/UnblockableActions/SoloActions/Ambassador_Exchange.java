@@ -1,5 +1,6 @@
 package Actions.ChallengableActions.UnblockableActions.SoloActions;
 
+import Cards.Card;
 import Cards.CardsTypes;
 import Players.Player;
 
@@ -7,13 +8,17 @@ public class Ambassador_Exchange extends SoloAction {
 
     //Draw two from the deck and exchange your influences
 
-    public String firstCardId;
-    public String secondCardId;
+
+
+    public Card firstCard;
+    public Card secondCard;
 
 
     public Ambassador_Exchange(Player dower) {
         super(dower);
         this.cardsTypes= CardsTypes.Ambassador;
+        this.BlockAble=false;
+        this.ChallengeAble=true;
     }
 
 
@@ -22,23 +27,15 @@ public class Ambassador_Exchange extends SoloAction {
         return "CARDS";
     }
 
-    public void setSecondCardId(String secondCardId) {
-        this.secondCardId = secondCardId;
-    }
-
-    public void setFirstCardId(String firstCardId) {
-        this.firstCardId = firstCardId;
-    }
 
     @Override
     public void doIfDone() {
         super.doIfDone();
-        Player player=getDower();
-        if (firstCardId!=null){
-            player.setFirstCardId(firstCardId);
+        if (firstCard!=null){
+            actionDower.setFirstCard(firstCard);
         }
-        if (secondCardId!=null){
-            player.setSecondCardId(secondCardId);
+        if (secondCard!=null){
+            actionDower.setSecondCard(secondCard);
         }
     }
 }

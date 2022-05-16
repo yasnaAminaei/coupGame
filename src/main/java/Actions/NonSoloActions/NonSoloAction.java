@@ -10,6 +10,7 @@ public class NonSoloAction extends Action {
 
     String targetId;
 
+    Player target;
 
     public String getTargetId() {
         return targetId;
@@ -19,4 +20,5 @@ public class NonSoloAction extends Action {
         super(dower);
         this.actionKind= ActionKind.NonSoloAction;
     }
+
 }

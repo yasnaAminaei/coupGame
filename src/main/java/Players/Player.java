@@ -124,6 +124,32 @@ public class Player {
         return secondCardId;
     }
 
+    public void setFirstCard(Card x){
+        this.getFirstCard().setAlive(false);
+        this.firstCardId=x.getCardId();
+        makeACardAliveForThisPlayer(firstCardId);
+    }
+
+    public void setSecondCard(Card x){
+        this.getSecondCard().setAlive(false);
+        this.secondCardId=x.getCardId();
+        makeACardAliveForThisPlayer(secondCardId);
+    }
+
+    public void setCards(Card x, Card y){
+        setFirstCard(x);
+        setSecondCard(y);
+    }
+
+    public void setCard(Card x){
+        if (this.getFirstCard().isAlive()){
+            setFirstCard(x);
+        }
+        else{
+            setSecondCard(x);
+        }
+    }
+
 
 
 
@@ -190,13 +216,7 @@ public class Player {
 
     public Player(){
     }
-
-
-
-
-    public void coup(){
-
-    }
+    
 
 }
 

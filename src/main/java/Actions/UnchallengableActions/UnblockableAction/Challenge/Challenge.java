@@ -14,16 +14,10 @@ import java.util.ArrayList;
 public class Challenge extends Action {
 
 
-    public String challengedActionId;
+
 
     public ChallengeAbleAction challengedAction;
 
-    public Challenge(Player dower , String challengedActionId ) {
-        super(dower);
-        this.actionKind= ActionKind.Challenge;
-        this.challengedActionId=challengedActionId;
-
-    }
 
 
     @Override
@@ -34,19 +28,16 @@ public class Challenge extends Action {
 
     public Challenge(Player dower , ChallengeAbleAction challengedAction ) {
         super(dower);
+        this.ChallengeAble=false;
+        this.BlockAble=false;
         this.actionKind= ActionKind.Challenge;
         this.challengedAction=challengedAction;
     }
 
     public boolean getChallengeResult() {
-        Action challengedAction = ActionDataBase.searchByActionId(challengedActionId);
-        assert challengedAction != null;
         Player challengedPlayer = challengedAction.getDower();
-        if (challengedAction instanceof ChallengeAbleAction) {
-            CardsTypes challengedCard = ((ChallengeAbleAction) challengedAction).getCardsTypes();
-            return !checkIfPlayerHaveTheCard(challengedPlayer, challengedCard);
-        }
-        return false;
+        CardsTypes challengedCard = ((ChallengeAbleAction) challengedAction).getCardsTypes();
+        return !checkIfPlayerHaveTheCard(challengedPlayer, challengedCard);
     }
 
 

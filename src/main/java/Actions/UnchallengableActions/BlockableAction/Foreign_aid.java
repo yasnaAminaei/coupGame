@@ -9,6 +9,9 @@ public class Foreign_aid extends SoloAction {
 
     public Foreign_aid(Player dower) {
         super(dower);
+        this.actionDower=dower;
+        this.ChallengeAble=false;
+        this.BlockAble=true;
     }
 
 
@@ -19,10 +22,7 @@ public class Foreign_aid extends SoloAction {
 
     @Override
     public void doIfDone() {
-        super.doIfDone();
-        Player player=getDower();
-        player.addCoins(2);
-
+        actionDower.addCoins(2);
     }
 
 

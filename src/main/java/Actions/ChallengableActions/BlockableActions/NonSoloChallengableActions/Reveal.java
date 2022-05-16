@@ -17,6 +17,8 @@ public class Reveal extends NonSoloChallengeAbleAction {
     public Reveal(Player dower) {
         super(dower);
         this.cardsTypes= CardsTypes.Assassin;
+        this.BlockAble=true;
+        this.ChallengeAble=true;
     }
 
     @Override
@@ -24,12 +26,6 @@ public class Reveal extends NonSoloChallengeAbleAction {
         super.doIfDone();
         targetCard.setAlive(false);
     }
-
-    @Override
-    public void doIfFailed() {
-        super.doIfFailed();
-    }
-
 
 
 

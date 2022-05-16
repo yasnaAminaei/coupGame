@@ -19,8 +19,10 @@ public class Income extends Action {
         super(dower);
         actionKind= ActionKind.Income;
         stateOfAction= StateOfAction.done;
+        this.BlockAble=false;
+        this.ChallengeAble=false;
         doIfDone();
-        new Logging(actionId,dowerId,"BANK",ActionKind.Income);
+        new Logging(this);
     }
 
 
@@ -31,9 +33,8 @@ public class Income extends Action {
 
     @Override
     public void doIfDone() {
+        actionDower.addCoins(1);
         super.doIfDone();
-        Player player=getDower();
-        player.addCoins(1);
     }
 
 

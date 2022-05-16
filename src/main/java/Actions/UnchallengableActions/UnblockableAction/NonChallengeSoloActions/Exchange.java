@@ -18,25 +18,26 @@ public class Exchange extends Action {
     // از دسته کارت های روی زمین به تصادف انتخاب شده و در دست این بازیکن قرار می گیرد.
 
 
-    public String randomCardId;
+    public Card randomCard;
+    public Card exchangedCard;
 
-    public String exchangedCardId;
-
-    public Exchange(Player dower) {
+    public Exchange(Player dower) {//for when just have one alive card
         super(dower);
+        this.BlockAble=false;
+        this.ChallengeAble=false;
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
-        this.randomCardId = CardsDataBase.chooseARandomDeadCard().getCardId();
-        this.exchangedCardId=dower.getAliveCards().get(0).getCardId();
+        this.randomCard = CardsDataBase.chooseARandomDeadCard();
+        this.exchangedCard=dower.getAliveCards().get(0);
     }
 
 
-    public Exchange(Player dower, Card exchangingCard) {
+    public Exchange(Player dower, Card exchangingCard) {//for when have 2 alive cards
         super(dower);
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
-        this.exchangedCardId=exchangingCard.getCardId();
-        this.randomCardId = CardsDataBase.chooseARandomDeadCard().getCardId();
+        this.exchangedCard=exchangingCard;
+        this.randomCard = CardsDataBase.chooseARandomDeadCard();
         doIfDone();
     }
 
@@ -46,29 +47,18 @@ public class Exchange extends Action {
         return "CARDS";
     }
 
-    public void setExchangedCardId(String exchangedCardId) {
-        this.exchangedCardId = exchangedCardId;
-    }
-
-    public void setRandomCardId(String randomCardId) {
-        this.randomCardId = randomCardId;
-    }
-
     @Override
     public void doIfDone() {
-        super.doIfDone();
-        Player player=getDower();
-        player.addCoins(-1);
-        if (randomCardId!=null){
-            if (exchangedCardId.equals(player.getFirstCardId())){
-                player.setFirstCardId(randomCardId);
+        actionDower.addCoins(-1);
+        if (randomCard!=null){
+            if (exchangedCard.equals(actionDower.getFirstCard())){
+                actionDower.setFirstCardId(randomCard.getCardId());
             }
             else{
-                player.setSecondCardId(randomCardId);
+                actionDower.setSecondCardId(randomCard.getCardId());
             }
         }
-
-       // player.changeCards(exchangedCardId,randomCardId);
+        super.doIfDone();
     }
 
 

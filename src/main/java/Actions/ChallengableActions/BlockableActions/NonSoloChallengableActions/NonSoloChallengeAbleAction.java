@@ -18,6 +18,8 @@ public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
     public NonSoloChallengeAbleAction(Player dower) {
         super(dower);
         this.actionKind= ActionKind.NonSoloAction;
+        this.BlockAble=true;
+        this.ChallengeAble=true;
     }
 
     @Override

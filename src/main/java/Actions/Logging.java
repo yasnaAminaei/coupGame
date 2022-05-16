@@ -18,18 +18,19 @@ public class Logging {
 
 
 
-    public Logging(Action action){
+    public Logging(Action action) throws FileNotFoundException, UnsupportedEncodingException {
         this.actionId=action.getActionId();
         this.dower=action.getDower().getPlayerId();
         this.stateOfAction=action.getStateOfAction();
         this.actionKind=action.getActionKind();
         this.target=action.getTargetIdORName();
+        StringFormatterLog();
     }
 
 
 
 
-
+/*
     public Logging(String actionId , String firstPlayer, String secondPlayer, ActionKind action ) throws FileNotFoundException, UnsupportedEncodingException {
         this.actionId=actionId;
         this.dower=firstPlayer;
@@ -38,9 +39,14 @@ public class Logging {
         StringFormatterLog();
     }
 
+ */
+
+    /*
     public void setStateOfAction(StateOfAction stateOfAction) {
         this.stateOfAction = stateOfAction;
     }
+
+     */
 
     public void StringFormatterLog() throws FileNotFoundException, UnsupportedEncodingException {
         String actionName= actionKind.name();

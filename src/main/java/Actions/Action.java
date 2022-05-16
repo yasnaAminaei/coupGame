@@ -14,13 +14,15 @@ public class Action {
 
     public static Logger log= LogManager.getLogger(Action.class);
 
+    public Player actionDower;
     public String actionId;
-    public String dowerId;
     public ActionKind actionKind;
     public StateOfAction stateOfAction;
     public String targetIdORName;
     public boolean BlockAble;
     public boolean ChallengeAble;
+
+
 
 
     public boolean isBlockAble() {
@@ -47,17 +49,16 @@ public class Action {
         return actionKind;
     }
 
-    public Player getDower(){
-        return PlayersDataBase.searchByPlayerId(dowerId);
-    }
-
 
     public Action(Player dower){
         stateOfAction=StateOfAction.attempted;
-        this.dowerId= dower.getPlayerId();
+        this.actionDower=dower;
         this.actionId=generateActionId();
     }
 
+    public Player getDower() {
+        return actionDower;
+    }
 
     public String getActionId() {
         return actionId;
