@@ -116,6 +116,8 @@ public class Player {
 
     }
 
+
+    /*
     public String getFirstCardId() {
         return firstCardId;
     }
@@ -123,6 +125,8 @@ public class Player {
     public String getSecondCardId() {
         return secondCardId;
     }
+
+     */
 
     public void setFirstCard(Card x){
         this.getFirstCard().setAlive(false);
@@ -153,13 +157,14 @@ public class Player {
 
 
 
-
-
+    /*
     public void setFirstCardId(String firstCardId) {
         getFirstCard().setAlive(false);
         this.firstCardId = firstCardId;
         makeACardAliveForThisPlayer(firstCardId);
     }
+
+     */
 
     public Card getFirstCard() {
         return CardsDataBase.searchByCardId(firstCardId);
@@ -179,13 +184,18 @@ public class Player {
         randomCard.setPlayerId(playerId);
     }
 
+    /*
     public void setSecondCardId(String secondCardId) {
         getSecondCard().setAlive(false);
         this.secondCardId = secondCardId;
         makeACardAliveForThisPlayer(secondCardId);
     }
 
+     */
 
+
+
+    /*
     public void changeCards(String exchangedCardId , String newCardId){
        if (exchangedCardId.equals(firstCardId)){
            changeCards(true, newCardId);
@@ -195,8 +205,10 @@ public class Player {
        }
     }
 
+     */
 
 
+/*
     public void changeCards(boolean firstCard , String newCardId){
         makeACardAliveForThisPlayer(newCardId);
 
@@ -213,10 +225,12 @@ public class Player {
     }
 
 
+ */
+
 
     public Player(){
     }
-    
+
 
 }
 

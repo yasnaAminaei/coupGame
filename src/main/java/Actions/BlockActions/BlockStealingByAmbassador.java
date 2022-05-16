@@ -1,4 +1,4 @@
-package Actions.ChallengableActions.UnblockableActions.BlockActions;
+package Actions.BlockActions;
 
 import Cards.CardsTypes;
 import Players.Player;

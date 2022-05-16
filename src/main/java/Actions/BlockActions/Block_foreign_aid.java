@@ -1,4 +1,4 @@
-package Actions.ChallengableActions.UnblockableActions.BlockActions;
+package Actions.BlockActions;
 
 import Cards.CardsTypes;
 import Players.Player;
@@ -10,7 +10,6 @@ public class Block_foreign_aid extends BlockActions {
         super(dower);
         this.cardsTypes= CardsTypes.Duke;
     }
-
 
 
 }

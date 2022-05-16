@@ -21,9 +21,12 @@ public class Action {
     public String targetIdORName;
     public boolean BlockAble;
     public boolean ChallengeAble;
+    public boolean solo;
 
 
-
+    public boolean isSolo() {
+        return solo;
+    }
 
     public boolean isBlockAble() {
         return BlockAble;

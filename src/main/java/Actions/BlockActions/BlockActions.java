@@ -1,4 +1,4 @@
-package Actions.ChallengableActions.UnblockableActions.BlockActions;
+package Actions.BlockActions;
 
 import Actions.Action;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
@@ -35,11 +35,12 @@ public class BlockActions extends NonSoloChallengeAbleAction {
     public void doIfDone() {
         super.doIfDone();
         blockedAction.stateOfAction= StateOfAction.failed;
+        this.stateOfAction=StateOfAction.done;
     }
 
     @Override
     public void doIfFailed() {
         super.doIfFailed();
-        blockedAction.stateOfAction= StateOfAction.done;
+        //blockedAction.stateOfAction= StateOfAction.done;
     }
 }

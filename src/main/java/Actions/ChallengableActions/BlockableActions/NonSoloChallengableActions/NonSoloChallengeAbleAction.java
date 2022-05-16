@@ -1,7 +1,7 @@
 package Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions;
 
 import Actions.ActionKind;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
+import Actions.BlockActions.BlockActions;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Players.Player;
 
