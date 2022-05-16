@@ -115,22 +115,7 @@ public class MainPageOfGame {
     public void loadEveryThing() throws IOException {
         ShowCheatSheet();
         ShowGameTracker();
-        //loadAClassWithGivenStringFXML("src/main/resources/GameTrackerController.fxml");
-        //loadAClassWithGivenStringFXML("src/main/resources/MINOR.fxml");
-        //loadAClassWithGivenStringFXML("src/main/resources/ProfessorList.fxml");
-
     }
-
-
-    /*
-    public void loadEveryThing(){
-        loadCheatSheet();
-        loadGameTracker();
-        loadCurrentStateOfGame();
-        loadPlayerInfo();
-    }
-
-     */
 
 
 

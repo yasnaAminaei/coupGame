@@ -1,8 +1,10 @@
 package GUI.View;
 
 import Actions.Action;
+import Actions.ChallengableActions.ChallengeAbleAction;
 import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
+import ManageGameStates.GameProcessor;
 import Players.Player;
 import Players.PlayersDataBase;
 import javafx.fxml.FXML;
@@ -17,19 +19,6 @@ import java.nio.file.Paths;
 public class CurrentStateOfGame {
     //GUI.View.CurrentStateOfGame
 
-
-    @FXML
-    private AnchorPane AllowOrChallengePane;
-
-    @FXML
-    private AnchorPane ChooseCardToBurnPane;
-
-    @FXML
-    private AnchorPane ChooseCardToHavePane;
-
-    @FXML
-    private AnchorPane blockOrAllowOrChallengePane;
-
     @FXML
     private AnchorPane curremyStateOfGamePane;
 
@@ -37,11 +26,7 @@ public class CurrentStateOfGame {
     private AnchorPane myTurnPane;
 
 
-    GameState gameState;
-
-
      Player player= PlayersDataBase.searchByPlayerId("4");
-
 
 
 
@@ -53,20 +38,13 @@ public class CurrentStateOfGame {
     }
 
     public void showAllowOrChallenge() throws IOException {
-        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
-        Parent root=loader.load();
-        myTurnPane.getChildren().add(root);
-        myTurnPane.setVisible(true);
-        ChallengeOrAllow x=loader.getController();
+
+        new ChallengeOrAllow((ChallengeAbleAction) CountingActions.currentAction());
 
     }
 
     public void showAllowOrChallengeOrBlock() throws IOException {
-        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
-        Parent root=loader.load();
-        myTurnPane.getChildren().add(root);
-        myTurnPane.setVisible(true);
-        BlockOrChallengeOrAllow x=loader.getController();
+        new BlockOrChallengeOrAllow((ChallengeAbleAction) CountingActions.currentAction());
 
     }
 
@@ -94,20 +72,20 @@ public class CurrentStateOfGame {
     public void showCurrentStateOfGame() throws IOException {
 
         myTurnPane.setVisible(false);
-        if (gameState==null){
-            gameState=GameState.MyTurn;
+        if (GameProcessor.gameState==null){
+            GameProcessor.gameState=GameState.MyTurn;
         }
         else{
             Action currentAction= CountingActions.currentAction();
             if (currentAction==null){
-                gameState=GameState.MyTurn;
+                GameProcessor.gameState=GameState.MyTurn;
             }
             else{
 
             }
 
         }
-        String gameStateName=gameState.name();
+        String gameStateName=GameProcessor.gameState.name();
         switch (gameStateName){
             //MyTurn,ChooseCardToBurn,ChooseCardsToHave,ChallengeOrAllow,BlockOrChallengeOrAllow
             case "MyTurn":
@@ -130,7 +108,6 @@ public class CurrentStateOfGame {
 
 
         }
-        PlayersTurn();
     }
 
 

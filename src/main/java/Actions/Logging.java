@@ -23,46 +23,9 @@ public class Logging {
         this.dower=action.getDower().getPlayerId();
         this.stateOfAction=action.getStateOfAction();
         this.actionKind=action.getActionKind();
-        setTarget();
+        this.target=action.getTargetIdORName();
     }
 
-
-    public void setTarget() {
-       // BlockAction,NonSoloAction
-        // ,Challenge,coup
-        Action a = ActionDataBase.searchByActionId(actionId);
-
-        String actionKindName=this.actionKind.name();
-
-        switch (actionKindName){
-            case "Income":
-                this.target="BANK";
-                break;
-            case "Exchange":
-                this.target="CARDS";
-                break;
-            case "SoloAction":
-                 if (a instanceof Tax){
-                     this.target="BANK";
-                 }
-                 else if (a instanceof Ambassador_Exchange){
-                     this.target="CARDS";
-                 }
-                 break;
-            case "coup":
-                break;
-            case "Challenge":
-                break;
-            default:
-                if (a instanceof NonSoloChallengeAbleAction){
-                    //this.target=((NonSoloChallengeAbleAction) a).getTargetId();
-                }
-
-
-
-
-        }
-    }
 
 
 

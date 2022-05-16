@@ -5,6 +5,7 @@ import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.E
 import Cards.Card;
 import Cards.CardsDataBase;
 import Cards.CardsTypes;
+import ManageGameStates.CountingActions;
 import Players.Player;
 import Players.PlayersDataBase;
 
@@ -43,6 +44,7 @@ public class killer extends AI{
         else{
             foreign_Aid(player);
         }
+        CountingActions.setWhoseTurn(this);
     }
 
 

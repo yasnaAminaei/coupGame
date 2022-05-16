@@ -1,6 +1,7 @@
 package AI;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
+import ManageGameStates.CountingActions;
 import Players.Player;
 import Players.PlayersDataBase;
 
@@ -17,6 +18,7 @@ public class coupper extends AI {
     public void playTheirTurn() {
         Player p = PlayersDataBase.searchByPlayerId(this.playerId);
         Tax tax =new Tax(p);
+        CountingActions.setWhoseTurn(this);
 
     }
 }

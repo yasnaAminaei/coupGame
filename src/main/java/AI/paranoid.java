@@ -28,6 +28,7 @@ public class paranoid extends AI {
         else{
 
         }
+        CountingActions.setWhoseTurn(this);
 
     }
 
