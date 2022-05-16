@@ -3,10 +3,16 @@ package Players;
 import Cards.Card;
 import Cards.CardsDataBase;
 import Cards.CardsTypes;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class Player {
+
+
+
+    public static Logger log= LogManager.getLogger(Player.class);
 
     public String name;
     public String playerId;
@@ -84,13 +90,16 @@ public class Player {
     public ArrayList<Card> getAliveCards(){
         ArrayList<Card> card=new ArrayList<>();
         Card first=getFirstCard();
+        log.error(first.getCardId());
         Card second=getSecondCard();
+        log.error(second.getCardId());
         if (first.isAlive()){
             card.add(first);
         }
         if (second.isAlive()){
             card.add(second);
         }
+        log.error(card.size());
         return card;
     }
 

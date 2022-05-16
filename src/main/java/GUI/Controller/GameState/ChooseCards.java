@@ -1,8 +1,6 @@
 package GUI.Controller.GameState;
 
-import Actions.CountingActions;
 import Cards.Card;
-import Players.Player;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 

@@ -1,13 +1,16 @@
 package AI;
 
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+import Actions.Action;
+import Actions.ActionKind;
+import ManageGameStates.CountingActions;
+
+import java.io.IOException;
 
 public class paranoid extends AI {
 
     /**
      * یکی از بازیکنان حریف را داشته باشد به صورت یکی در میان بازیکنی که
-     * در آن موقعیت ادعا     * پارانوید: در موقعیت هایی که امکان به چالش کشیدن کرده را به چالش می کشد.
+     * در آن موقعیت ادعا * پارانوید: در موقعیت هایی که امکان به چالش کشیدن کرده را به چالش می کشد.
      */
 
 
@@ -15,9 +18,29 @@ public class paranoid extends AI {
 
 
     @Override
-    public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
-        super.playTheirTurn();
+    public void playTheirTurn() throws IOException {
+        turn++;
+        if (turn%2==0){
+            Action action =CountingActions.currentAction();
+            //new Challenge()
+
+        }
+        else{
+
+        }
+
     }
+
+
+
+
+
+    public static boolean isChallengeQuestion() throws IOException {
+        Action action =CountingActions.currentAction();
+        ActionKind actionKind=action.getActionKind();
+        return actionKind.equals(ActionKind.Challenge);
+    }
+
 
 
 

@@ -8,7 +8,6 @@ public class Ambassador extends Card{
     }
 
 
-
     public Ambassador(){
         this.type=CardsTypes.Ambassador;
     }

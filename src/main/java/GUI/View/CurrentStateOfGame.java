@@ -1,28 +1,18 @@
 package GUI.View;
 
 import Actions.Action;
-import Actions.CountingActions;
+import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
-import GUI.Controller.PlayerInfo;
 import Players.Player;
 import Players.PlayersDataBase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.Scanner;
 
 public class CurrentStateOfGame {
     //GUI.View.CurrentStateOfGame
@@ -91,11 +81,7 @@ public class CurrentStateOfGame {
     }
 
     public void showChooseCardsToHave() throws IOException {
-        FXMLLoader loader=loadAClassWithGivenStringFXML("src/main/resources/currentGameView.fxml");
-        Parent root=loader.load();
-        myTurnPane.getChildren().add(root);
-        myTurnPane.setVisible(true);
-        ChooseCartsToHave x=loader.getController();
+        ChooseCartsToHave chooseCartsToHave=new ChooseCartsToHave(player);
     }
 
     public void PlayersTurn() throws IOException {
@@ -110,6 +96,9 @@ public class CurrentStateOfGame {
 
 
     public void showCurrentStateOfGame() throws IOException {
+        showChooseCardsToHave();
+
+        myTurnPane.setVisible(false);
         if (gameState==null){
             gameState=GameState.MyTurn;
         }

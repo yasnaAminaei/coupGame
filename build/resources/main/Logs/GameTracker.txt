@@ -1,0 +1,4 @@
+2 : 4 -> BANK : Income
+3 : 4 -> BANK : Income
+2 : 4 -> BANK : Income
+2 : 4 -> BANK : Income

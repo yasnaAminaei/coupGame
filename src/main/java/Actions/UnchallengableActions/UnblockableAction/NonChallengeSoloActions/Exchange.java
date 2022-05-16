@@ -3,6 +3,7 @@ package Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions;
 import Actions.Action;
 import Actions.ActionKind;
 import Actions.StateOfAction;
+import Cards.Card;
 import Players.Player;
 
 public class Exchange extends Action {
@@ -25,6 +26,15 @@ public class Exchange extends Action {
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
     }
+
+
+    public Exchange(Player dower, Card exchangingCard) {
+        super(dower);
+        actionKind= ActionKind.Exchange;
+        stateOfAction= StateOfAction.done;
+        this.exchangedCardId=exchangingCard.getCardId();
+    }
+
 
 
     public void setExchangedCardId(String exchangedCardId) {

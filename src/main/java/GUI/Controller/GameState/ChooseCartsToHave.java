@@ -1,20 +1,36 @@
 package GUI.Controller.GameState;
 
-import Actions.CountingActions;
+import ManageGameStates.CountingActions;
 import Cards.Card;
 import Players.Player;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-
-import java.util.Optional;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class ChooseCartsToHave {
 
     //GUI.Controller.GameState.ChooseCartsToHave
 
+    public static Logger log= LogManager.getLogger(ChooseCartsToHave.class);
+
 
      Player player;
+
+     public ChooseCartsToHave(Player player){
+         this.player=player;
+         int t = player.getAliveCards().size();
+         if (t==2){
+             ChooseTowCardsWhitFourOptions();
+         }
+         else if (t==1){
+             ChooseOneCardWitThreeOptions();
+         }
+         else {
+             log.error(t);
+         }
+     }
+
+
+
 
     public void ChooseOneCardWitThreeOptions(){
         Card x = CountingActions.randomCard1;
