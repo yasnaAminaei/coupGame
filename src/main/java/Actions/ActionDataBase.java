@@ -1,5 +1,8 @@
 package Actions;
 
+import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.NonSoloActions.NonSoloAction;
+
 import java.util.ArrayList;
 
 public class ActionDataBase {
@@ -14,6 +17,25 @@ public class ActionDataBase {
         return actions;
     }
 
+
+    public static ArrayList<Action> getBlockAbleActions(){
+        ArrayList<Action> actionArrayList=new ArrayList<>();
+        for (Action action : getActions()){
+            if (action instanceof NonSoloAction){
+                actionArrayList.add(action);
+            }
+        }
+        return actionArrayList;
+    }
+    public static ArrayList<Action> getChallengeAbleActions(){
+        ArrayList<Action> actionArrayList=new ArrayList<>();
+        for (Action action : getActions()){
+            if (action instanceof ChallengeAbleAction){
+                actionArrayList.add(action);
+            }
+        }
+        return actionArrayList;
+    }
 
     public static Action searchByActionId(String id){
         for (Action action : getActions()){

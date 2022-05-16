@@ -8,6 +8,7 @@ public class PlayersDataBase {
 
     public static ArrayList<Player> players=new ArrayList<>();
 
+    public static Player NotAIPlayer;
 
     public static ArrayList<Player> getPlayers() {
         if (players==null){
@@ -25,6 +26,18 @@ public class PlayersDataBase {
         }
         return null;
     }
+
+    public static ArrayList<Player> AIPlayers(){
+        ArrayList<Player> AIPlayer=new ArrayList<>();
+        for (Player player : getPlayers()){
+            if (!player.equals(NotAIPlayer)){
+                AIPlayer.add(player);
+            }
+        }
+        return AIPlayer;
+    }
+
+
 
 
 }

@@ -104,9 +104,7 @@ public class CurrentStateOfGame {
                 showChooseCardsToHave();
                 break;
             default:
-
-
-
+                myTurnPane.setVisible(false);
         }
     }
 

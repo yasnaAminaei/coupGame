@@ -21,17 +21,18 @@ public class SideActionsForType1 {
          if (!AIRespondsLeadToEnd()){
              GameProcessor.gameState= GameState.ChallengeOrAllow;
          }
+         else {
+             GameTurns.moveToNextPlayerInMainAction();
+         }
      }
 
 
 
      public boolean AIRespondsLeadToEnd(){
-         for (Player p : PlayersDataBase.getPlayers()) {
-             if (p instanceof AI){
-                 new Challenge(p,mainAction);
-                 if (mainAction.getStateOfAction().equals(StateOfAction.failed)){
-                     return true;
-                 }
+         for (Player p : PlayersDataBase.AIPlayers()) {
+             new Challenge(p,mainAction);
+             if (mainAction.getStateOfAction().equals(StateOfAction.failed)){
+                 return true;
              }
          }
          return false;

@@ -19,11 +19,17 @@ public class Action {
     public ActionKind actionKind;
     public StateOfAction stateOfAction;
     public String targetIdORName;
+    public boolean BlockAble;
+    public boolean ChallengeAble;
 
-    public Action() {
 
+    public boolean isBlockAble() {
+        return BlockAble;
     }
 
+    public boolean isChallengeAble() {
+        return ChallengeAble;
+    }
 
     public String getTargetIdORName() {
         return targetIdORName;
@@ -47,9 +53,9 @@ public class Action {
 
 
     public Action(Player dower){
+        stateOfAction=StateOfAction.attempted;
         this.dowerId= dower.getPlayerId();
         this.actionId=generateActionId();
-        stateOfAction=StateOfAction.attempted;
     }
 
 

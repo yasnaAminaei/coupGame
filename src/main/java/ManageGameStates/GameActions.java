@@ -22,6 +22,28 @@ public class GameActions {
         //GameTurns.whoseTurn=GameTurns.moveToNextPlayer(GameTurns.whoseDoingTheMainAction);
     }
 
+
+
+
+    public void actionProcess(){
+        if (MainAction.isChallengeAble()){
+            if (MainAction.isBlockAble()){
+                doIfItsChallengeAbleAndBlockAbleAction();
+            }
+            else{
+                doIfItsChallengeAbleActionAndNotBlockAble();
+            }
+        }
+        else{
+            if (MainAction.isBlockAble()){
+                doIfItsNotChallengeAbleButItsBlockAbleAction();
+            }
+            else{
+                doIfItsNotChallengeAbleActionAndNotBlockAble();
+            }
+        }
+    }
+
     //challenge-block
 
 
