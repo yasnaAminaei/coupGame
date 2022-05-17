@@ -16,7 +16,7 @@ public class ChoosePlayer {
 
     public Player choosePlayer;
 
-    public Player getChoosePlayer() {
+    public Player getChosenPlayer() {
         return choosePlayer;
     }
 
@@ -44,9 +44,9 @@ public class ChoosePlayer {
         alert.setTitle("");
         alert.setHeaderText("choose 1 cards to have ");
         alert.setContentText("Choose your option.");
-        ButtonType buttonTypeOne = new ButtonType(a.getPlayerId());
-        ButtonType buttonTypeThree = new ButtonType(b.getPlayerId());
-        ButtonType buttonTypeCancel = new ButtonType(c.getPlayerId());
+        ButtonType buttonTypeOne = new ButtonType(a.getPlayerId()+" "+a.getName());
+        ButtonType buttonTypeThree = new ButtonType(b.getPlayerId()+" "+b.getName());
+        ButtonType buttonTypeCancel = new ButtonType(c.getPlayerId()+" "+c.getName());
 
         alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeThree, buttonTypeCancel);
 

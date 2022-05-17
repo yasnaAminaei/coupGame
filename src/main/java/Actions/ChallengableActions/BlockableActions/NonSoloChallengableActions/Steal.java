@@ -14,6 +14,7 @@ public class Steal extends NonSoloChallengeAbleAction {
 
 
 
+
     public Steal(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
         this.cardsTypes= CardsTypes.Captain;
@@ -24,7 +25,7 @@ public class Steal extends NonSoloChallengeAbleAction {
     }
 
     @Override
-    public void doIfDone() {
+    public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         target.addCoins(-2);
         actionDower.addCoins(2);
         super.doIfDone();

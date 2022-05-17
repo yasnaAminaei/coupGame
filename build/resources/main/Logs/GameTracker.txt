@@ -1,4 +1,7 @@
-2 : 4 -> BANK : TAX
+2 : 4 -> ATTEMPT : Steal
+2 : 4 -> 2 : Steal
 3 : 1 -> 4 : Challenge
-4 : 4 -> KILL : Captain
-5 : 4 -> BANK : INCOME
+4 : 2 -> 4 : nothing
+5 : 4 -> 2 : Challenge
+6 : 3 -> 4 : Challenge
+7 : 4 -> 4 : Challenge

@@ -23,26 +23,32 @@ public class ChallengeOrAllow {
 
     Player player;
 
+    public boolean challengeResult;
+
+    public boolean isChallengeResult() {
+        return challengeResult;
+    }
 
     public static Logger log= LogManager.getLogger(ChallengeOrAllow.class);
 
 
     public ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
-        this.player=PlayersDataBase.searchByPlayerId("4");
+        this.player=PlayersDataBase.getNotAIPlayer();
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
-            ActionRespond actionRespond=blockOrChallengeOrAllow();
+            ActionRespond actionRespond=ChallengeOrAllow();
             if (actionRespond.equals(ActionRespond.challenged)){
-               challengeTheAction(challengeAbleAction);
+               challengeResult = challengeTheAction(challengeAbleAction);
             }
             else{
                 //goto next one
+                challengeResult=false;
             }
         }
 
     }
 
 
-    public void challengeTheAction(ChallengeAbleAction challengeAbleAction) throws IOException {
+    public boolean challengeTheAction(ChallengeAbleAction challengeAbleAction) throws IOException {
         Challenge challenge =new Challenge(player,challengeAbleAction);
         boolean result = challenge.getChallengeResult();
         if (result){
@@ -61,13 +67,14 @@ public class ChallengeOrAllow {
                 new ChooseCartToBurn();
             }
         }
+        return result;
     }
 
 
-    public ActionRespond blockOrChallengeOrAllow (){
+    public ActionRespond ChallengeOrAllow (){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("");
-        alert.setHeaderText("choose 1 cards to have ");
+        alert.setHeaderText("");
         alert.setContentText("Choose your option.");
         ButtonType buttonTypeThree = new ButtonType("Allow");
         ButtonType buttonTypeCancel = new ButtonType("Challenge");

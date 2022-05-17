@@ -25,8 +25,15 @@ public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
         this.ChallengeAble=true;
     }
 
+    public void setTarget(Player target) {
+        this.target = target;
+    }
+
     @Override
     public String getTargetIdORName() {
+        if (target==null){
+            return "ATTEMPT";
+        }
         return target.getPlayerId();
     }
 }

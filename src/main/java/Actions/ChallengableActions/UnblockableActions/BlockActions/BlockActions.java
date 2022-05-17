@@ -25,6 +25,16 @@ public class BlockActions extends NonSoloChallengeAbleAction {
 
     public ActionRespond actionRespond;
 
+
+
+    public boolean isBlocked;
+
+
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+
+
     public ActionRespond getActionRespond() {
         return actionRespond;
     }
@@ -43,6 +53,9 @@ public class BlockActions extends NonSoloChallengeAbleAction {
     public BlockActions(Player dower, Action blockedAction) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
         this.blockedAction=blockedAction;
+        if (blockActionKinds==null){
+            blockActionKinds=BlockActionKinds.nothing;
+        }
         this.name=blockActionKinds.name();
         this.BlockAble=false;
         this.ChallengeAble=true;
@@ -53,7 +66,8 @@ public class BlockActions extends NonSoloChallengeAbleAction {
 
     public void doIfBlockAble(Player dower){
         try {
-            actionRespond =((AI) dower).BlockOrChallengeOrAllow(this);
+            BlockActionKinds blockActionKinds=((AI) dower).BlockOrAllow(this);
+            isBlocked =blockActionKinds==BlockActionKinds.Block_stealing_by_Ambassador || blockActionKinds ==BlockActionKinds.Block_stealing_by_captain;
         }catch (IOException r){
             log.error("challenge or allow or block an AI doesnt work");
         }
@@ -62,7 +76,7 @@ public class BlockActions extends NonSoloChallengeAbleAction {
 
 
     @Override
-    public void doIfDone() {
+    public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         super.doIfDone();
         blockedAction.stateOfAction= StateOfAction.failed;
         this.stateOfAction=StateOfAction.done;

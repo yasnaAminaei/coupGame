@@ -11,6 +11,5 @@ public class Block_stealing extends BlockActions {
 
     public Block_stealing(Player dower, Action action) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower,action);
-
     }
 }

@@ -1,12 +1,15 @@
 package GUI.Controller.GameState;
 
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
 import ManageGameStates.GameProcessor;
 import ManageGameStates.GameTurns;
+import ManageGameStates.ProcessTheGame.ChallengeOrAllowState;
+import ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState;
 import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -69,8 +72,8 @@ public class myTurn {
     void coupAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
         if (haveEnoughCoins(7)){
             ChoosePlayer choosePlayer = new ChoosePlayer();
-            Player p = choosePlayer.getChoosePlayer();
-            new Coup(PlayersDataBase.getNotAIPlayer(),p);
+            //Player p = choosePlayer.getChoosePlayer();
+           // new Coup(PlayersDataBase.getNotAIPlayer(),p);
         }
     }
 
@@ -107,10 +110,10 @@ public class myTurn {
 
     @FXML
     void revealAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-        Player human =PlayersDataBase.getNotAIPlayer();
-        ChoosePlayer choosePlayer = new ChoosePlayer();
-        Player p = choosePlayer.getChoosePlayer();
-        new Reveal(PlayersDataBase.getNotAIPlayer(),p);
+       // Player human =PlayersDataBase.getNotAIPlayer();
+        //ChoosePlayer choosePlayer = new ChoosePlayer();
+        //Player p = choosePlayer.getChoosePlayer();
+        //new Reveal(PlayersDataBase.getNotAIPlayer(),p);
 
     }
 
@@ -120,7 +123,11 @@ public class myTurn {
     }
 
     @FXML
-    void stealAction(ActionEvent event) {
+    void stealAction(ActionEvent event) throws IOException {
+        Player human =PlayersDataBase.getNotAIPlayer();
+        GameTurns.setAllTurn(human,GameState.ChoosePlayer);
+        Steal steal=new Steal(human);
+        ChoosePlayerToStealFromState choosePlayerToStealFromState=new ChoosePlayerToStealFromState(steal);
 
     }
 
@@ -129,7 +136,7 @@ public class myTurn {
         Player human =PlayersDataBase.getNotAIPlayer();
         Tax newTax =new Tax(human);
         GameTurns.setAllTurn(human, GameState.ChallengeOrAllow);
-        GameProcessor gameProcessor=new GameProcessor(newTax);
+        new ChallengeOrAllowState(newTax);
     }
 
 }

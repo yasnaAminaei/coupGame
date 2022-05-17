@@ -16,4 +16,5 @@ public class BlockStealingByAmbassador extends Block_stealing {
         this.blockActionKinds=BlockActionKinds.Block_stealing_by_Ambassador;
         new Logging(this);
     }
+
 }

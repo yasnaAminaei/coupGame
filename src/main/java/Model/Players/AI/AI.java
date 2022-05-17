@@ -2,6 +2,8 @@ package Model.Players.AI;
 
 import Actions.Action;
 import Actions.ActionRespond;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Model.Players.Player;
@@ -26,8 +28,8 @@ public class AI extends Player {
         return true;
     }
 
-    public ActionRespond BlockOrChallengeOrAllow(Action action) throws IOException {
-        return ActionRespond.allow;
+    public BlockActionKinds BlockOrAllow(Action action) throws IOException {
+        return BlockActionKinds.Block_stealing_by_Ambassador;
 
     }
 

@@ -1,6 +1,8 @@
-2 : 4 -> BANK : TAX
+2 : 4 -> ATTEMPT : Steal
+2 : 4 -> 2 : Steal
 3 : 1 -> 4 : Challenge
-4 : 4 -> KILL : Ambassador
-5 : 4 -> BANK : INCOME
-6 : 4 -> BANK : TAX
-7 : 1 -> 4 : Challenge
+4 : 2 -> 4 : nothing
+5 : 4 -> 2 : Challenge
+6 : 2 -> CARDS : null
+7 : 3 -> 4 : Challenge
+8 : 4 -> 4 : Challenge

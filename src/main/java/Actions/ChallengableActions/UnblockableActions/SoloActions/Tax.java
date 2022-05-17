@@ -28,7 +28,7 @@ public class Tax extends SoloAction {
 
 
     @Override
-    public void doIfDone() {
+    public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         super.doIfDone();
         this.actionDower.addCoins(3);
     }

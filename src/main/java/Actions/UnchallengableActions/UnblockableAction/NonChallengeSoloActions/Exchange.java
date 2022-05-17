@@ -61,7 +61,7 @@ public class Exchange extends Action {
     }
 
     @Override
-    public void doIfDone() {
+    public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         actionDower.addCoins(-1);
         if (randomCard!=null){
             if (exchangedCard.equals(actionDower.getFirstCard())){

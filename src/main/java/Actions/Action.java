@@ -42,6 +42,9 @@ public class Action {
     }
 
     public String getTargetIdORName() {
+        if (targetIdORName==null){
+            return "ATTEMPT";
+        }
         return targetIdORName;
     }
 
@@ -82,7 +85,7 @@ public class Action {
 
     }
 
-    public void doIfDone(){
+    public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
 
     }
 

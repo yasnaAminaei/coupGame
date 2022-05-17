@@ -28,7 +28,7 @@ public class Reveal extends NonSoloChallengeAbleAction {
     }
 
     @Override
-    public void doIfDone() {
+    public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         super.doIfDone();
         targetCard.setAlive(false);
     }
