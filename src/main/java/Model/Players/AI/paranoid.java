@@ -1,7 +1,9 @@
-package Model.AI;
+package Model.Players.AI;
 
 import Actions.Action;
 import Actions.ActionKind;
+import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import ManageGameStates.CountingActions;
 
 import java.io.IOException;
@@ -19,17 +21,14 @@ public class paranoid extends AI {
 
     @Override
     public void playTheirTurn() throws IOException {
-        turn++;
-        if (turn%2==0){
-            Action action =CountingActions.currentAction();
-            //new Challenge()
-
-        }
-        else{
-
+        Action action =CountingActions.currentAction();
+        if (action instanceof ChallengeAbleAction){
+            turn++;
+            if (turn%2==0){
+                new Challenge(this,(ChallengeAbleAction) action);
+            }
         }
         CountingActions.setWhoseTurn(this);
-
     }
 
 

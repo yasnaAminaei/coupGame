@@ -1,8 +1,8 @@
 package BuildData;
 
-import Model.AI.coupper;
-import Model.AI.killer;
-import Model.AI.paranoid;
+import Model.Players.AI.coupper;
+import Model.Players.AI.killer;
+import Model.Players.AI.paranoid;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Players.Player;

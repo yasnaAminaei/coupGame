@@ -61,7 +61,7 @@ public class myTurn {
     @FXML
     void coupAction(ActionEvent event) {
         if (haveEnoughCoins(7)){
-            new Coup(PlayersDataBase.getNotAIPlayer());
+            //new Coup(PlayersDataBase.getNotAIPlayer());
         }
     }
 

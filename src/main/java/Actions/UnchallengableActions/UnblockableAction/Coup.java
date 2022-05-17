@@ -6,11 +6,9 @@ import Model.Players.Player;
 public class Coup extends NonSoloAction {
 
 
-
-    public Coup(Player dower) {
-        super(dower);
+    public Coup(Player dower, Player target) {
+        super(dower, target);
     }
-
 
     @Override
     public String getTargetIdORName() {

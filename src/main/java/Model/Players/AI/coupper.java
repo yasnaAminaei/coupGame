@@ -1,6 +1,7 @@
-package Model.AI;
+package Model.Players.AI;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
+import Actions.UnchallengableActions.UnblockableAction.Coup;
 import ManageGameStates.CountingActions;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -16,8 +17,12 @@ public class coupper extends AI {
 
     @Override
     public void playTheirTurn() {
-        Player p = PlayersDataBase.searchByPlayerId(this.playerId);
-        Tax tax =new Tax(p);
+        if (this.getCoins()<7){
+            Tax tax =new Tax(this);
+        }
+        else{
+            //new Coup(this);
+        }
         CountingActions.setWhoseTurn(this);
 
     }

@@ -1,6 +1,7 @@
-package Model.AI;
+package Model.Players.AI;
 
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
+import Model.Cards.Card;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
@@ -12,9 +13,13 @@ public class AI extends Player {
 
 
     public void playTheirTurn() throws IOException {
-        Player p = PlayersDataBase.searchByPlayerId(this.playerId);
-        Income income= new Income(p);
+        Income income= new Income(this);
         income.doIfDone();
+    }
+
+
+    public void burnACard(){
+
     }
 
 

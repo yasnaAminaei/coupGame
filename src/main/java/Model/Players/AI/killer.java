@@ -1,4 +1,4 @@
-package Model.AI;
+package Model.Players.AI;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
@@ -32,17 +32,18 @@ public class killer extends AI{
 
     @Override
     public void playTheirTurn(){
-        Player player= PlayersDataBase.searchByPlayerId(this.playerId);
-        assert player != null;
-        ArrayList<CardsTypes>  cardsTypesArrayList = player.getAliveCardsType();
-        if (cardsTypesArrayList.contains(CardsTypes.Ambassador)){
-            drawTowCardsAndChange(player);
+        ArrayList<CardsTypes>  cardsTypesArrayList = this.getAliveCardsType();
+        if (cardsTypesArrayList.contains(CardsTypes.Assassin)){
+            //todo
         }
-        else if (player.getCoins()>=1){
-            drawOneAnChange(player);
+        else if (cardsTypesArrayList.contains(CardsTypes.Ambassador)){
+            drawTowCardsAndChange(this);
+        }
+        else if (this.getCoins()>=1){
+            drawOneAnChange(this);
         }
         else{
-            foreign_Aid(player);
+            foreign_Aid(this);
         }
         CountingActions.setWhoseTurn(this);
     }
@@ -83,7 +84,7 @@ public class killer extends AI{
 
     /**
      * pay $1 to draw a card and change
-     * @param player is the Model.AI
+     * @param player is the Model.Players.AI
      */
     public static void drawOneAnChange(Player player){
 
