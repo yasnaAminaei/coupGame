@@ -24,6 +24,7 @@ public class Income extends Action {
         stateOfAction= StateOfAction.done;
         this.BlockAble=false;
         this.ChallengeAble=false;
+        this.name="INCOME";
         doIfDone();
         new Logging(this);
         log.info("end");

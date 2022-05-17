@@ -1,11 +1,15 @@
 package GUI.Controller.GameState;
 
+import Actions.Kill;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Model.Cards.Card;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class ChooseCartToBurn {
 
@@ -17,12 +21,12 @@ public class ChooseCartToBurn {
     public static Logger log= LogManager.getLogger(ChooseCartToBurn.class);
 
 
-    public ChooseCartToBurn(){
+    public ChooseCartToBurn() throws FileNotFoundException, UnsupportedEncodingException {
         this.player=PlayersDataBase.getNotAIPlayer();
         int size=player.getAliveCards().size();
         if (size==2){
             Card t= ChooseOneCardToBurn();
-            t.setAlive(false);
+            new Kill(player,t);
             //new Exchange(player,t);
         }
         else if (size==1){

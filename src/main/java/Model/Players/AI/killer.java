@@ -9,6 +9,8 @@ import ManageGameStates.CountingActions;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class killer extends AI{
@@ -31,7 +33,7 @@ public class killer extends AI{
 
 
     @Override
-    public void playTheirTurn(){
+    public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<CardsTypes>  cardsTypesArrayList = this.getAliveCardsType();
         if (cardsTypesArrayList.contains(CardsTypes.Assassin)){
             //todo
@@ -54,7 +56,7 @@ public class killer extends AI{
      * @param player draw tow random cards and change the cards
      */
 
-    public static void drawTowCardsAndChange(Player player){
+    public static void drawTowCardsAndChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
         Ambassador_Exchange ambassador_exchange= new Ambassador_Exchange(player);
         Card[] randomCards = CardsDataBase.chooseTowRandomDeadCard();
         ArrayList<Card> c = player.getAliveCards();
@@ -86,7 +88,7 @@ public class killer extends AI{
      * pay $1 to draw a card and change
      * @param player is the Model.Players.AI
      */
-    public static void drawOneAnChange(Player player){
+    public static void drawOneAnChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
 
         Exchange exchange=new Exchange(player);
         Card random=CardsDataBase.chooseARandomDeadCard();

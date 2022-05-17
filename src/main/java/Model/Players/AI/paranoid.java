@@ -2,6 +2,7 @@ package Model.Players.AI;
 
 import Actions.Action;
 import Actions.ActionKind;
+import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import ManageGameStates.CountingActions;
@@ -38,8 +39,8 @@ public class paranoid extends AI {
         return false;
     }
 
-    @Override
-    public void BlockOrChallengeOrAllow() throws IOException {
+
+    public ActionRespond BlockOrChallengeOrAllow() throws IOException {
         Action action =CountingActions.currentAction();
         if (action instanceof ChallengeAbleAction){
             turn++;
@@ -48,6 +49,7 @@ public class paranoid extends AI {
             }
         }
         CountingActions.setWhoseTurn(this);
+        return ActionRespond.allow;
     }
 
     public static boolean isChallengeQuestion() throws IOException {

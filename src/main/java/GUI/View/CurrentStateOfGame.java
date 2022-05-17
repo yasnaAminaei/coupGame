@@ -4,8 +4,8 @@ import Actions.Action;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
-import ManageGameStates.GameProcessor;
 import ManageGameStates.GameTurns;
+import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.fxml.FXML;
@@ -77,7 +77,7 @@ public class CurrentStateOfGame {
 
         myTurnPane.setVisible(false);
         if (GameTurns.gameState==null){
-            GameTurns.gameState=GameState.MyTurn;
+            GameTurns.gameState= GameState.MyTurn;
         }
         else{
             Action currentAction= CountingActions.currentAction();

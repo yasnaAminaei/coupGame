@@ -6,6 +6,9 @@ import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
 
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
 public class ChallengeAbleAction extends Action {
 
     public Challenge challenge;
@@ -17,7 +20,7 @@ public class ChallengeAbleAction extends Action {
     }
 
 
-    public ChallengeAbleAction(Player dower) {
+    public ChallengeAbleAction(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
     }
 

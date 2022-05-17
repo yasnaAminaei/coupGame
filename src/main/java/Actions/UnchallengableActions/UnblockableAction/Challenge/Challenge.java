@@ -2,7 +2,9 @@ package Actions.UnchallengableActions.UnblockableAction.Challenge;
 
 import Actions.Action;
 import Actions.ActionKind;
+import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.Logging;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Cards.CardsTypes;
@@ -11,7 +13,9 @@ import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class Challenge extends Action {
@@ -26,6 +30,7 @@ public class Challenge extends Action {
     public boolean isChallenged;
 
 
+
     public boolean isChallenged() {
         return isChallenged;
     }
@@ -36,21 +41,50 @@ public class Challenge extends Action {
         return player.getPlayerId();
     }
 
+    /*
+    public Challenge(Player dower,ChallengeAbleAction challengeAbleAction , boolean blockAble) throws FileNotFoundException, UnsupportedEncodingException {
+        super(dower);
+        setProperty();
+        this.challengedAction=challengeAbleAction;
+        if (dower instanceof AI){
+            if (blockAble){
+
+            }
+            else{
+
+            }
+        }
+
+    }
+
+     */
+
+
+
     public Challenge(Player dower , ChallengeAbleAction challengedAction ) throws IOException {
         super(dower);
+        setProperty();
+        this.challengedAction=challengedAction;
+        if (dower instanceof AI){
+            doIfNotBlockAble(dower);
+        }
+        new Logging(this);
+    }
+
+    public void doIfNotBlockAble(Player dower){
+        try {
+            isChallenged =((AI) dower).ChallengeOrAllow(this);
+        }catch (IOException r){
+            log.error("challenge or allow an AI doesnt work");
+        }
+    }
+
+    public void setProperty(){
+        this.name="Challenge";
         this.isChallenged=false;
         this.ChallengeAble=false;
         this.BlockAble=false;
         this.actionKind= ActionKind.Challenge;
-        this.challengedAction=challengedAction;
-        if (dower instanceof AI){
-            try {
-                isChallenged =((AI) dower).ChallengeOrAllow(this);
-            }catch (IOException r){
-                log.error("challenge or allow an AI doesnt work");
-            }
-
-        }
     }
 
     public boolean getChallengeResult() {

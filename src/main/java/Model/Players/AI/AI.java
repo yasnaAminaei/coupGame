@@ -1,12 +1,10 @@
 package Model.Players.AI;
 
-import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.Action;
+import Actions.ActionRespond;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
-import GUI.Controller.GameState.GameState;
-import Model.Cards.Card;
 import Model.Players.Player;
-import Model.Players.PlayersDataBase;
 
 import java.io.IOException;
 
@@ -28,7 +26,8 @@ public class AI extends Player {
         return true;
     }
 
-    public void BlockOrChallengeOrAllow() throws IOException {
+    public ActionRespond BlockOrChallengeOrAllow(Action action) throws IOException {
+        return ActionRespond.allow;
 
     }
 

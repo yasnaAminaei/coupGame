@@ -1,1 +1,4 @@
-
+2 : 4 -> BANK : TAX
+3 : 1 -> 4 : Challenge
+4 : 4 -> KILL : Captain
+5 : 4 -> BANK : INCOME

@@ -1,6 +1,5 @@
 package GUI.Controller.GameState;
 
-import Actions.ActionDataBase;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
@@ -8,6 +7,7 @@ import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.I
 import Actions.UnchallengableActions.UnblockableAction.Coup;
 import ManageGameStates.GameProcessor;
 import ManageGameStates.GameTurns;
+import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
@@ -66,7 +66,7 @@ public class myTurn {
 
 
     @FXML
-    void coupAction(ActionEvent event) {
+    void coupAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
         if (haveEnoughCoins(7)){
             ChoosePlayer choosePlayer = new ChoosePlayer();
             Player p = choosePlayer.getChoosePlayer();
@@ -85,14 +85,17 @@ public class myTurn {
     }
 
     @FXML
-    void exchangeAction(ActionEvent event) {
+    void exchangeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
         if (haveEnoughCoins(1)){
-            new Exchange(PlayersDataBase.getNotAIPlayer());
+            Player human =PlayersDataBase.getNotAIPlayer();
+            Exchange exchange = new Exchange(PlayersDataBase.getNotAIPlayer());
         }
     }
 
     @FXML
     void foreignAidAction(ActionEvent event) {
+        Player human =PlayersDataBase.getNotAIPlayer();
+
 
     }
 
@@ -103,7 +106,8 @@ public class myTurn {
     }
 
     @FXML
-    void revealAction(ActionEvent event) {
+    void revealAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
+        Player human =PlayersDataBase.getNotAIPlayer();
         ChoosePlayer choosePlayer = new ChoosePlayer();
         Player p = choosePlayer.getChoosePlayer();
         new Reveal(PlayersDataBase.getNotAIPlayer(),p);
@@ -124,9 +128,8 @@ public class myTurn {
     void taxAction(ActionEvent event) throws IOException {
         Player human =PlayersDataBase.getNotAIPlayer();
         Tax newTax =new Tax(human);
-        GameTurns.setAllTurn(human,GameState.ChallengeOrAllow);
+        GameTurns.setAllTurn(human, GameState.ChallengeOrAllow);
         GameProcessor gameProcessor=new GameProcessor(newTax);
-
     }
 
 }

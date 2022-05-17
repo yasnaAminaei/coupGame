@@ -1,6 +1,6 @@
 package ManageGameStates;
 
-import GUI.Controller.GameState.GameState;
+import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 

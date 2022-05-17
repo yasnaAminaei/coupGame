@@ -4,7 +4,6 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.ChooseCartToBurn;
-import GUI.Controller.GameState.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
@@ -17,11 +16,15 @@ public class GameProcessor {
 
 
     public GameProcessor(ChallengeAbleAction challengeAbleAction) throws IOException {
-        this.mainAction=challengeAbleAction;
-        if (AIRespondsChallengeItCorrectly()){
+        this.mainAction = challengeAbleAction;
+        doIfStateOfTheGameISChallengeOrAllow();
+    }
+
+
+    public void doIfStateOfTheGameISChallengeOrAllow() throws IOException {
+        if (AIRespondsChallengeItCorrectly()) {
             new ChooseCartToBurn();
-        }
-        else{
+        } else {
             mainAction.doIfDone();
         }
     }

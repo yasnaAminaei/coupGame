@@ -3,7 +3,7 @@ package ManageGameStates;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import GUI.Controller.GameState.GameState;
+import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 

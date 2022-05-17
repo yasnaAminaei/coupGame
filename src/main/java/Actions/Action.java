@@ -5,6 +5,8 @@ import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class Action {
@@ -57,11 +59,12 @@ public class Action {
     }
 
 
-    public Action(Player dower){
+    public Action(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         stateOfAction=StateOfAction.attempted;
         this.actionDower=dower;
         this.actionId=generateActionId();
         ActionDataBase.actions.add(this);
+        //new Logging(this);
     }
 
     public Player getDower() {

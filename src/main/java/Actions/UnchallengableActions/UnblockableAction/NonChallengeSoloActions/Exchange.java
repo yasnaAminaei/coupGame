@@ -2,10 +2,14 @@ package Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions;
 
 import Actions.Action;
 import Actions.ActionKind;
+import Actions.Logging;
 import Actions.StateOfAction;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Players.Player;
+
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class Exchange extends Action {
 
@@ -21,7 +25,7 @@ public class Exchange extends Action {
     public Card randomCard;
     public Card exchangedCard;
 
-    public Exchange(Player dower) {//for when just have one alive card
+    public Exchange(Player dower) throws FileNotFoundException, UnsupportedEncodingException {//for when just have one alive card
         super(dower);
         this.BlockAble=false;
         this.ChallengeAble=false;
@@ -32,13 +36,14 @@ public class Exchange extends Action {
     }
 
 
-    public Exchange(Player dower, Card exchangingCard) {//for when have 2 alive cards
+    public Exchange(Player dower, Card exchangingCard) throws FileNotFoundException, UnsupportedEncodingException {//for when have 2 alive cards
         super(dower);
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
         this.exchangedCard=exchangingCard;
         this.randomCard = CardsDataBase.chooseARandomDeadCard();
         doIfDone();
+        new Logging(this);
     }
 
 

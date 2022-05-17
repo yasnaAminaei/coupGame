@@ -1,3 +1,6 @@
-
 2 : 4 -> BANK : TAX
-4 : 4 -> BANK : TAX
+3 : 1 -> 4 : Challenge
+4 : 4 -> KILL : Ambassador
+5 : 4 -> BANK : INCOME
+6 : 4 -> BANK : TAX
+7 : 1 -> 4 : Challenge

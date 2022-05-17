@@ -1,9 +1,15 @@
 package Actions.ChallengableActions.UnblockableActions.BlockActions;
 
 import Actions.Action;
+import Actions.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
 import Actions.StateOfAction;
+import Model.Players.AI.AI;
 import Model.Players.Player;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class BlockActions extends NonSoloChallengeAbleAction {
 
@@ -17,6 +23,12 @@ public class BlockActions extends NonSoloChallengeAbleAction {
     Action blockedAction;
     BlockActionKinds blockActionKinds;
 
+    public ActionRespond actionRespond;
+
+    public ActionRespond getActionRespond() {
+        return actionRespond;
+    }
+
 
     @Override
     public String getTargetIdORName() {
@@ -28,10 +40,26 @@ public class BlockActions extends NonSoloChallengeAbleAction {
         return p.getPlayerId();
     }
 
-    public BlockActions(Player dower) {
+    public BlockActions(Player dower, Action blockedAction) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
+        this.blockedAction=blockedAction;
         this.name=blockActionKinds.name();
+        this.BlockAble=false;
+        this.ChallengeAble=true;
+        if (dower instanceof AI){
+            doIfBlockAble(dower);
+        }
     }
+
+    public void doIfBlockAble(Player dower){
+        try {
+            actionRespond =((AI) dower).BlockOrChallengeOrAllow(this);
+        }catch (IOException r){
+            log.error("challenge or allow or block an AI doesnt work");
+        }
+    }
+
+
 
     @Override
     public void doIfDone() {

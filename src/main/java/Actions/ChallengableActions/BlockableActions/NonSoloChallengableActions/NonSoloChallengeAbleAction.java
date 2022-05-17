@@ -5,6 +5,9 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Model.Players.Player;
 
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
 public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
 
 
@@ -15,7 +18,7 @@ public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
 
     BlockActions blockAction;
 
-    public NonSoloChallengeAbleAction(Player dower) {
+    public NonSoloChallengeAbleAction(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
         this.actionKind= ActionKind.NonSoloAction;
         this.BlockAble=true;
