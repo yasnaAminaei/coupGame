@@ -1,16 +1,14 @@
 package GUI.Controller.GameState;
 
-import Actions.Action;
 import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
-import Cards.Card;
-import Cards.CardsTypes;
-import ManageGameStates.CountingActions;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Cards.Card;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import org.apache.log4j.LogManager;

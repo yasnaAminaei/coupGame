@@ -3,9 +3,9 @@ package ManageGameStates;
 import Actions.Action;
 import Actions.ActionDataBase;
 import Actions.StateOfAction;
-import Cards.Card;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Cards.Card;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
 import java.io.File;
 import java.io.IOException;

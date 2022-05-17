@@ -1,8 +1,7 @@
 package Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions;
 
-import Actions.Logging;
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 public class Steal extends NonSoloChallengeAbleAction {
 

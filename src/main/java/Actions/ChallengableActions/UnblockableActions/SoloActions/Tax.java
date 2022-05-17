@@ -1,8 +1,8 @@
 package Actions.ChallengableActions.UnblockableActions.SoloActions;
 
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 public class Tax extends SoloAction {
 
@@ -30,7 +30,7 @@ public class Tax extends SoloAction {
     @Override
     public void doIfChallenged(Player player) {
         super.doIfChallenged(player);
-        Challenge challenge=new Challenge(player,actionId);
+        Challenge challenge=new Challenge(player,this);
     }
 
     @Override

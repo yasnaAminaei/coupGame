@@ -1,7 +1,7 @@
-package Cards;
+package Model.Cards;
 
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

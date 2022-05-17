@@ -1,13 +1,10 @@
-package AI;
+package Model.AI;
 
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
-import ManageGameStates.CountingActions;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 public class AI extends Player {
 

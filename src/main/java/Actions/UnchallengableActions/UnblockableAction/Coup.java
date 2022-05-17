@@ -1,8 +1,7 @@
 package Actions.UnchallengableActions.UnblockableAction;
 
-import Actions.Action;
 import Actions.NonSoloActions.NonSoloAction;
-import Players.Player;
+import Model.Players.Player;
 
 public class Coup extends NonSoloAction {
 

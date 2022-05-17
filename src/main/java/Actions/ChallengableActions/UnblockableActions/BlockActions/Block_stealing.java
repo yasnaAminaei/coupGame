@@ -1,6 +1,6 @@
-package Actions.BlockActions;
+package Actions.ChallengableActions.UnblockableActions.BlockActions;
 
-import Players.Player;
+import Model.Players.Player;
 
 public class Block_stealing extends BlockActions {
 

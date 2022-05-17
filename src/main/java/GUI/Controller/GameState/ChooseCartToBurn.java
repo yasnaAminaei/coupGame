@@ -1,10 +1,9 @@
 package GUI.Controller.GameState;
 
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
-import Cards.Card;
-import Cards.CardsDataBase;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Cards.Card;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

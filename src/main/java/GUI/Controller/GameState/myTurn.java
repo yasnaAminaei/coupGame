@@ -3,7 +3,7 @@ package GUI.Controller.GameState;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
-import Players.Player;
+import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -48,16 +48,6 @@ public class myTurn {
 
 
 
-    Player player;
-
-
-
-
-
-    public void setPlayer(Player player){
-        this.player=player;
-    }
-
 
     public static void notEnoughCoinsError(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -71,13 +61,13 @@ public class myTurn {
     @FXML
     void coupAction(ActionEvent event) {
         if (haveEnoughCoins(7)){
-            new Coup(player);
+            new Coup(PlayersDataBase.getNotAIPlayer());
         }
     }
 
 
     public boolean haveEnoughCoins(int neededCoins){
-        int coins=player.getCoins();
+        int coins=PlayersDataBase.getNotAIPlayer().getCoins();
         if (coins<neededCoins){
             notEnoughCoinsError();
             return false;
@@ -88,7 +78,7 @@ public class myTurn {
     @FXML
     void exchangeAction(ActionEvent event) {
         if (haveEnoughCoins(1)){
-            new Exchange(player);
+            new Exchange(PlayersDataBase.getNotAIPlayer());
         }
     }
 
@@ -99,7 +89,7 @@ public class myTurn {
 
     @FXML
     void incomeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-        new Income(player);
+        new Income(PlayersDataBase.getNotAIPlayer());
 
     }
 

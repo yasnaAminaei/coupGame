@@ -1,11 +1,10 @@
 package GUI.View;
 
-import BuildData.ReadDefualtData;
 import GUI.Controller.CheatSheet;
 import GUI.Controller.GameTracker;
 import GUI.Controller.PlayerInfo;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,8 +53,8 @@ public class MainPageOfGame {
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
         ShowPlayerInfo();
-        ShowCurrentStateOfGame();
         ShowGameTracker();
+        ShowCurrentStateOfGame();
     }
 
     @FXML

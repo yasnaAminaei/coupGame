@@ -1,4 +1,4 @@
-package Cards;
+package Model.Cards;
 
 public class Contessa extends Card {
 

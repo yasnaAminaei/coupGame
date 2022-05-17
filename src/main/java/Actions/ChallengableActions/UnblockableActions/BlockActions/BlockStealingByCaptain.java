@@ -1,7 +1,7 @@
-package Actions.BlockActions;
+package Actions.ChallengableActions.UnblockableActions.BlockActions;
 
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 public class BlockStealingByCaptain extends Block_stealing{
 

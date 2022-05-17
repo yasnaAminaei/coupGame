@@ -1,13 +1,11 @@
 package ManageGameStates;
 
-import AI.AI;
-import Actions.Action;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.GameState;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
 public class SideActionsForType1 {
     //challenge-block : yes-no
@@ -31,7 +29,7 @@ public class SideActionsForType1 {
      public boolean AIRespondsLeadToEnd(){
          for (Player p : PlayersDataBase.AIPlayers()) {
              new Challenge(p,mainAction);
-             if (mainAction.getStateOfAction().equals(StateOfAction.failed)){
+             if (StateOfAction.failed.equals(mainAction.getStateOfAction())){
                  return true;
              }
          }

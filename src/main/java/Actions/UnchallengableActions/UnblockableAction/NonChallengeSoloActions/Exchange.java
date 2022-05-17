@@ -3,9 +3,9 @@ package Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions;
 import Actions.Action;
 import Actions.ActionKind;
 import Actions.StateOfAction;
-import Cards.Card;
-import Cards.CardsDataBase;
-import Players.Player;
+import Model.Cards.Card;
+import Model.Cards.CardsDataBase;
+import Model.Players.Player;
 
 public class Exchange extends Action {
 
@@ -42,6 +42,14 @@ public class Exchange extends Action {
     }
 
 
+    public void setExchangedCard(Card exchangedCard) {
+        this.exchangedCard = exchangedCard;
+    }
+
+    public void setRandomCard(Card randomCard) {
+        this.randomCard = randomCard;
+    }
+
     @Override
     public String getTargetIdORName() {
         return "CARDS";
@@ -52,10 +60,10 @@ public class Exchange extends Action {
         actionDower.addCoins(-1);
         if (randomCard!=null){
             if (exchangedCard.equals(actionDower.getFirstCard())){
-                actionDower.setFirstCardId(randomCard.getCardId());
+                actionDower.setFirstCard(randomCard);
             }
             else{
-                actionDower.setSecondCardId(randomCard.getCardId());
+                actionDower.setSecondCard(randomCard);
             }
         }
         super.doIfDone();

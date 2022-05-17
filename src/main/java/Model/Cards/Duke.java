@@ -1,6 +1,6 @@
-package Cards;
+package Model.Cards;
 
-import Players.Player;
+import Model.Players.Player;
 
 public class Duke extends Card {
     //Duke: Take three coins from the treasury. Block someone from taking foreign aid.

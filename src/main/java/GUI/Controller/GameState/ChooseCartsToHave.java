@@ -1,8 +1,8 @@
 package GUI.Controller.GameState;
 
 import ManageGameStates.CountingActions;
-import Cards.Card;
-import Players.Player;
+import Model.Cards.Card;
+import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -37,7 +37,7 @@ public class ChooseCartsToHave {
         Card y= CountingActions.randomCard2;
         Card z= player.getFirstCard();
         Card card =ChooseCards.chooseCard(x,y,z);
-        player.setFirstCardId(card.getCardId());
+        player.setFirstCard(card);
     }
 
 
@@ -47,7 +47,7 @@ public class ChooseCartsToHave {
         Card z= player.getFirstCard();
         Card t=player.getSecondCard();
         Card[] cards =ChooseCards.chooseCard(x,y,z,t);
-        player.setFirstCardId(cards[0].getCardId());
-        player.setSecondCardId(cards[1].getCardId());
+        player.setFirstCard(cards[0]);
+        player.setSecondCard(cards[1]);
     }
 }

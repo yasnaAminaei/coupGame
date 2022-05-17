@@ -1,8 +1,8 @@
 package Actions.ChallengableActions.UnblockableActions.SoloActions;
 
-import Cards.Card;
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.Card;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 public class Ambassador_Exchange extends SoloAction {
 
@@ -21,6 +21,14 @@ public class Ambassador_Exchange extends SoloAction {
         this.ChallengeAble=true;
     }
 
+
+    public void setFirstCard(Card firstCard) {
+        this.firstCard = firstCard;
+    }
+
+    public void setSecondCard(Card secondCard) {
+        this.secondCard = secondCard;
+    }
 
     @Override
     public String getTargetIdORName() {

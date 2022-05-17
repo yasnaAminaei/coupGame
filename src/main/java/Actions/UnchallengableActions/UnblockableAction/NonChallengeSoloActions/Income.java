@@ -4,13 +4,16 @@ import Actions.Action;
 import Actions.ActionKind;
 import Actions.Logging;
 import Actions.StateOfAction;
-import Players.Player;
+import Model.Players.Player;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 
 public class Income extends Action {
 
+    public static Logger log= LogManager.getLogger(Income.class);
 
     //Income +$1
 
@@ -23,6 +26,7 @@ public class Income extends Action {
         this.ChallengeAble=false;
         doIfDone();
         new Logging(this);
+        log.info("end");
     }
 
 

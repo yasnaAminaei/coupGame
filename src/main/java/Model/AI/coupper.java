@@ -1,9 +1,9 @@
-package AI;
+package Model.AI;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import ManageGameStates.CountingActions;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
 public class coupper extends AI {
 

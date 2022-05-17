@@ -1,13 +1,13 @@
-package AI;
+package Model.AI;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
-import Cards.Card;
-import Cards.CardsDataBase;
-import Cards.CardsTypes;
+import Model.Cards.Card;
+import Model.Cards.CardsDataBase;
+import Model.Cards.CardsTypes;
 import ManageGameStates.CountingActions;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
 import java.util.ArrayList;
 
@@ -57,46 +57,46 @@ public class killer extends AI{
         Ambassador_Exchange ambassador_exchange= new Ambassador_Exchange(player);
         Card[] randomCards = CardsDataBase.chooseTowRandomDeadCard();
         ArrayList<Card> c = player.getAliveCards();
-        String changedCard = null;
-        String otherCard = null;
+        Card changedCard = null;
+        Card otherCard = null;
         int size=c.size();
         if (size==2){
             if (c.get(0).getType().equals(CardsTypes.Ambassador)){
-                otherCard=c.get(1).getCardId();
+                otherCard=c.get(1);
             }
             else{
-                otherCard=c.get(0).getCardId();
+                otherCard=c.get(0);
             }
         }
         if (randomCards[0].getType().equals(CardsTypes.Assassin)){
-           changedCard=randomCards[0].cardId;
+           changedCard=randomCards[0];
         }
         else if (randomCards[1].getType().equals(CardsTypes.Assassin)){
-            changedCard=randomCards[1].cardId;
+            changedCard=randomCards[1];
         }
 
-        ambassador_exchange.setFirstCardId(changedCard);
-        ambassador_exchange.setSecondCardId(otherCard);
+        ambassador_exchange.setFirstCard(changedCard);
+        ambassador_exchange.setSecondCard(otherCard);
 
         ambassador_exchange.doIfDone();
     }
 
     /**
      * pay $1 to draw a card and change
-     * @param player is the AI
+     * @param player is the Model.AI
      */
     public static void drawOneAnChange(Player player){
 
         Exchange exchange=new Exchange(player);
         Card random=CardsDataBase.chooseARandomDeadCard();
         ArrayList<Card> c = player.getAliveCards();
-        String changedCard = null;
-        String otherCard = c.get(0).getCardId();
+        Card changedCard = null;
+        Card otherCard = c.get(0);
         if (random.getType().equals(CardsTypes.Assassin)){
-            changedCard=random.cardId;
+            changedCard=random;
         }
-        exchange.setExchangedCardId(changedCard);
-        exchange.setRandomCardId(otherCard);
+        exchange.setExchangedCard(changedCard);
+        exchange.setRandomCard(otherCard);
 
         exchange.doIfDone();
     }

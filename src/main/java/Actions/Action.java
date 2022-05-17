@@ -1,10 +1,7 @@
 package Actions;
 
-import Cards.Card;
-
-import Cards.CardsTypes;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -44,6 +41,7 @@ public class Action {
         this.targetIdORName = targetIdORName;
     }
 
+
     public StateOfAction getStateOfAction() {
         return stateOfAction;
     }
@@ -57,6 +55,7 @@ public class Action {
         stateOfAction=StateOfAction.attempted;
         this.actionDower=dower;
         this.actionId=generateActionId();
+        ActionDataBase.actions.add(this);
     }
 
     public Player getDower() {

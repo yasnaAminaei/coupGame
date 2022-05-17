@@ -2,7 +2,7 @@ package Actions.ChallengableActions.UnblockableActions.SoloActions;
 
 import Actions.ActionKind;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Players.Player;
+import Model.Players.Player;
 
 public class SoloAction extends ChallengeAbleAction {
 

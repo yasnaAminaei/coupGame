@@ -1,8 +1,8 @@
 package Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions;
 
-import Cards.Card;
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.Card;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 public class Reveal extends NonSoloChallengeAbleAction {
 

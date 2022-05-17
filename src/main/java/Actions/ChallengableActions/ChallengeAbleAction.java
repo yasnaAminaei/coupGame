@@ -1,11 +1,10 @@
 package Actions.ChallengableActions;
 
 import Actions.Action;
-import Actions.ActionDataBase;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 public class ChallengeAbleAction extends Action {
 

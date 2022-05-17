@@ -5,8 +5,8 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
 import ManageGameStates.GameProcessor;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -64,12 +64,15 @@ public class CurrentStateOfGame {
         myTurnPane.getChildren().add(root);
         myTurnPane.setVisible(true);
         myTurn x=loader.getController();
-        x.setPlayer(player);
     }
 
 
 
     public void showCurrentStateOfGame() throws IOException {
+        if (true){//todo
+            PlayersTurn();
+            return;
+        }
 
         myTurnPane.setVisible(false);
         if (GameProcessor.gameState==null){

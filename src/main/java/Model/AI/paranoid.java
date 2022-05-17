@@ -1,4 +1,4 @@
-package AI;
+package Model.AI;
 
 import Actions.Action;
 import Actions.ActionKind;

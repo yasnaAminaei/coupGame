@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ActionDataBase {
 
 
-    public static ArrayList<Action> actions ;
+    public static ArrayList<Action> actions =new ArrayList<>();
 
     public static ArrayList<Action> getActions() {
         if (actions==null){

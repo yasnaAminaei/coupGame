@@ -1,12 +1,12 @@
 package BuildData;
 
-import AI.coupper;
-import AI.killer;
-import AI.paranoid;
-import Cards.Card;
-import Cards.CardsDataBase;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.AI.coupper;
+import Model.AI.killer;
+import Model.AI.paranoid;
+import Model.Cards.Card;
+import Model.Cards.CardsDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.log4j.LogManager;

@@ -1,8 +1,8 @@
 package ManageGameStates;
 
 import GUI.Controller.GameState.GameState;
-import Players.Player;
-import Players.PlayersDataBase;
+import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
 
 public class GameTurns {

@@ -1,7 +1,5 @@
-package Cards;
+package Model.Cards;
 
-import GUI.View.MainPageOfGame;
-import Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

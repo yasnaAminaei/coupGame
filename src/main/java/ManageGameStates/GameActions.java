@@ -2,7 +2,7 @@ package ManageGameStates;
 
 import Actions.Action;
 import Actions.StateOfAction;
-import Players.Player;
+import Model.Players.Player;
 
 import java.io.IOException;
 
@@ -52,7 +52,7 @@ public class GameActions {
         GameTurns.whoseTurn=GameTurns.moveToNextPlayer(GameTurns.whoseDoingTheMainAction);
         for (int i = 0; i < 4; i++) {
             if (!player.equals(GameTurns.whoseTurn)){
-                if (MainAction.getStateOfAction().equals(StateOfAction.attempted)){
+                if (StateOfAction.attempted.equals(MainAction.getStateOfAction())){
                     GameTurns.moveToNextPlayerInSideAction();
                 }
             }

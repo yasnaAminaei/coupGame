@@ -1,8 +1,7 @@
 package ManageGameStates;
 
-import Actions.Action;
 import GUI.Controller.GameState.GameState;
-import Players.Player;
+import Model.Players.Player;
 
 public class GameProcessor {
 

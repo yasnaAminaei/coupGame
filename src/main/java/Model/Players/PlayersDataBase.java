@@ -1,4 +1,4 @@
-package Players;
+package Model.Players;
 
 import java.util.ArrayList;
 
@@ -8,13 +8,18 @@ public class PlayersDataBase {
 
     public static ArrayList<Player> players=new ArrayList<>();
 
-    public static Player NotAIPlayer;
+    private static Player NotAIPlayer;
 
     public static ArrayList<Player> getPlayers() {
         if (players==null){
             players=new ArrayList<>();
         }
         return players;
+    }
+
+
+    public static Player getNotAIPlayer() {
+        return searchByPlayerId("4");
     }
 
     public static Player searchByPlayerId(String playerId){

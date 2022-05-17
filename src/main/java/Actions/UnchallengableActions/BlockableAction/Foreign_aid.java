@@ -1,7 +1,7 @@
 package Actions.UnchallengableActions.BlockableAction;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.SoloAction;
-import Players.Player;
+import Model.Players.Player;
 
 public class Foreign_aid extends SoloAction {
 

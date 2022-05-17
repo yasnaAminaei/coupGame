@@ -1,9 +1,9 @@
-package Actions.BlockActions;
+package Actions.ChallengableActions.UnblockableActions.BlockActions;
 
 import Actions.Action;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
 import Actions.StateOfAction;
-import Players.Player;
+import Model.Players.Player;
 
 public class BlockActions extends NonSoloChallengeAbleAction {
 

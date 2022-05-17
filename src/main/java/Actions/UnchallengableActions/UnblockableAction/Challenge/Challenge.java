@@ -1,13 +1,12 @@
 package Actions.UnchallengableActions.UnblockableAction.Challenge;
 
 import Actions.Action;
-import Actions.ActionDataBase;
 import Actions.ActionKind;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Cards.Card;
-import Cards.CardsDataBase;
-import Cards.CardsTypes;
-import Players.Player;
+import Model.Cards.Card;
+import Model.Cards.CardsDataBase;
+import Model.Cards.CardsTypes;
+import Model.Players.Player;
 
 import java.util.ArrayList;
 
@@ -50,14 +49,13 @@ public class Challenge extends Action {
         Card random = CardsDataBase.chooseARandomDeadCard();
         random.setAlive(true);
         random.setPlayerId(player.getPlayerId());
-        String randomCardId=random.getCardId();
         Card c1=player.getFirstCard();
         c1.setAlive(false);
         if (c1.getType().equals(cardsTypes)){
-            player.setFirstCardId(randomCardId);
+            player.setFirstCard(random);
         }
         else{
-            player.setSecondCardId(randomCardId);
+            player.setSecondCard(random);
         }
     }
 

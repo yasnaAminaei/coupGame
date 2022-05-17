@@ -1,11 +1,4 @@
-package Cards;
-
-import Actions.ActionKind;
-import Actions.Logging;
-import Players.Player;
-
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+package Model.Cards;
 
 public class Captain extends Card {
 
