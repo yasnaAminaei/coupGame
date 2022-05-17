@@ -12,6 +12,7 @@ public class Foreign_aid extends SoloAction {
         this.actionDower=dower;
         this.ChallengeAble=false;
         this.BlockAble=true;
+        this.name="Foreign_aid";
     }
 
 

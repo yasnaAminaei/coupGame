@@ -11,6 +11,8 @@ public class Action {
 
     public static Logger log= LogManager.getLogger(Action.class);
 
+
+    public String name;
     public Player actionDower;
     public String actionId;
     public ActionKind actionKind;
@@ -20,6 +22,10 @@ public class Action {
     public boolean ChallengeAble;
     public boolean solo;
 
+
+    public String getName() {
+        return name;
+    }
 
     public boolean isSolo() {
         return solo;

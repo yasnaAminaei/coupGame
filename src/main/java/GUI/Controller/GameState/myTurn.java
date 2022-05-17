@@ -1,8 +1,14 @@
 package GUI.Controller.GameState;
 
+import Actions.ActionDataBase;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
+import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
+import ManageGameStates.GameProcessor;
+import ManageGameStates.GameTurns;
+import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 public class myTurn {
@@ -61,7 +68,9 @@ public class myTurn {
     @FXML
     void coupAction(ActionEvent event) {
         if (haveEnoughCoins(7)){
-            //new Coup(PlayersDataBase.getNotAIPlayer());
+            ChoosePlayer choosePlayer = new ChoosePlayer();
+            Player p = choosePlayer.getChoosePlayer();
+            new Coup(PlayersDataBase.getNotAIPlayer(),p);
         }
     }
 
@@ -95,6 +104,9 @@ public class myTurn {
 
     @FXML
     void revealAction(ActionEvent event) {
+        ChoosePlayer choosePlayer = new ChoosePlayer();
+        Player p = choosePlayer.getChoosePlayer();
+        new Reveal(PlayersDataBase.getNotAIPlayer(),p);
 
     }
 
@@ -109,7 +121,11 @@ public class myTurn {
     }
 
     @FXML
-    void taxAction(ActionEvent event) {
+    void taxAction(ActionEvent event) throws IOException {
+        Player human =PlayersDataBase.getNotAIPlayer();
+        Tax newTax =new Tax(human);
+        GameTurns.setAllTurn(human,GameState.ChallengeOrAllow);
+        GameProcessor gameProcessor=new GameProcessor(newTax);
 
     }
 

@@ -2,7 +2,7 @@ package ManageGameStates;
 
 import Actions.Action;
 
-public class SideActions {
+public class SideAction {
 
     public Action MainAction;
 }

@@ -5,6 +5,7 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
 import ManageGameStates.GameProcessor;
+import ManageGameStates.GameTurns;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.fxml.FXML;
@@ -75,20 +76,20 @@ public class CurrentStateOfGame {
         }
 
         myTurnPane.setVisible(false);
-        if (GameProcessor.gameState==null){
-            GameProcessor.gameState=GameState.MyTurn;
+        if (GameTurns.gameState==null){
+            GameTurns.gameState=GameState.MyTurn;
         }
         else{
             Action currentAction= CountingActions.currentAction();
             if (currentAction==null){
-                GameProcessor.gameState=GameState.MyTurn;
+                GameTurns.gameState=GameState.MyTurn;
             }
             else{
 
             }
 
         }
-        String gameStateName=GameProcessor.gameState.name();
+        String gameStateName= GameTurns.gameState.name();
         switch (gameStateName){
             //MyTurn,ChooseCardToBurn,ChooseCardsToHave,ChallengeOrAllow,BlockOrChallengeOrAllow
             case "MyTurn":

@@ -6,6 +6,9 @@ import ManageGameStates.CountingActions;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+
 public class coupper extends AI {
 
 
@@ -16,7 +19,7 @@ public class coupper extends AI {
 
 
     @Override
-    public void playTheirTurn() {
+    public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         if (this.getCoins()<7){
             Tax tax =new Tax(this);
         }

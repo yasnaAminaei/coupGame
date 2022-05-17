@@ -6,18 +6,29 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Cards.CardsTypes;
+import Model.Players.AI.AI;
 import Model.Players.Player;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Challenge extends Action {
 
 
+    public static Logger log= LogManager.getLogger(Challenge.class);
+
 
 
     public ChallengeAbleAction challengedAction;
 
+    public boolean isChallenged;
 
+
+    public boolean isChallenged() {
+        return isChallenged;
+    }
 
     @Override
     public String getTargetIdORName() {
@@ -25,12 +36,21 @@ public class Challenge extends Action {
         return player.getPlayerId();
     }
 
-    public Challenge(Player dower , ChallengeAbleAction challengedAction ) {
+    public Challenge(Player dower , ChallengeAbleAction challengedAction ) throws IOException {
         super(dower);
+        this.isChallenged=false;
         this.ChallengeAble=false;
         this.BlockAble=false;
         this.actionKind= ActionKind.Challenge;
         this.challengedAction=challengedAction;
+        if (dower instanceof AI){
+            try {
+                isChallenged =((AI) dower).ChallengeOrAllow(this);
+            }catch (IOException r){
+                log.error("challenge or allow an AI doesnt work");
+            }
+
+        }
     }
 
     public boolean getChallengeResult() {

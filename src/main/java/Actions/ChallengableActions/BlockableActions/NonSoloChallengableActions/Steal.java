@@ -15,6 +15,7 @@ public class Steal extends NonSoloChallengeAbleAction {
         this.cardsTypes= CardsTypes.Captain;
         this.ChallengeAble=true;
         this.BlockAble=true;
+        this.name="Steal";
     }
 
     @Override

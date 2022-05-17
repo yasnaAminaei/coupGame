@@ -18,14 +18,16 @@ public class ChooseCartToBurn {
 
 
     public ChooseCartToBurn(){
-        this.player= PlayersDataBase.searchByPlayerId("4");
+        this.player=PlayersDataBase.getNotAIPlayer();
         int size=player.getAliveCards().size();
         if (size==2){
             Card t= ChooseOneCardToBurn();
-            new Exchange(player,t);
+            t.setAlive(false);
+            //new Exchange(player,t);
         }
         else if (size==1){
-            new Exchange(player);
+            player.getAliveCards().get(0).setAlive(false);
+            //new Exchange(player);
         }
         else{
             log.error("size =0 ");

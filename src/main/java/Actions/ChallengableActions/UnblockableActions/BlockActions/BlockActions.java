@@ -15,6 +15,7 @@ public class BlockActions extends NonSoloChallengeAbleAction {
 
 
     Action blockedAction;
+    BlockActionKinds blockActionKinds;
 
 
     @Override
@@ -29,6 +30,7 @@ public class BlockActions extends NonSoloChallengeAbleAction {
 
     public BlockActions(Player dower) {
         super(dower);
+        this.name=blockActionKinds.name();
     }
 
     @Override

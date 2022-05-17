@@ -14,11 +14,12 @@ public class Reveal extends NonSoloChallengeAbleAction {
     public Card targetCard;
 
 
-    public Reveal(Player dower) {
+    public Reveal(Player notAIPlayer, Player dower) {
         super(dower);
         this.cardsTypes= CardsTypes.Assassin;
         this.BlockAble=true;
         this.ChallengeAble=true;
+        this.name="Reveal";
     }
 
     @Override

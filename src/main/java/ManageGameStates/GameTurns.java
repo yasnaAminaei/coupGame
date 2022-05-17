@@ -15,11 +15,10 @@ public class GameTurns {
     public static GameState gameState;
 
 
-
-
-
-
-
+    public static void setAllTurn(Player whoseDoingTheMainAction , GameState state) {
+        GameTurns.whoseDoingTheMainAction=whoseDoingTheMainAction;
+        GameTurns.gameState=state;
+    }
 
     public static Player moveToNextPlayer(Player p){
         String playerId = p.getPlayerId();

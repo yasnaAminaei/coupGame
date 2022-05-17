@@ -1,8 +1,12 @@
 package Actions.ChallengableActions.UnblockableActions.SoloActions;
 
+import Actions.Logging;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
+
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 public class Tax extends SoloAction {
 
@@ -15,26 +19,17 @@ public class Tax extends SoloAction {
         return "BANK";
     }
 
-    public Tax(Player dower) {
+    public Tax(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
+        this.name="TAX";
         this.cardsTypes= CardsTypes.Duke;
+        new Logging(this);
     }
 
 
     @Override
     public void doIfDone() {
         super.doIfDone();
-        getDower().addCoins(3);
-    }
-
-    @Override
-    public void doIfChallenged(Player player) {
-        super.doIfChallenged(player);
-        Challenge challenge=new Challenge(player,this);
-    }
-
-    @Override
-    public void doIfFailed() {
-        super.doIfFailed();
+        this.actionDower.addCoins(3);
     }
 }

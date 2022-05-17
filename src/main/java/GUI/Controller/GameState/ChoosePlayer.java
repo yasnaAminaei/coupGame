@@ -14,6 +14,12 @@ public class ChoosePlayer {
 
 
 
+    public Player choosePlayer;
+
+    public Player getChoosePlayer() {
+        return choosePlayer;
+    }
+
     public ChoosePlayer(){
         boolean choose=true;
         ArrayList<Player> playerArrayList = PlayersDataBase.AIPlayers();
@@ -23,7 +29,8 @@ public class ChoosePlayer {
             if (p.isAlive()){
                 choose=false;
                 if (p instanceof AI){
-                    ((AI) p).burnACard();
+                    //((AI) p).burnACard();
+                    choosePlayer=p;
                 }
             }
             else {

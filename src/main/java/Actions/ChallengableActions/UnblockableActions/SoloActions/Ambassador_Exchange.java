@@ -19,6 +19,7 @@ public class Ambassador_Exchange extends SoloAction {
         this.cardsTypes= CardsTypes.Ambassador;
         this.BlockAble=false;
         this.ChallengeAble=true;
+        this.name="Ambassador_Exchange";
     }
 
 

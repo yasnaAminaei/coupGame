@@ -49,7 +49,9 @@ public class Logging {
      */
 
     public void StringFormatterLog() throws FileNotFoundException, UnsupportedEncodingException {
-        String actionName= actionKind.name();
+        Action a = ActionDataBase.searchByActionId(actionId);
+        assert a != null;
+        String actionName=a.getName();
         String formattedLog= actionId+" : "+dower+" -> "+target+" : "+actionName+"\n";
 
 

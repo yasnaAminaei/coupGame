@@ -7,6 +7,8 @@ import GUI.Controller.GameState.GameState;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
+import java.io.IOException;
+
 public class SideActionsForType1 {
     //challenge-block : yes-no
 
@@ -14,10 +16,10 @@ public class SideActionsForType1 {
      public ChallengeAbleAction mainAction;
 
 
-     public SideActionsForType1(ChallengeAbleAction challengeAbleAction){
+     public SideActionsForType1(ChallengeAbleAction challengeAbleAction) throws IOException {
          this.mainAction=challengeAbleAction;
          if (!AIRespondsLeadToEnd()){
-             GameProcessor.gameState= GameState.ChallengeOrAllow;
+             GameTurns.gameState= GameState.ChallengeOrAllow;
          }
          else {
              GameTurns.moveToNextPlayerInMainAction();
@@ -26,7 +28,7 @@ public class SideActionsForType1 {
 
 
 
-     public boolean AIRespondsLeadToEnd(){
+     public boolean AIRespondsLeadToEnd() throws IOException {
          for (Player p : PlayersDataBase.AIPlayers()) {
              new Challenge(p,mainAction);
              if (StateOfAction.failed.equals(mainAction.getStateOfAction())){

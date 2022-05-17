@@ -14,6 +14,7 @@ import javafx.scene.control.ButtonType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -27,7 +28,7 @@ public class BlockOrChallengeOrAllow {
     public static Logger log= LogManager.getLogger(ChallengeOrAllow.class);
 
 
-    public BlockOrChallengeOrAllow(ChallengeAbleAction challengeAbleAction){
+    public BlockOrChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
         this.player= PlayersDataBase.searchByPlayerId("4");
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
             ActionRespond actionRespond=blockOrChallengeOrAllow();
@@ -53,7 +54,7 @@ public class BlockOrChallengeOrAllow {
 
 
 
-    public void challengeTheAction(ChallengeAbleAction challengeAbleAction){
+    public void challengeTheAction(ChallengeAbleAction challengeAbleAction) throws IOException {
         Challenge challenge =new Challenge(player,challengeAbleAction);
         boolean result = challenge.getChallengeResult();
         if (result){
