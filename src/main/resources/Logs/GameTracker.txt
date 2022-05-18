@@ -1,5 +1,4 @@
-2 : 4 -> ATTEMPT : Steal
-2 : 4 -> 2 : Steal
-3 : 1 -> 4 : Challenge
-4 : 2 -> 4 : Challenge
-5 : 3 -> 4 : Challenge
+2 : 4 -> BANK : INCOME
+3 : 4 -> ATTEMPT : Reveal
+3 : 4 -> 2 : Reveal
+4 : 1 -> 4 : Challenge

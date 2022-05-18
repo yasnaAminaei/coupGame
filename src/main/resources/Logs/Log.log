@@ -1,8 +1,9 @@
-2022-05-18 12:27:55.595 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-18 12:27:55.845 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-18 12:27:55.862 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-18 12:27:56.447 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-18 12:27:57.601 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-18 12:27:59.938 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - chosen player :2
-2022-05-18 12:27:59.942 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - is not blocking
-2022-05-18 12:28:01.278 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 13:51:58.566 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-18 13:51:58.900 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-18 13:51:58.925 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 13:51:59.656 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-18 13:52:01.846 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 13:52:05.353 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
+2022-05-18 13:52:07.177 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 13:52:15.299 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - chosen player :2
+2022-05-18 13:52:17.014 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

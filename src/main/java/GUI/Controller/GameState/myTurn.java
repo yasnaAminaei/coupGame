@@ -9,6 +9,7 @@ import Actions.UnchallengableActions.UnblockableAction.Coup;
 import ManageGameStates.GameProcessor;
 import ManageGameStates.GameTurns;
 import ManageGameStates.ProcessTheGame.ChallengeOrAllowState;
+import ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState;
 import ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState;
 import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.Player;
@@ -109,8 +110,14 @@ public class myTurn {
     }
 
     @FXML
-    void revealAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-       // Player human =PlayersDataBase.getNotAIPlayer();
+    void revealAction(ActionEvent event) throws IOException {
+        if (haveEnoughCoins(3)){
+            Player human =PlayersDataBase.getNotAIPlayer();
+            GameTurns.setAllTurn(human,GameState.ChoosePlayer);
+            Reveal reveal=new Reveal(human);
+            ChoosePlayerToRevealState choosePlayerToRevealState=new ChoosePlayerToRevealState(reveal);
+        }
+       //Player human =PlayersDataBase.getNotAIPlayer();
         //ChoosePlayer choosePlayer = new ChoosePlayer();
         //Player p = choosePlayer.getChoosePlayer();
         //new Reveal(PlayersDataBase.getNotAIPlayer(),p);

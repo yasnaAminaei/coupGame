@@ -11,10 +11,6 @@ public class Steal extends NonSoloChallengeAbleAction {
 
     // Steal $2 from another player; blocked by captain and ambassador
 
-
-
-
-
     public Steal(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
         this.cardsTypes= CardsTypes.Captain;
