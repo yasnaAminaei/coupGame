@@ -2,6 +2,7 @@ package Model.Players.AI;
 
 import Actions.Action;
 import Actions.ActionRespond;
+import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
@@ -30,10 +31,17 @@ public class AI extends Player {
         this.getAliveCards().get(0).setAlive(false);
     }
 
-    public boolean ChallengeOrAllow(Challenge challengeAbleAction) throws IOException {
-        return true;
+    public boolean ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
+        return false;
     }
 
+
+    public ActionRespond blockOrChallengeOrAllow(Action action) throws IOException {
+       if (BlockOrAllow(action).equals(BlockActionKinds.nothing)){
+           return ActionRespond.allow;
+       }
+       return ActionRespond.blocked;
+    }
 
     public BlockActionKinds BlockOrAllow(Action action) throws IOException {
         String actionName = action.getName();
@@ -41,12 +49,12 @@ public class AI extends Player {
             case "Steal" :
                 return BlockOrAllowStealing(action);
             case "Reveal" :
-                if (BlockOrAllowRevealing(action)==ActionRespond.allow){
+                if (BlockOrAllowRevealing(action).equals(ActionRespond.allow)){
                     return BlockActionKinds.Block_revealing;
                 }
                 break;
             case "Foreign_aid":
-                if (BlockOrAllowForeignAid(action)==ActionRespond.allow){
+                if (BlockOrAllowForeignAid(action).equals(ActionRespond.allow)){
                     return BlockActionKinds.Block_foreign_aid;
                 }
                 break;

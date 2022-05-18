@@ -73,7 +73,7 @@ public class Challenge extends Action {
 
     public void doIfNotBlockAble(Player dower){
         try {
-            isChallenged =((AI) dower).ChallengeOrAllow(this);
+            isChallenged =((AI) dower).ChallengeOrAllow(challengedAction);
         }catch (IOException r){
             log.error("challenge or allow an AI doesnt work");
         }

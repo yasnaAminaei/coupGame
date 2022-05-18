@@ -4,6 +4,7 @@ import Actions.Action;
 import Actions.ActionKind;
 import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import ManageGameStates.CountingActions;
 
@@ -17,39 +18,32 @@ public class paranoid extends AI {
      */
 
 
-    public int turn =0 ;
+    public static int turn =-1 ;
+
+
+
+
 
 
     @Override
-    public void playTheirTurn() throws IOException {
-
-    }
-
-
-    @Override
-    public boolean ChallengeOrAllow(Challenge challenge) throws IOException {
-        Action action =CountingActions.currentAction();
-        if (action instanceof ChallengeAbleAction){
-            turn++;
-            if (turn%2==0){
-                new Challenge(this,(ChallengeAbleAction) action);
-            }
+    public boolean ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
+        if (turn%2==0){
+            new Challenge(this,challengeAbleAction);
         }
-        CountingActions.setWhoseTurn(this);
+        turn++;
+        //CountingActions.setWhoseTurn(this);
         return false;
     }
 
 
-    public ActionRespond BlockOrChallengeOrAllow() throws IOException {
-        Action action =CountingActions.currentAction();
-        if (action instanceof ChallengeAbleAction){
-            turn++;
-            if (turn%2==0){
-                new Challenge(this,(ChallengeAbleAction) action);
-            }
+    @Override
+    public ActionRespond blockOrChallengeOrAllow(Action action) throws IOException {
+        if (turn%2==0){
+            new Challenge(this, (ChallengeAbleAction) action);
+            return ActionRespond.challenged;
         }
-        CountingActions.setWhoseTurn(this);
-        return ActionRespond.allow;
+        turn++;
+        return super.blockOrChallengeOrAllow(action);
     }
 
     public static boolean isChallengeQuestion() throws IOException {

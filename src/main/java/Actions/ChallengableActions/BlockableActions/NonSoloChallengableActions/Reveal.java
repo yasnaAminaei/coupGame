@@ -16,20 +16,10 @@ public class Reveal extends NonSoloChallengeAbleAction {
 
 
 
-    public Card targetCard;
 
 
-    public Reveal(Player notAIPlayer, Player dower) throws FileNotFoundException, UnsupportedEncodingException {
+    public Reveal( Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
-        this.cardsTypes= CardsTypes.Assassin;
-        this.BlockAble=true;
-        this.ChallengeAble=true;
-        this.name="Reveal";
-        new Logging(this);
-    }
-
-    public Reveal(Player human) throws FileNotFoundException, UnsupportedEncodingException {
-        super(human);
         this.cardsTypes= CardsTypes.Assassin;
         this.BlockAble=true;
         this.ChallengeAble=true;
@@ -40,7 +30,9 @@ public class Reveal extends NonSoloChallengeAbleAction {
     @Override
     public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         super.doIfDone();
-        targetCard.setAlive(false);
+        if (target instanceof  AI){
+            ((AI) target).burnACard();
+        }
     }
 
 

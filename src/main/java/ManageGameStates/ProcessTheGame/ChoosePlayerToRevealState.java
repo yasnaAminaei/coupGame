@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class ChoosePlayerToRevealState extends Processor{
 
-    public static Logger log= LogManager.getLogger(ChoosePlayerToStealFromState.class);
+    public static Logger log= LogManager.getLogger(ChoosePlayerToRevealState.class);
 
     Player chosenPlayer;
 
@@ -32,7 +32,11 @@ public class ChoosePlayerToRevealState extends Processor{
         new Logging(reveal);
         if (!AIRespondsChallengedOrBlockedItCorrectly()){
             //steal from chosen player
+            log.info("reveal is happening");
             mainActionRunning.doIfDone();//todo
+        }
+        else{
+            log.info("reveal is not happening");
         }
 
 
@@ -42,12 +46,18 @@ public class ChoosePlayerToRevealState extends Processor{
 
 
     public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
-        for (Player p : PlayersDataBase.AIPlayers()) {
+        log.info("enter function AIRespondsChallengedOrBlockedItCorrectly ");
+        log.warn("alive ai s are "+PlayersDataBase.getAliveAIs().size());
+        for (Player p : PlayersDataBase.getAliveAIs()) {
+            log.info(p.playerId+" is responding");
+
             if (p.equals(chosenPlayer)){
+                log.info("chosen player");
 
                 if (p instanceof AI){
 
                     BlockActionKinds blockActionKind =((AI) p).BlockOrAllow(mainActionRunning);
+
 
                     if (blockActionKind.equals(BlockActionKinds.nothing)){
                         log.info("is not blocking");
@@ -63,6 +73,9 @@ public class ChoosePlayerToRevealState extends Processor{
                         }
                     }
 
+                }
+                else{
+                    log.error("p is not ai");
                 }
             }
             else{
@@ -103,6 +116,7 @@ public class ChoosePlayerToRevealState extends Processor{
     public boolean challengeBtP(Player p ) throws IOException {
         Challenge c=new Challenge(p, (ChallengeAbleAction) mainActionRunning);
         if (c.isChallenged()){
+            log.info(" id challenged ");
             if (c.getChallengeResult()){
                 mainActionRunning.stateOfAction= StateOfAction.failed;
                 return true;

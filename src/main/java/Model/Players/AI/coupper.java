@@ -20,13 +20,17 @@ public class coupper extends AI {
 
     @Override
     public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
+
         if (this.getCoins()<7){
-            Tax tax =new Tax(this);
+            //Tax tax=new Tax(this);
+
         }
         else{
-            //new Coup(this);
+            Player p =PlayersDataBase.getAliveAIs().get(0);
+            new Coup(this,p);
         }
-        CountingActions.setWhoseTurn(this);
-
+        //CountingActions.setWhoseTurn(this);
     }
+
+
 }
