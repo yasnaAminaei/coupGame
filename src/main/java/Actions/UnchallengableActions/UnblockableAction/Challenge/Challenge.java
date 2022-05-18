@@ -4,6 +4,10 @@ import Actions.Action;
 import Actions.ActionKind;
 import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByCaptain;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_stealing;
 import Actions.Logging;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
@@ -68,6 +72,9 @@ public class Challenge extends Action {
         if (dower instanceof AI){
             doIfNotBlockAble(dower);
         }
+        else {
+            isChallenged=true;
+        }
         new Logging(this);
     }
 
@@ -89,7 +96,11 @@ public class Challenge extends Action {
 
     public boolean getChallengeResult() {
         Player challengedPlayer = challengedAction.getDower();
+        log.info(challengedAction instanceof BlockStealingByCaptain);
+        //log.warn(challengedAction instanceof BlockStealingByAmbassador);
+        //log.warn(challengedAction instanceof Block_stealing);
         CardsTypes challengedCard = ((ChallengeAbleAction) challengedAction).getCardsTypes();
+        log.info(challengedCard.name());
         return !checkIfPlayerHaveTheCard(challengedPlayer, challengedCard);
     }
 

@@ -62,7 +62,7 @@ public class ChoosePlayerToStealFromState extends Processor {
     }
 
     public boolean BlockedByTargetByCaptain() throws IOException {
-        BlockStealingByAmbassador block_stealing = new BlockStealingByAmbassador(chosenPlayer ,mainActionRunning);
+        BlockStealingByCaptain block_stealing = new BlockStealingByCaptain(chosenPlayer ,mainActionRunning);
         return BlockedByTarget(block_stealing);
     }
 

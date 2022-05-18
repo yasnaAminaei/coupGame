@@ -44,12 +44,9 @@ public class ChallengeOrAllow {
                 //goto next one
                 challengeResult=false;
                 log.info("action is allowed so it is going to happen");
-
             }
         }
-
     }
-
 
 
     public boolean challengeTheAction(ChallengeAbleAction challengeAbleAction) throws IOException {

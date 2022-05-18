@@ -4,3 +4,5 @@
 4 : 2 -> 4 : Challenge
 5 : 3 -> 4 : nothing
 6 : 4 -> 3 : Challenge
+7 : 4 -> KILL : Ambassador
+8 : 3 -> CARDS : null

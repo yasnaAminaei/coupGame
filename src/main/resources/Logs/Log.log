@@ -1,18 +1,20 @@
-2022-05-18 17:17:36.128 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-18 17:17:36.353 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-18 17:17:36.371 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-18 17:17:36.869 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-18 17:17:37.881 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-18 17:17:40.300 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - chosen player :3
-2022-05-18 17:17:40.300 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - cast is ok
-2022-05-18 17:17:40.301 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - state is ok
-2022-05-18 17:17:40.302 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - challenge was not able to be against action
-2022-05-18 17:17:40.304 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - challenge was not able to be against action
-2022-05-18 17:17:40.305 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - blocked
-2022-05-18 17:17:40.306 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - block respond held
-2022-05-18 17:17:40.306 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - captain block
-2022-05-18 17:17:41.435 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
-2022-05-18 17:17:41.436 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : true
-2022-05-18 17:17:41.436 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is not going to happen
-2022-05-18 17:17:41.437 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - challenge is ok so the block is not happening
-2022-05-18 17:17:42.678 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 17:41:13.926 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-18 17:41:14.315 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-18 17:41:14.332 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 17:41:15.049 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-18 17:41:17.977 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 17:41:20.782 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - chosen player :3
+2022-05-18 17:41:20.782 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - cast is ok
+2022-05-18 17:41:20.785 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - state is ok
+2022-05-18 17:41:20.788 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - challenge was not able to be against action
+2022-05-18 17:41:20.790 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - challenge was not able to be against action
+2022-05-18 17:41:20.791 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - blocked
+2022-05-18 17:41:20.791 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - block respond held
+2022-05-18 17:41:20.792 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - captain block
+2022-05-18 17:41:21.635 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
+2022-05-18 17:41:21.637 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - true
+2022-05-18 17:41:21.637 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Captain
+2022-05-18 17:41:21.638 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : false
+2022-05-18 17:41:23.227 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenged action is going to happen
+2022-05-18 17:41:23.231 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - challenge is failed so the block is happening
+2022-05-18 17:41:23.908 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
