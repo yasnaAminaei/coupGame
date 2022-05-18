@@ -16,6 +16,10 @@ public class NonSoloChallengeAbleAction extends ChallengeAbleAction {
 
     Player target;
 
+    public Player getTarget() {
+        return target;
+    }
+
     BlockActions blockAction;
 
     public NonSoloChallengeAbleAction(Player dower) throws FileNotFoundException, UnsupportedEncodingException {

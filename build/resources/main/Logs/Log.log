@@ -1,15 +1,15 @@
-2022-05-18 15:00:39.491 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-18 15:00:39.754 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-18 15:00:39.770 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-18 15:00:40.283 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-18 15:01:23.589 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-18 15:01:25.553 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - chosen player :2
-2022-05-18 15:01:25.553 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-18 15:01:25.554 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - alive ai s are 3
-2022-05-18 15:01:25.555 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - 1 is responding
-2022-05-18 15:01:25.556 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - 2 is responding
-2022-05-18 15:01:25.556 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - chosen player
-2022-05-18 15:01:25.557 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - is not blocking
-2022-05-18 15:01:25.557 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - 3 is responding
-2022-05-18 15:01:25.558 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - reveal is happening
-2022-05-18 15:01:26.100 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 15:06:45.334 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-18 15:06:45.565 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-18 15:06:45.579 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 15:06:46.164 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-18 15:06:47.224 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-18 15:06:49.669 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - chosen player :2
+2022-05-18 15:06:49.670 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - enter function AIRespondsChallengedOrBlockedItCorrectly 
+2022-05-18 15:06:49.671 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - alive ai s are 3
+2022-05-18 15:06:49.671 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - 1 is responding
+2022-05-18 15:06:49.675 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - 2 is responding
+2022-05-18 15:06:49.675 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - chosen player
+2022-05-18 15:06:49.676 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - is not blocking
+2022-05-18 15:06:49.677 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - 3 is responding
+2022-05-18 15:06:49.678 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - reveal is happening
+2022-05-18 15:06:50.407 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

@@ -1,5 +1,6 @@
 package ManageGameStates.ProcessTheGame;
 
+import Actions.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.ChallengeAbleAction;
@@ -48,49 +49,21 @@ public class ChoosePlayerToRevealState extends Processor{
     public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
         log.info("enter function AIRespondsChallengedOrBlockedItCorrectly ");
         log.warn("alive ai s are "+PlayersDataBase.getAliveAIs().size());
-        for (Player p : PlayersDataBase.getAliveAIs()) {
-            log.info(p.playerId+" is responding");
-
-            if (p.equals(chosenPlayer)){
-                log.info("chosen player");
-
-                if (p instanceof AI){
-
-                    BlockActionKinds blockActionKind =((AI) p).BlockOrAllow(mainActionRunning);
-
-
-                    if (blockActionKind.equals(BlockActionKinds.nothing)){
-                        log.info("is not blocking");
-                        if (challengeBtP(p)){
-                            return true;
-                        }
-                    }
-                    else {
-                        log.info("block revealing");
-                        Block_revealing block_revealing=new Block_revealing(p,mainActionRunning);
-                        if (BlockByP(block_revealing)){
-                            return true;
-                        }
-                    }
-
-                }
-                else{
-                    log.error("p is not ai");
-                }
-            }
-            else{
-                if (challengeBtP(p)){
-                    return true;
-                }
-            }
+        ChallengeOrBlockOrAllowState state=new ChallengeOrBlockOrAllowState((ChallengeAbleAction) mainActionRunning);
+        ActionRespond actionRespond=state.blockOrChallengeOtAllowByAI();
+        if (actionRespond.equals(ActionRespond.blocked)){
+            return BlockedByTarget();
         }
-        return false;
+        return actionRespond.equals(ActionRespond.challenged);
     }
 
 
-    public boolean BlockByP(Block_revealing block_revealing ) throws IOException {
+
+    public boolean BlockedByTarget() throws IOException {
+        Block_revealing block_revealing=new Block_revealing(chosenPlayer,mainActionRunning);
 
         if (block_revealing.isBlocked()){
+
             ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_revealing);
 
             if(challengeOrAllow.isChallengeResult()){
@@ -110,18 +83,5 @@ public class ChoosePlayerToRevealState extends Processor{
         log.info("is not blocked");
         return false;
 
-    }
-
-
-    public boolean challengeBtP(Player p ) throws IOException {
-        Challenge c=new Challenge(p, (ChallengeAbleAction) mainActionRunning);
-        if (c.isChallenged()){
-            log.info(" id challenged ");
-            if (c.getChallengeResult()){
-                mainActionRunning.stateOfAction= StateOfAction.failed;
-                return true;
-            }
-        }
-        return false;
     }
 }
