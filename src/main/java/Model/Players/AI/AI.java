@@ -6,9 +6,12 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKi
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
+import GUI.Controller.GameState.RespondActions.BlockOrAllow;
+import Model.Cards.CardsTypes;
 import Model.Players.Player;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AI extends Player {
 
@@ -25,17 +28,63 @@ public class AI extends Player {
 
     public void burnACard(){
         this.getAliveCards().get(0).setAlive(false);
-
     }
 
     public boolean ChallengeOrAllow(Challenge challengeAbleAction) throws IOException {
         return true;
     }
 
-    public BlockActionKinds BlockOrAllow(Action action) throws IOException {
-        return BlockActionKinds.Block_stealing_by_Ambassador;
 
+    public BlockActionKinds BlockOrAllow(Action action) throws IOException {
+        String actionName = action.getName();
+        switch (actionName){
+            case "Steal" :
+                return BlockOrAllowStealing(action);
+            case "Reveal" :
+                if (BlockOrAllowRevealing(action)==ActionRespond.allow){
+                    return BlockActionKinds.Block_revealing;
+                }
+                break;
+            case "Foreign_aid":
+                if (BlockOrAllowForeignAid(action)==ActionRespond.allow){
+                    return BlockActionKinds.Block_foreign_aid;
+                }
+                break;
+        }
+        return BlockActionKinds.nothing;
     }
+
+    public BlockActionKinds BlockOrAllowStealing(Action action) throws IOException {
+        ArrayList<CardsTypes> cardsTypes= this.getAliveCardsType();
+        if (cardsTypes.contains(CardsTypes.Ambassador)){
+            return BlockActionKinds.Block_stealing_by_Ambassador;
+        }
+        else if (cardsTypes.contains(CardsTypes.Captain)){
+            return BlockActionKinds.Block_stealing_by_captain;
+        }
+        else {
+            return BlockActionKinds.nothing;
+        }
+    }
+
+    public ActionRespond BlockOrAllowForeignAid(Action action) throws IOException {
+        if (this.getAliveCardsType().contains(CardsTypes.Duke)){
+            return ActionRespond.blocked;
+        }
+        return ActionRespond.allow;
+    }
+
+    public ActionRespond BlockOrAllowRevealing(Action action) throws IOException {
+        if (this.getAliveCardsType().contains(CardsTypes.Contessa)){
+            return ActionRespond.blocked;
+        }
+        return ActionRespond.allow;
+    }
+
+
+
+
+
 
     public void ChooseCardsToHave(){
 

@@ -1,7 +1,11 @@
 package Model.Players.AI;
 
+import Actions.Action;
+import Actions.ActionRespond;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
+import Model.Cards.Ambassador;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Cards.CardsTypes;
@@ -10,10 +14,13 @@ import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class killer extends AI{
+
+
 
     /**
      * قاتل محتاط: این بازیکن به دنبال حمله کردن است اما حاضر به بلوف زدن نیست. در صورتی
@@ -21,7 +28,6 @@ public class killer extends AI{
      * اگر در کارت‌هایی که از دسته کارت‌ها می آید قاتل پیدا کند آن‌ را با سفیر عوض می‌کند و در غیر اینصورت تعویض نمی‌کند. در صورت نداشتن
      * سفیر نیز در نوبت خود اگر یک سکه داشته باشد تقاضای تعویض می‌کند و اگر سکه نداشته باشد اقدام به دریافت دو سکه می‌کند.
      */
-
 
 
 

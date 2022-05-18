@@ -66,7 +66,7 @@ public class BlockActions extends NonSoloChallengeAbleAction {
 
     public void doIfBlockAble(Player dower){
         try {
-            BlockActionKinds blockActionKinds=((AI) dower).BlockOrAllow(this);
+            BlockActionKinds blockActionKinds=((AI) dower).BlockOrAllowStealing(this);
             isBlocked =blockActionKinds==BlockActionKinds.Block_stealing_by_Ambassador || blockActionKinds ==BlockActionKinds.Block_stealing_by_captain;
         }catch (IOException r){
             log.error("challenge or allow or block an AI doesnt work");

@@ -47,7 +47,7 @@ public class ChoosePlayerToStealFromState extends Processor {
 
                 if (p instanceof AI){
 
-                    BlockActionKinds blockActionKind =((AI) p).BlockOrAllow(mainActionRunning);
+                    BlockActionKinds blockActionKind =((AI) p).BlockOrAllowStealing(mainActionRunning);
 
                     if (blockActionKind.equals(BlockActionKinds.nothing)){
                         log.info("is not blocking");
