@@ -1,10 +1,13 @@
 package Model.Players;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 
 public class PlayersDataBase {
 
-
+    public static Logger log= LogManager.getLogger(PlayersDataBase.class);
 
     public static ArrayList<Player> players=new ArrayList<>();
 
@@ -19,8 +22,9 @@ public class PlayersDataBase {
 
     public static ArrayList<Player> getAliveAIs(){
         ArrayList<Player> AliveAIPlayer=new ArrayList<>();
-        for (Player player : getPlayers()){
-            if (!player.equals(NotAIPlayer) && player.isAlive()){
+        for (Player player : AIPlayers()){
+
+            if (player.isAlive()){
                 AliveAIPlayer.add(player);
             }
         }
@@ -44,7 +48,7 @@ public class PlayersDataBase {
     public static ArrayList<Player> AIPlayers(){
         ArrayList<Player> AIPlayer=new ArrayList<>();
         for (Player player : getPlayers()){
-            if (!player.equals(NotAIPlayer)){
+            if (!player.equals(getNotAIPlayer())){
                 AIPlayer.add(player);
             }
         }

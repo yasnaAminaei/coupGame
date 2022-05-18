@@ -24,7 +24,7 @@ public class ChoosePlayerBoxes {
             case 3 :
                 return choosePlayer(playerArrayList.get(0),playerArrayList.get(1),playerArrayList.get(2));
         }
-        log.error("array list bound is incorrect");
+        log.error("array list bound is incorrect and is "+ size);
         return null;
     }
 

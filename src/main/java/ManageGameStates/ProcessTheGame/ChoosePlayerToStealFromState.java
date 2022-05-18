@@ -6,7 +6,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.*;
 import Actions.Logging;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import GUI.Controller.GameState.ChallengeOrAllow;
+import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import GUI.Controller.GameState.ChoosePlayer;
 import Model.Players.AI.AI;
 import Model.Players.Player;

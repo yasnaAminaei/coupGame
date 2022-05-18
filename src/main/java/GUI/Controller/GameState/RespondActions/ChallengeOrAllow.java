@@ -1,4 +1,4 @@
-package GUI.Controller.GameState;
+package GUI.Controller.GameState.RespondActions;
 
 import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;

@@ -1,4 +1,4 @@
-package GUI.Controller.GameState;
+package GUI.Controller.GameState.RespondActions;
 
 import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
@@ -6,6 +6,8 @@ import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
+import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
+import GUI.View.Ask.AskBoxes;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
@@ -26,13 +28,16 @@ public class BlockOrChallengeOrAllow {
     Player player;
 
 
+    public ActionRespond actionRespond;
+
+
     public static Logger log= LogManager.getLogger(ChallengeOrAllow.class);
 
 
     public BlockOrChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
         this.player= PlayersDataBase.searchByPlayerId("4");
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
-            ActionRespond actionRespond=blockOrChallengeOrAllow();
+            ActionRespond actionRespond= AskBoxes.allowOrBlockOrChallenge("");
             if (actionRespond.equals(ActionRespond.challenged)){
                 challengeTheAction(challengeAbleAction);
             }
@@ -77,30 +82,7 @@ public class BlockOrChallengeOrAllow {
     }
 
 
-    public ActionRespond blockOrChallengeOrAllow (){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("");
-        alert.setHeaderText("choose 1 cards to have ");
-        alert.setContentText("Choose your option.");
-        ButtonType buttonTypeOne = new ButtonType("Block");
-        ButtonType buttonTypeThree = new ButtonType("Allow");
-        ButtonType buttonTypeCancel = new ButtonType("Challenge");
 
-        alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeThree, buttonTypeCancel);
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == buttonTypeOne){
-            // ... user chose "One"
-            return ActionRespond.blocked;
-        } else if (result.get() == buttonTypeThree) {
-            // ... user chose "Three"
-            return ActionRespond.allow;
-
-        } else {
-            // ... user chose CANCEL or closed the dialog
-            return ActionRespond.challenged;
-        }
-    }
 
 
 }

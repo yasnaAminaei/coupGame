@@ -80,6 +80,9 @@ public class Player {
     }
 
     public boolean isAlive() {
+        if (getAliveCards().size()==0){
+            return false;
+        }
         return alive;
     }
 
@@ -229,6 +232,7 @@ public class Player {
 
 
     public Player(){
+        this.alive=true;
     }
 
 

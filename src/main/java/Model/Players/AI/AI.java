@@ -13,6 +13,9 @@ import java.io.IOException;
 public class AI extends Player {
 
 
+    public AI(){
+        this.alive=true;
+    }
 
     public void playTheirTurn() throws IOException {
         Income income= new Income(this);
