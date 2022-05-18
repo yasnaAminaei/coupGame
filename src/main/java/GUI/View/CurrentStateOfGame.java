@@ -2,8 +2,8 @@ package GUI.View;
 
 import Actions.Action;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
-import GUI.Controller.GameState.CardChoosing.ChooseCartsToHave;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
+import GUI.Controller.GameState.CardChoosing.ChooseCardsToHave;
 import GUI.Controller.GameState.RespondActions.BlockOrChallengeOrAllow;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import ManageGameStates.CountingActions;
@@ -55,12 +55,12 @@ public class CurrentStateOfGame {
 
 
     public void showChooseCardsToBurn() throws IOException {
-        ChooseCartToBurn x=new ChooseCartToBurn();
+        ChooseCardToBurn x=new ChooseCardToBurn();
 
     }
 
     public void showChooseCardsToHave() throws IOException {
-        ChooseCartsToHave chooseCartsToHave=new ChooseCartsToHave(player);
+        ChooseCardsToHave chooseCartsToHave=new ChooseCardsToHave(player);
     }
 
     public void PlayersTurn() throws IOException {

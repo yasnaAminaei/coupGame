@@ -87,6 +87,15 @@ public class Player {
     }
 
 
+    public void changeTheAliveCard(Card x){
+        if (this.getFirstCard().isAlive()){
+            setFirstCard(x);
+        }
+        else {
+            setSecondCard(x);
+        }
+    }
+
     //cards :
 
     public ArrayList<Card> getAliveCards(){

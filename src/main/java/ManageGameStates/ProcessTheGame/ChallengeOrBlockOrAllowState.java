@@ -30,7 +30,7 @@ public class ChallengeOrBlockOrAllowState {
     public ChallengeOrBlockOrAllowState(ChallengeAbleAction challengeAbleAction) throws IOException {
         this.mainAction = challengeAbleAction;
         if (AIRespondsChallengeItCorrectly()) {
-            new ChooseCartToBurn();
+            new ChooseCardToBurn();
         } else {
             mainAction.doIfDone();
         }

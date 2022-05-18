@@ -26,7 +26,7 @@ public class ChoosePlayer {
 
     public ChoosePlayer(){
         ArrayList<Player> playerArrayList = PlayersDataBase.getAliveAIs();
-        log.info("number of alive AIs : "+playerArrayList.size());
+        //log.info("number of alive AIs : "+playerArrayList.size());
         choosePlayer= ChoosePlayerBoxes.choosePlayer(playerArrayList);
     }
 

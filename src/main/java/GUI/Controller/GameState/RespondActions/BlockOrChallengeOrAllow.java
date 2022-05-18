@@ -5,21 +5,17 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
-import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
-import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import GUI.View.Ask.AskBoxes;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class BlockOrChallengeOrAllow {
 
@@ -76,7 +72,7 @@ public class BlockOrChallengeOrAllow {
         }
         else{
             if (Challenge.removeOneCardFromPlayer(player)){
-                new ChooseCartToBurn();
+                new ChooseCardToBurn();
             }
         }
     }

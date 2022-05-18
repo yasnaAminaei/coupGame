@@ -5,7 +5,7 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
-import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import GUI.View.Ask.AskBoxes;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
@@ -58,7 +58,7 @@ public class ChallengeOrAllow {
         log.info("challenge result : "+result);
         if (!result){
             if (Challenge.removeOneCardFromPlayer(player)){
-                new ChooseCartToBurn();
+                new ChooseCardToBurn();
             }
             log.info("challenged action is going to happen");
             Player dower=challengeAbleAction.getDower();
@@ -81,7 +81,7 @@ public class ChallengeOrAllow {
             }
             /*
             if (Challenge.removeOneCardFromPlayer(player)){
-                new ChooseCartToBurn();
+                new ChooseCardToBurn();
             }
 
              */

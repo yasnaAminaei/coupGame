@@ -11,27 +11,25 @@ import org.apache.log4j.Logger;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 
-public class ChooseCartToBurn {
+public class ChooseCardToBurn {
 
 
 
     Player player;
 
 
-    public static Logger log= LogManager.getLogger(ChooseCartToBurn.class);
+    public static Logger log= LogManager.getLogger(ChooseCardToBurn.class);
 
 
-    public ChooseCartToBurn() throws FileNotFoundException, UnsupportedEncodingException {
+    public ChooseCardToBurn() throws FileNotFoundException, UnsupportedEncodingException {
         this.player=PlayersDataBase.getNotAIPlayer();
         int size=player.getAliveCards().size();
         if (size==2){
             Card t= ChooseOneCardToBurn();
             new Kill(player,t);
-            //new Exchange(player,t);
         }
         else if (size==1){
             player.getAliveCards().get(0).setAlive(false);
-            //new Exchange(player);
         }
         else{
             log.error("size =0 ");

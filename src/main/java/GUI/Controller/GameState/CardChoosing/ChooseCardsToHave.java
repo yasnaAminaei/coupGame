@@ -7,16 +7,18 @@ import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-public class ChooseCartsToHave {
+public class ChooseCardsToHave {
 
-    //GUI.Controller.GameState.CardChoosing.ChooseCartsToHave
+    //GUI.Controller.GameState.CardChoosing.ChooseCardsToHave
 
-    public static Logger log= LogManager.getLogger(ChooseCartsToHave.class);
+    public static Logger log= LogManager.getLogger(ChooseCardsToHave.class);
 
 
      Player player;
 
-     public ChooseCartsToHave(Player player){
+
+
+     public ChooseCardsToHave(Player player){
          this.player=player;
          int t = player.getAliveCards().size();
          if (t==2){
@@ -36,9 +38,9 @@ public class ChooseCartsToHave {
     public void ChooseOneCardWitThreeOptions(){
         Card x = CountingActions.randomCard1;
         Card y= CountingActions.randomCard2;
-        Card z= player.getFirstCard();
+        Card z= player.getAliveCards().get(0);
         Card card = ChooseCardsBoxes.chooseCard(x,y,z);
-        player.setFirstCard(card);
+        player.changeTheAliveCard(card);
     }
 
 

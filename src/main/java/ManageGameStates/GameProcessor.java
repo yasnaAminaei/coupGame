@@ -3,7 +3,7 @@ package ManageGameStates;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
@@ -23,7 +23,7 @@ public class GameProcessor {
 
     public void doIfStateOfTheGameISChallengeOrAllow() throws IOException {
         if (AIRespondsChallengeItCorrectly()) {
-            new ChooseCartToBurn();
+            new ChooseCardToBurn();
         } else {
             mainAction.doIfDone();
         }
