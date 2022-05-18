@@ -13,6 +13,8 @@ import GUI.Controller.GameState.ChoosePlayer;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.net.ProxySelector;
@@ -20,12 +22,15 @@ import java.net.ProxySelector;
 public class ChoosePlayerToStealFromState extends Processor {
 
 
+    public static Logger log= LogManager.getLogger(ChoosePlayerToStealFromState.class);
+
     Player chosenPlayer;
 
     public ChoosePlayerToStealFromState(Steal steal) throws IOException {
         this.mainActionRunning=steal;
         ChoosePlayer choosePlayer =new ChoosePlayer();
         this.chosenPlayer = choosePlayer.getChosenPlayer();
+        log.info("chosen player :"+chosenPlayer.getPlayerId());
         ((Steal) mainActionRunning).setTarget(chosenPlayer);
         new Logging(steal);
         if (!AIRespondsChallengedOrBlockedItCorrectly()){
@@ -44,14 +49,17 @@ public class ChoosePlayerToStealFromState extends Processor {
             if (p.equals(chosenPlayer)){
 
                 if (p instanceof AI){
+
                     BlockActionKinds blockActionKind =((AI) p).BlockOrAllow(mainActionRunning);
 
                     if (blockActionKind.equals(BlockActionKinds.nothing)){
+                        log.info("is not blocking");
                         if (challengeBtP(p)){
                             return true;
                         }
                     }
-                    if (blockActionKind.equals(BlockActionKinds.Block_stealing_by_Ambassador)){
+                    else if (blockActionKind.equals(BlockActionKinds.Block_stealing_by_Ambassador)){
+                        log.info("block by ambassador");
                         BlockStealingByAmbassador block_stealing = new BlockStealingByAmbassador(p ,mainActionRunning);
                         if (BlockByP(block_stealing)){
                             return true;
@@ -59,6 +67,7 @@ public class ChoosePlayerToStealFromState extends Processor {
 
                     }
                     else {
+                        log.info("block by captain");
                         BlockStealingByCaptain block_stealing=new BlockStealingByCaptain(p,mainActionRunning);
                         if (BlockByP(block_stealing)){
                             return true;
@@ -81,16 +90,22 @@ public class ChoosePlayerToStealFromState extends Processor {
 
         if (block_stealing.isBlocked()){
             ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_stealing);
+
             if(challengeOrAllow.isChallengeResult()){
                 //challenge was ok so blocking not gonna happen
+                log.info("challenge is ok so the block is not happening");
+                return false;
 
             }
             else{
                 //challenge was failed
+                log.info("challenge is failed so the block is happening");
+                mainActionRunning.stateOfAction=StateOfAction.failed;
                 return true;
 
             }
         }
+        log.info("is not blocked");
         return false;
 
     }

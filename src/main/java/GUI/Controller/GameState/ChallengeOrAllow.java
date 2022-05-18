@@ -7,6 +7,7 @@ import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
+import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.scene.control.Alert;
@@ -36,12 +37,15 @@ public class ChallengeOrAllow {
         this.player=PlayersDataBase.getNotAIPlayer();
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
             ActionRespond actionRespond=ChallengeOrAllow();
+            log.info("action respond : "+actionRespond.name());
             if (actionRespond.equals(ActionRespond.challenged)){
                challengeResult = challengeTheAction(challengeAbleAction);
             }
             else{
                 //goto next one
                 challengeResult=false;
+                log.info("action is allowed so it is going to happen");
+
             }
         }
 
@@ -51,7 +55,12 @@ public class ChallengeOrAllow {
     public boolean challengeTheAction(ChallengeAbleAction challengeAbleAction) throws IOException {
         Challenge challenge =new Challenge(player,challengeAbleAction);
         boolean result = challenge.getChallengeResult();
-        if (result){
+        log.info("challenge result : "+result);
+        if (!result){
+            if (Challenge.removeOneCardFromPlayer(player)){
+                new ChooseCartToBurn();
+            }
+            log.info("action is going to happen");
             Player dower=challengeAbleAction.getDower();
             ArrayList<Card> cardArrayList=dower.getAliveCards();
             CardsTypes cardsTypes = challengeAbleAction.getCardsTypes();
@@ -63,9 +72,17 @@ public class ChallengeOrAllow {
             }
         }
         else{
+            Player player1 = challengeAbleAction.getDower();
+            if (player1 instanceof AI){
+                ((AI) player1).burnACard();
+            }
+            /*
             if (Challenge.removeOneCardFromPlayer(player)){
                 new ChooseCartToBurn();
             }
+
+             */
+            log.info("action is not going to happen");
         }
         return result;
     }

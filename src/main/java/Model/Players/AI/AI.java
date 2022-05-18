@@ -21,6 +21,7 @@ public class AI extends Player {
 
 
     public void burnACard(){
+        this.getAliveCards().get(0).setAlive(false);
 
     }
 

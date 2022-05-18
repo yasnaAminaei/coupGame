@@ -22,7 +22,7 @@ public class CardsDataBase {
 
     public static Card searchByCardId(String cardId){
         for (Card card : getCards()){
-            log.warn(cardId+" "+card.getCardId());
+            //log.warn(cardId+" "+card.getCardId());
             String id=card.getCardId();
             if (id.equals(cardId)){
                 return card;

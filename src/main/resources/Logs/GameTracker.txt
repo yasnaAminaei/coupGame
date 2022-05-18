@@ -3,6 +3,5 @@
 3 : 1 -> 4 : Challenge
 4 : 2 -> 4 : nothing
 5 : 4 -> 2 : Challenge
-6 : 2 -> CARDS : null
-7 : 3 -> 4 : Challenge
-8 : 4 -> 4 : Challenge
+6 : 3 -> 4 : Challenge
+7 : 4 -> 4 : Challenge
