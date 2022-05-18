@@ -60,7 +60,7 @@ public class ChallengeOrAllow {
             if (Challenge.removeOneCardFromPlayer(player)){
                 new ChooseCartToBurn();
             }
-            log.info("action is going to happen");
+            log.info("challenged action is going to happen");
             Player dower=challengeAbleAction.getDower();
             ArrayList<Card> cardArrayList=dower.getAliveCards();
             CardsTypes cardsTypes = challengeAbleAction.getCardsTypes();

@@ -41,7 +41,7 @@ public class Exchange extends Action {
         actionKind= ActionKind.Exchange;
         stateOfAction= StateOfAction.done;
         this.exchangedCard=exchangingCard;
-        this.randomCard = CardsDataBase.chooseARandomDeadCard();
+        this.randomCard = CardsDataBase.chooseARandomDeadCard();//todo
         doIfDone();
         new Logging(this);
     }
