@@ -1,6 +1,7 @@
 package ManageGameStates.ProcessTheGame;
 
 import Actions.ActionRespond;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
@@ -32,8 +33,6 @@ public class ChallengeOrBlockOrAllowState {
         this.mainAction=mainAction;
     }
 
-
-
     public boolean challengeByAI(AI p) throws IOException {
         Challenge c=new Challenge(p, (ChallengeAbleAction) mainAction);
         if (c.isChallenged()){
@@ -47,16 +46,14 @@ public class ChallengeOrBlockOrAllowState {
         return false;
     }
 
-
     public ActionRespond blockOrChallengeOtAllowByAI(AI x) throws IOException {
         return x.blockOrChallengeOrAllow(mainAction);
     }
 
-
     public ActionRespond blockOrChallengeOtAllowByAI(){
 
         try {
-            Player target = ((Reveal) mainAction).getTarget();
+            Player target = ((NonSoloChallengeAbleAction) mainAction).getTarget();
             for (Player x : PlayersDataBase.getAliveAIs()){
 
                 if (x.equals(target)){
@@ -80,7 +77,6 @@ public class ChallengeOrBlockOrAllowState {
 
     }
 
-
     public  ActionRespond ChallengeOtAllowByAI(AI player) throws IOException {
         boolean challenge = challengeByAI((AI) player);
         if (challenge){
@@ -88,7 +84,6 @@ public class ChallengeOrBlockOrAllowState {
         }
         return ActionRespond.allow;
     }
-
 
     public ActionRespond blockOrChallengeOtAllowByTarget(AI target) throws IOException {
 
@@ -98,9 +93,6 @@ public class ChallengeOrBlockOrAllowState {
         }
         return actionRespond;
     }
-
-
-
 
 
 

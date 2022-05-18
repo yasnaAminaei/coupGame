@@ -1,5 +1,6 @@
 package ManageGameStates.ProcessTheGame;
 
+import Actions.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.*;
@@ -14,7 +15,9 @@ import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class ChoosePlayerToStealFromState extends Processor {
 
@@ -29,63 +32,49 @@ public class ChoosePlayerToStealFromState extends Processor {
         this.chosenPlayer = choosePlayer.getChosenPlayer();
         log.info("chosen player :"+chosenPlayer.getPlayerId());
         ((Steal) mainActionRunning).setTarget(chosenPlayer);
+        log.info("cast is ok");
         new Logging(steal);
         if (!AIRespondsChallengedOrBlockedItCorrectly()){
             //steal from chosen player
             mainActionRunning.doIfDone();
         }
-
-
-
-
     }
-
 
     public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
-        for (Player p : PlayersDataBase.AIPlayers()) {
-            if (p.equals(chosenPlayer)){
-
-                if (p instanceof AI){
-
-                    BlockActionKinds blockActionKind =((AI) p).BlockOrAllowStealing(mainActionRunning);
-
-                    if (blockActionKind.equals(BlockActionKinds.nothing)){
-                        log.info("is not blocking");
-                        if (challengeBtP(p)){
-                            return true;
-                        }
-                    }
-                    else if (blockActionKind.equals(BlockActionKinds.Block_stealing_by_Ambassador)){
-                        log.info("block by ambassador");
-                        BlockStealingByAmbassador block_stealing = new BlockStealingByAmbassador(p ,mainActionRunning);
-                        if (BlockByP(block_stealing)){
-                            return true;
-                        }
-
-                    }
-                    else {
-                        log.info("block by captain");
-                        BlockStealingByCaptain block_stealing=new BlockStealingByCaptain(p,mainActionRunning);
-                        if (BlockByP(block_stealing)){
-                            return true;
-                        }
-                    }
-
+        ChallengeOrBlockOrAllowState state=new ChallengeOrBlockOrAllowState((ChallengeAbleAction) mainActionRunning);
+        log.info("state is ok");
+        ActionRespond actionRespond=state.blockOrChallengeOtAllowByAI();
+        log.info(actionRespond.name());
+        if (actionRespond.equals(ActionRespond.blocked)){
+            log.info("block respond held");
+            if (chosenPlayer instanceof AI){
+                BlockActionKinds blockActionKinds=((AI) chosenPlayer).BlockOrAllowStealing(mainActionRunning);
+                if (blockActionKinds.equals(BlockActionKinds.Block_stealing_by_captain)){
+                    log.info("captain block");
+                    return BlockedByTargetByCaptain();
                 }
-            }
-            else{
-                if (challengeBtP(p)){
-                    return true;
-                }
+                log.info("ambassador block");
+                return BlockedByTargetByAmbassador();
+
             }
         }
-        return false;
+        return actionRespond.equals(ActionRespond.challenged);
     }
 
+    public boolean BlockedByTargetByCaptain() throws IOException {
+        BlockStealingByAmbassador block_stealing = new BlockStealingByAmbassador(chosenPlayer ,mainActionRunning);
+        return BlockedByTarget(block_stealing);
+    }
 
-    public boolean BlockByP(Block_stealing block_stealing ) throws IOException {
+    public boolean BlockedByTargetByAmbassador() throws IOException {
+        BlockStealingByAmbassador block_stealing = new BlockStealingByAmbassador(chosenPlayer ,mainActionRunning);
+        return BlockedByTarget(block_stealing);
+    }
 
+    public boolean BlockedByTarget(Block_stealing block_stealing) throws IOException
+    {
         if (block_stealing.isBlocked()){
+
             ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_stealing);
 
             if(challengeOrAllow.isChallengeResult()){
@@ -104,22 +93,7 @@ public class ChoosePlayerToStealFromState extends Processor {
         }
         log.info("is not blocked");
         return false;
-
     }
-
-
-    public boolean challengeBtP(Player p ) throws IOException {
-        Challenge c=new Challenge(p, (ChallengeAbleAction) mainActionRunning);
-        if (c.isChallenged()){
-            if (c.getChallengeResult()){
-                mainActionRunning.stateOfAction= StateOfAction.failed;
-                return true;
-            }
-        }
-        return false;
-    }
-
-
 
 
 }
