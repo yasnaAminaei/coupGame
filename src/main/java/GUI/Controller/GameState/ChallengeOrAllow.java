@@ -5,19 +5,18 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
+import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
+import GUI.View.Ask.AskBoxes;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class ChallengeOrAllow {
 
@@ -52,6 +51,7 @@ public class ChallengeOrAllow {
     }
 
 
+
     public boolean challengeTheAction(ChallengeAbleAction challengeAbleAction) throws IOException {
         Challenge challenge =new Challenge(player,challengeAbleAction);
         boolean result = challenge.getChallengeResult();
@@ -64,12 +64,15 @@ public class ChallengeOrAllow {
             Player dower=challengeAbleAction.getDower();
             ArrayList<Card> cardArrayList=dower.getAliveCards();
             CardsTypes cardsTypes = challengeAbleAction.getCardsTypes();
-            if (cardsTypes.equals(cardArrayList.get(0).getType())){
-                new Exchange(dower,cardArrayList.get(0));
+            if (cardsTypes.equals(cardArrayList.get(0).getType())){//todo
+                Exchange exchange=new Exchange(dower,cardArrayList.get(0));
+                //exchange.doIfDone();
             }
             else{
-                new Exchange(dower,cardArrayList.get(1));
+                Exchange exchangee=new Exchange(dower,cardArrayList.get(1));
+               // exchangee.doIfDone();
             }
+            dower.addCoins(1);
         }
         else{
             Player player1 = challengeAbleAction.getDower();
@@ -89,24 +92,7 @@ public class ChallengeOrAllow {
 
 
     public ActionRespond ChallengeOrAllow (){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("");
-        alert.setHeaderText("");
-        alert.setContentText("Choose your option.");
-        ButtonType buttonTypeThree = new ButtonType("Allow");
-        ButtonType buttonTypeCancel = new ButtonType("Challenge");
-
-        alert.getButtonTypes().setAll(buttonTypeThree, buttonTypeCancel);
-
-        Optional<ButtonType> result = alert.showAndWait();
-         if (result.get() == buttonTypeThree) {
-            // ... user chose "Three"
-            return ActionRespond.allow;
-
-        } else {
-            // ... user chose CANCEL or closed the dialog
-            return ActionRespond.challenged;
-        }
+        return AskBoxes.allowOrChallenge("");
     }
 
 }

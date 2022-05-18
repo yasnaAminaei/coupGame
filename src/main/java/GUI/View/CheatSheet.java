@@ -1,4 +1,4 @@
-package GUI.Controller;
+package GUI.View;
 
 import Model.Cards.*;
 import javafx.collections.FXCollections;
@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 
 public class CheatSheet {
-    //GUI.Controller.CheatSheet
+    //GUI.View.CheatSheet
 
     @FXML
     private ListView<String> cheatSheetListView;

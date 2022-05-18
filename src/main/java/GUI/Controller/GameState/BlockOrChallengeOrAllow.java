@@ -5,6 +5,7 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
+import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;

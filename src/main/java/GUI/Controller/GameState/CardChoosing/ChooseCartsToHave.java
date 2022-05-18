@@ -1,5 +1,6 @@
-package GUI.Controller.GameState;
+package GUI.Controller.GameState.CardChoosing;
 
+import GUI.View.Ask.ChooseCardsBoxes;
 import ManageGameStates.CountingActions;
 import Model.Cards.Card;
 import Model.Players.Player;
@@ -8,7 +9,7 @@ import org.apache.log4j.Logger;
 
 public class ChooseCartsToHave {
 
-    //GUI.Controller.GameState.ChooseCartsToHave
+    //GUI.Controller.GameState.CardChoosing.ChooseCartsToHave
 
     public static Logger log= LogManager.getLogger(ChooseCartsToHave.class);
 
@@ -36,7 +37,7 @@ public class ChooseCartsToHave {
         Card x = CountingActions.randomCard1;
         Card y= CountingActions.randomCard2;
         Card z= player.getFirstCard();
-        Card card =ChooseCards.chooseCard(x,y,z);
+        Card card = ChooseCardsBoxes.chooseCard(x,y,z);
         player.setFirstCard(card);
     }
 
@@ -46,7 +47,7 @@ public class ChooseCartsToHave {
         Card y= CountingActions.randomCard2;
         Card z= player.getFirstCard();
         Card t=player.getSecondCard();
-        Card[] cards =ChooseCards.chooseCard(x,y,z,t);
+        Card[] cards = ChooseCardsBoxes.chooseCard(x,y,z,t);
         player.setFirstCard(cards[0]);
         player.setSecondCard(cards[1]);
     }

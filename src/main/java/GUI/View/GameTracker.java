@@ -1,4 +1,4 @@
-package GUI.Controller;
+package GUI.View;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class GameTracker {
 
-    //GUI.Controller.GameTracker
+    //GUI.View.GameTracker
 
 
     @FXML

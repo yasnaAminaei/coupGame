@@ -1,8 +1,5 @@
 package GUI.View;
 
-import GUI.Controller.CheatSheet;
-import GUI.Controller.GameTracker;
-import GUI.Controller.PlayerInfo;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;

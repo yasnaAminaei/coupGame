@@ -1,19 +1,28 @@
-package GUI.Controller.GameState;
+package GUI.View.Ask;
 
 import Model.Cards.Card;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
-public class ChooseCards {
+public class ChooseCardsBoxes {
 
 
 
-    public static Card chooseCard(Card x, Card y, Card z ){
+    /**
+     * use for exchanging cards ( ambassador ) when 1 card is alive
+     * @param x random card
+     * @param y random card
+     * @param z playersAliveCard
+     * @return chosen card
+     */
+
+    public static Card chooseCard(Card x, Card y, Card z){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("");
-        alert.setHeaderText("choose 1 cards to have ");
+        alert.setHeaderText("choose 1 card");
         alert.setContentText("Choose your option.");
         ButtonType buttonTypeOne = new ButtonType(x.getType().name());
         ButtonType buttonTypeThree = new ButtonType(z.getType().name());
@@ -23,18 +32,21 @@ public class ChooseCards {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne){
-            // ... user chose "One"
             return x;
         } else if (result.get() == buttonTypeThree) {
-            // ... user chose "Three"
             return  z;
 
         } else {
-            // ... user chose CANCEL or closed the dialog
             return y;
         }
     }
 
+    /**
+     * use for burning a card
+     * @param x players alive card
+     * @param y another alive card of the player
+     * @return
+     */
     public static Card chooseCard(Card x, Card y){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("");
@@ -47,13 +59,21 @@ public class ChooseCards {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne){
-            // ... user chose "One"
             return x;
         } else {
-            // ... user chose CANCEL or closed the dialog
             return y;
         }
     }
+
+
+    /**
+     *  use for exchanging cards ( ambassador ) when 2 card is alive
+     * @param x players alive card
+     * @param y another alive card
+     * @param z random card
+     * @param t random card
+     * @return
+     */
 
     public static Card[] chooseCard(Card x, Card y, Card z ,Card t ){
         Card[] cards=new Card[2];

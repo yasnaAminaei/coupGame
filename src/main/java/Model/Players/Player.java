@@ -89,16 +89,16 @@ public class Player {
     public ArrayList<Card> getAliveCards(){
         ArrayList<Card> card=new ArrayList<>();
         Card first=getFirstCard();
-        log.error(first.getCardId());
+        //log.error(first.getCardId());
         Card second=getSecondCard();
-        log.error(second.getCardId());
+        //log.error(second.getCardId());
         if (first.isAlive()){
             card.add(first);
         }
         if (second.isAlive()){
             card.add(second);
         }
-        log.error(card.size());
+        //log.error(card.size());
         return card;
     }
 

@@ -3,7 +3,7 @@ package ManageGameStates.ProcessTheGame;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import GUI.Controller.GameState.ChooseCartToBurn;
+import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 

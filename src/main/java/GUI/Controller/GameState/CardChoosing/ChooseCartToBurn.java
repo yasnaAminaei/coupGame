@@ -1,7 +1,7 @@
-package GUI.Controller.GameState;
+package GUI.Controller.GameState.CardChoosing;
 
 import Actions.Kill;
-import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
+import GUI.View.Ask.ChooseCardsBoxes;
 import Model.Cards.Card;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -42,7 +42,7 @@ public class ChooseCartToBurn {
     public Card ChooseOneCardToBurn(){
         Card x= player.getFirstCard();
         Card y=player.getSecondCard();
-        return ChooseCards.chooseCard(x,y);
+        return ChooseCardsBoxes.chooseCard(x,y);
     }
 
 

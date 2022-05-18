@@ -1,4 +1,4 @@
-package GUI.Controller;
+package GUI.View;
 
 import Model.Cards.Card;
 import Model.Players.Player;
@@ -12,7 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class PlayerInfo {
-    //GUI.Controller.PlayerInfo
+    //GUI.View.PlayerInfo
 
 
 
@@ -46,7 +46,7 @@ public class PlayerInfo {
             String cash=p.getCoins()+"";
             String firstCard;
             String secondCard;
-            if (true || p.equals(player)){
+            if (true || p.equals(player)){//todo
                 Card c1= p.getFirstCard();
                 firstCard=c1.getName()+" \n is alive ?  "+c1.isAlive();
                 Card c2=p.getSecondCard();

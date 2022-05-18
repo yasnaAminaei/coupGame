@@ -1,6 +1,5 @@
 package ManageGameStates.ProcessTheGame;
 
-import Actions.Action;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.*;
@@ -8,7 +7,6 @@ import Actions.Logging;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.ChallengeOrAllow;
-import GUI.Controller.GameState.ChooseCartToBurn;
 import GUI.Controller.GameState.ChoosePlayer;
 import Model.Players.AI.AI;
 import Model.Players.Player;
@@ -17,7 +15,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
-import java.net.ProxySelector;
 
 public class ChoosePlayerToStealFromState extends Processor {
 

@@ -4,3 +4,10 @@
 4 : 4 -> 1 : Challenge
 5 : 4 -> KILL : Ambassador
 6 : 1 -> CARDS : null
+7 : 4 -> ATTEMPT : Steal
+7 : 4 -> 1 : Steal
+8 : 1 -> 4 : nothing
+9 : 4 -> 1 : Challenge
+10 : 2 -> 4 : Challenge
+11 : 3 -> 4 : Challenge
+12 : 4 -> 4 : Challenge

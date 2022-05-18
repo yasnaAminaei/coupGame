@@ -2,6 +2,8 @@ package GUI.View;
 
 import Actions.Action;
 import Actions.ChallengableActions.ChallengeAbleAction;
+import GUI.Controller.GameState.CardChoosing.ChooseCartToBurn;
+import GUI.Controller.GameState.CardChoosing.ChooseCartsToHave;
 import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
 import ManageGameStates.GameTurns;

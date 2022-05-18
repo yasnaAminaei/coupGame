@@ -17,6 +17,15 @@ public class PlayersDataBase {
         return players;
     }
 
+    public static ArrayList<Player> getAliveAIs(){
+        ArrayList<Player> AliveAIPlayer=new ArrayList<>();
+        for (Player player : getPlayers()){
+            if (!player.equals(NotAIPlayer) && player.isAlive()){
+                AliveAIPlayer.add(player);
+            }
+        }
+        return AliveAIPlayer;
+    }
 
     public static Player getNotAIPlayer() {
         return searchByPlayerId("4");
