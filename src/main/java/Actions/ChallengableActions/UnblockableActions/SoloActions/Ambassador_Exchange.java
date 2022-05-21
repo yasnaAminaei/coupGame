@@ -45,11 +45,26 @@ public class Ambassador_Exchange extends SoloAction {
     @Override
     public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         super.doIfDone();
-        if (firstCard!=null){
+        if (firstCard!=null && secondCard!=null){
             actionDower.setFirstCard(firstCard);
-        }
-        if (secondCard!=null){
             actionDower.setSecondCard(secondCard);
+            log.info("enter this fo if done ");
+        }
+        else if (actionDower.getFirstCard().isAlive()){
+            if (firstCard!=null){
+                actionDower.setFirstCard(firstCard);
+            }
+            else{
+                actionDower.setFirstCard(secondCard);
+            }
+        }
+        else{
+            if (firstCard!=null){
+                actionDower.setSecondCard(firstCard);
+            }
+            else{
+                actionDower.setSecondCard(secondCard);
+            }
         }
     }
 }

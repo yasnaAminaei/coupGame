@@ -3,6 +3,8 @@ package GUI.View.Ask;
 import Model.Cards.Card;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -10,6 +12,21 @@ import java.util.Optional;
 public class ChooseCardsBoxes {
 
 
+
+    public static Logger log= LogManager.getLogger(ChooseCardsBoxes.class);
+
+
+    public static Card chooseCard(ArrayList<Card> playersCard){
+        int size= playersCard.size();
+        if (size==1){
+            return playersCard.get(0);
+        }
+        else if (size==2){
+            return chooseCard(playersCard.get(0), playersCard.get(1));
+        }
+        log.error("invalid size input : "+size);
+        return null;
+    }
 
     /**
      * use for exchanging cards ( ambassador ) when 1 card is alive

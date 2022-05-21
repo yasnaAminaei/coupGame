@@ -2,16 +2,16 @@ package GUI.Controller.GameState;
 
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
+import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
+import GUI.View.Ask.ChooseCardsBoxes;
 import ManageGameStates.GameProcessor;
 import ManageGameStates.GameTurns;
-import ManageGameStates.ProcessTheGame.ChallengeOrAllowState;
-import ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState;
-import ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState;
-import ManageGameStates.ProcessTheGame.GameState;
+import ManageGameStates.ProcessTheGame.*;
+import Model.Cards.Card;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
@@ -68,17 +68,6 @@ public class myTurn {
         alert.showAndWait();
     }
 
-
-    @FXML
-    void coupAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-        if (haveEnoughCoins(7)){
-            ChoosePlayer choosePlayer = new ChoosePlayer();
-            //Player p = choosePlayer.getChoosePlayer();
-           // new Coup(PlayersDataBase.getNotAIPlayer(),p);
-        }
-    }
-
-
     public boolean haveEnoughCoins(int neededCoins){
         int coins=PlayersDataBase.getNotAIPlayer().getCoins();
         if (coins<neededCoins){
@@ -88,19 +77,29 @@ public class myTurn {
         return true;
     }
 
+
+    @FXML
+    void coupAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
+        if (haveEnoughCoins(7)){
+            ChoosePlayer choosePlayer = new ChoosePlayer();
+            Player p = choosePlayer.getChosenPlayer();
+            new Coup(PlayersDataBase.getNotAIPlayer(),p);
+        }
+    }
+
+
     @FXML
     void exchangeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
         if (haveEnoughCoins(1)){
             Player human =PlayersDataBase.getNotAIPlayer();
-            Exchange exchange = new Exchange(PlayersDataBase.getNotAIPlayer());
+            Card c =ChooseCardsBoxes.chooseCard(human.getAliveCards());
+            Exchange exchange = new Exchange(human,c);
         }
     }
 
     @FXML
-    void foreignAidAction(ActionEvent event) {
+    void foreignAidAction(ActionEvent event) {//todo
         Player human =PlayersDataBase.getNotAIPlayer();
-
-
     }
 
     @FXML
@@ -111,21 +110,20 @@ public class myTurn {
 
     @FXML
     void revealAction(ActionEvent event) throws IOException {
-        if (haveEnoughCoins(2)){//todo
+        if (haveEnoughCoins(3)){
             Player human =PlayersDataBase.getNotAIPlayer();
             GameTurns.setAllTurn(human,GameState.ChoosePlayer);
             Reveal reveal=new Reveal(human);
             ChoosePlayerToRevealState choosePlayerToRevealState=new ChoosePlayerToRevealState(reveal);
         }
-       //Player human =PlayersDataBase.getNotAIPlayer();
-        //ChoosePlayer choosePlayer = new ChoosePlayer();
-        //Player p = choosePlayer.getChoosePlayer();
-        //new Reveal(PlayersDataBase.getNotAIPlayer(),p);
-
     }
 
     @FXML
-    void spesialExchangeAction(ActionEvent event) {
+    void spesialExchangeAction(ActionEvent event) throws IOException {
+        Player human =PlayersDataBase.getNotAIPlayer();
+        GameTurns.setAllTurn(human,GameState.AmbassadorExchange);
+        Ambassador_Exchange ambassador_exchange=new Ambassador_Exchange(human);
+        new AmbassadorExchangeState(ambassador_exchange);
 
     }
 
@@ -135,7 +133,6 @@ public class myTurn {
         GameTurns.setAllTurn(human,GameState.ChoosePlayer);
         Steal steal=new Steal(human);
         ChoosePlayerToStealFromState choosePlayerToStealFromState=new ChoosePlayerToStealFromState(steal);
-
     }
 
     @FXML
