@@ -77,7 +77,7 @@ public class AI extends Player {
 
     public ActionRespond BlockOrAllowForeignAid(Action action) throws IOException {
         if (this.getAliveCardsType().contains(CardsTypes.Duke)){
-            return ActionRespond.blocked;
+         return ActionRespond.blocked;
         }
         return ActionRespond.allow;
     }

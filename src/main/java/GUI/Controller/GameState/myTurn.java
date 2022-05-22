@@ -4,6 +4,7 @@ import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.R
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
+import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
@@ -98,8 +99,12 @@ public class myTurn {
     }
 
     @FXML
-    void foreignAidAction(ActionEvent event) {//todo
+    void foreignAidAction(ActionEvent event) throws IOException {//todo
         Player human =PlayersDataBase.getNotAIPlayer();
+        GameTurns.setAllTurn(human,GameState.BlockOrAllow);
+        Foreign_aid foreign_aid =new Foreign_aid(human);
+        ForeignAidState foreignAidState=new ForeignAidState(foreign_aid);
+
     }
 
     @FXML
