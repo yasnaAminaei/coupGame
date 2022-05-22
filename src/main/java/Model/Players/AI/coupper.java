@@ -1,5 +1,6 @@
 package Model.Players.AI;
 
+import Actions.Action;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
 import ManageGameStates.CountingActions;
@@ -19,15 +20,15 @@ public class coupper extends AI {
 
 
     @Override
-    public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
+    public Action playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
 
         if (this.getCoins()<7){
-            //Tax tax=new Tax(this);
+            return new Tax(this);
 
         }
         else{
             Player p =PlayersDataBase.getAliveAIs().get(0);
-            new Coup(this,p);
+            return new Coup(this,p);
         }
         //CountingActions.setWhoseTurn(this);
     }

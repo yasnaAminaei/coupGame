@@ -24,9 +24,8 @@ public class AI extends Player {
         this.alive=true;
     }
 
-    public void playTheirTurn() throws IOException {
-        Income income= new Income(this);
-        income.doIfDone();
+    public Action playTheirTurn() throws IOException {
+        return new Income(this);
     }
 
 

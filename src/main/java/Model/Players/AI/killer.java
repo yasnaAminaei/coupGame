@@ -2,13 +2,12 @@ package Model.Players.AI;
 
 import Actions.Action;
 import Actions.ActionRespond;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
+import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
-import Model.Cards.Ambassador;
-import Model.Cards.Card;
-import Model.Cards.CardsDataBase;
-import Model.Cards.CardsTypes;
+import Model.Cards.*;
 import ManageGameStates.CountingActions;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -39,21 +38,22 @@ public class killer extends AI{
 
 
     @Override
-    public void playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
+    public Action playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<CardsTypes>  cardsTypesArrayList = this.getAliveCardsType();
         if (cardsTypesArrayList.contains(CardsTypes.Assassin)){
             //todo
+            return new Reveal(this);
         }
         else if (cardsTypesArrayList.contains(CardsTypes.Ambassador)){
-            drawTowCardsAndChange(this);
+            return drawTowCardsAndChange(this);
         }
         else if (this.getCoins()>=1){
-            drawOneAnChange(this);
+            return drawOneAnChange(this);
         }
         else{
-            foreign_Aid(this);
+            return new Foreign_aid(this);
         }
-        CountingActions.setWhoseTurn(this);
+        //CountingActions.setWhoseTurn(this);
     }
 
 
@@ -62,7 +62,7 @@ public class killer extends AI{
      * @param player draw tow random cards and change the cards
      */
 
-    public static void drawTowCardsAndChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
+    public static Action drawTowCardsAndChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
         Ambassador_Exchange ambassador_exchange= new Ambassador_Exchange(player);
         Card[] randomCards = CardsDataBase.chooseTowRandomDeadCard();
         ArrayList<Card> c = player.getAliveCards();
@@ -87,14 +87,15 @@ public class killer extends AI{
         ambassador_exchange.setFirstCard(changedCard);
         ambassador_exchange.setSecondCard(otherCard);
 
-        ambassador_exchange.doIfDone();
+        return ambassador_exchange;
+        ///ambassador_exchange.doIfDone();
     }
 
     /**
      * pay $1 to draw a card and change
      * @param player is the Model.Players.AI
      */
-    public static void drawOneAnChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
+    public static Action drawOneAnChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
 
         Exchange exchange=new Exchange(player);
         Card random=CardsDataBase.chooseARandomDeadCard();
@@ -107,7 +108,8 @@ public class killer extends AI{
         exchange.setExchangedCard(changedCard);
         exchange.setRandomCard(otherCard);
 
-        exchange.doIfDone();
+        return exchange;
+        //exchange.doIfDone();
     }
 
 

@@ -1,24 +1,21 @@
-2022-05-22 13:49:05.182 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-22 13:49:05.526 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-22 13:49:05.564 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-22 13:49:06.338 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-22 13:49:08.526 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-22 13:49:09.573 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Captain1 Duke3
-2022-05-22 13:49:14.053 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Duke3
-2022-05-22 13:49:14.053 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Captain2
-2022-05-22 13:49:14.054 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-22 13:49:14.055 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-22 13:49:14.057 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
-2022-05-22 13:49:14.059 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-22 13:49:14.059 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
-2022-05-22 13:49:14.061 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
-2022-05-22 13:49:14.873 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-22 13:49:17.882 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Contessa1 Ambassador3
-2022-05-22 13:49:21.993 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Contessa1
-2022-05-22 13:49:21.993 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador3
-2022-05-22 13:49:21.993 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-22 13:49:21.994 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-22 13:49:21.995 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
-2022-05-22 13:49:21.995 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-22 13:49:21.995 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
-2022-05-22 13:49:27.918 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 14:05:29.115 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-22 14:05:29.389 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-22 14:05:29.408 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 14:05:30.039 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-22 14:05:31.635 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 14:05:39.048 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - chosen player :1
+2022-05-22 14:05:39.048 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - cast is ok
+2022-05-22 14:05:39.052 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - state is ok
+2022-05-22 14:05:39.052 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - 1
+2022-05-22 14:05:39.055 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - it is not allowed
+2022-05-22 14:05:39.055 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - blocked
+2022-05-22 14:05:39.056 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - blocked
+2022-05-22 14:05:39.056 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - block respond held
+2022-05-22 14:05:39.056 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - ambassador block
+2022-05-22 14:05:42.171 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
+2022-05-22 14:05:42.175 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
+2022-05-22 14:05:42.176 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
+2022-05-22 14:05:42.177 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : false
+2022-05-22 14:05:43.104 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenged action is going to happen
+2022-05-22 14:05:43.106 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState - challenge is failed so the block is happening
+2022-05-22 14:05:43.632 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

@@ -20,6 +20,16 @@ public class PlayersDataBase {
         return players;
     }
 
+    public static ArrayList<Player> getAlivePlayersNotX(Player x){
+        ArrayList<Player> out =new ArrayList<>();
+        for (Player player : getPlayers()){
+            if (player.isAlive() && !player.equals(x)){
+                out.add(player);
+            }
+        }
+        return out;
+    }
+
     public static ArrayList<Player> getAliveAIs(){
         ArrayList<Player> AliveAIPlayer=new ArrayList<>();
         for (Player player : AIPlayers()){

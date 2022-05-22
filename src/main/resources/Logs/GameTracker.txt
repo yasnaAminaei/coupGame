@@ -1,8 +1,6 @@
-2 : 4 -> CARDS : Ambassador_Exchange
-2 : 4 -> CARDS : Ambassador_Exchange
-4 : 2 -> 4 : Challenge
-5 : 2 -> KILL : Duke
-6 : 4 -> CARDS : Ambassador_Exchange
-6 : 4 -> CARDS : Ambassador_Exchange
-8 : 2 -> 4 : Challenge
-9 : 4 -> KILL : Duke
+2 : 4 -> ATTEMPT : Steal
+2 : 4 -> 1 : Steal
+3 : 1 -> 4 : Block_stealing_by_Ambassador
+4 : 4 -> 1 : Challenge
+5 : 4 -> KILL : Ambassador
+6 : 1 -> CARDS : EXCHANGE
