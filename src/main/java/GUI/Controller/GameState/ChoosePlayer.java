@@ -1,5 +1,10 @@
 package GUI.Controller.GameState;
 
+import Actions.Action;
+import Actions.ActionKind;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
+import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
+import Actions.Kill;
 import GUI.View.Ask.ChoosePlayerBoxes;
 import Model.Cards.Card;
 import Model.Players.AI.AI;
@@ -24,12 +29,28 @@ public class ChoosePlayer {
         return choosePlayer;
     }
 
-    public ChoosePlayer(){
-        ArrayList<Player> playerArrayList = PlayersDataBase.getAliveAIs();
-        //log.info("number of alive AIs : "+playerArrayList.size());
-        choosePlayer= ChoosePlayerBoxes.choosePlayer(playerArrayList);
+    public ChoosePlayer(Player player,Action action){
+        if (player instanceof  AI){
+            log.info("AI choosing player");
+            if (action instanceof Steal){
+                choosePlayer= ((AI) player).choosePlayerToStealFrom();
+            }
+            else if (action instanceof Reveal){
+                choosePlayer= ((AI) player).ChoosePlayerToAssassinKill();
+            }
+        }
+        else{
+            log.info("human choosing player");
+            ArrayList<Player> playerArrayList = PlayersDataBase.getAliveAIs();
+            choosePlayer= ChoosePlayerBoxes.choosePlayer(playerArrayList);
+        }
     }
 
+    public ChoosePlayer(){
+        log.info("human choosing player");
+        ArrayList<Player> playerArrayList = PlayersDataBase.getAliveAIs();
+        choosePlayer= ChoosePlayerBoxes.choosePlayer(playerArrayList);
+    }
 
 
 }

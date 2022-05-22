@@ -27,8 +27,10 @@ public class ChoosePlayerToStealFromState extends Processor {
     Player chosenPlayer;
 
     public ChoosePlayerToStealFromState(Steal steal) throws IOException {
+
         this.mainActionRunning=steal;
-        ChoosePlayer choosePlayer =new ChoosePlayer();
+        thePlayerWhoIsDoingTheAction=steal.getDower();
+        ChoosePlayer choosePlayer =new ChoosePlayer(thePlayerWhoIsDoingTheAction,steal);
         this.chosenPlayer = choosePlayer.getChosenPlayer();
         log.info("chosen player :"+chosenPlayer.getPlayerId());
         ((Steal) mainActionRunning).setTarget(chosenPlayer);
@@ -41,6 +43,7 @@ public class ChoosePlayerToStealFromState extends Processor {
     }
 
     public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
+
         ChallengeOrBlockOrAllowState state=new ChallengeOrBlockOrAllowState((ChallengeAbleAction) mainActionRunning);
         log.info("state is ok");
         ActionRespond actionRespond=state.blockOrChallengeOtAllowByAI();

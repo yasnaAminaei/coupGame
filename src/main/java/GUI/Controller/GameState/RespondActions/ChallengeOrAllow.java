@@ -50,13 +50,17 @@ public class ChallengeOrAllow {
 
 
     public ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
+        constructorWhenIsHuman(challengeAbleAction);
+    }
+
+    public void constructorWhenIsHuman(ChallengeAbleAction challengeAbleAction) throws IOException {
         this.player=PlayersDataBase.getNotAIPlayer();
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
             setHeadTitle(challengeAbleAction);
             ActionRespond actionRespond=ChallengeOrAllow();
             log.info("action respond : "+actionRespond.name());
             if (actionRespond.equals(ActionRespond.challenged)){
-               challengeResult = challengeTheAction(challengeAbleAction);
+                challengeResult = challengeTheAction(challengeAbleAction);
             }
             else{
                 //goto next one

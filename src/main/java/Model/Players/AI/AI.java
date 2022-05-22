@@ -11,6 +11,7 @@ import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.I
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
+import Model.Players.PlayersDataBase;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -105,12 +106,12 @@ public class AI extends Player {
 
     }
 
-    public void ChoosePlayerToAssassinKill(){
-
+    public Player ChoosePlayerToAssassinKill(){
+        return PlayersDataBase.getAlivePlayersNotX(this).get(0);
     }
 
-    public void choosePlayerToStealFrom(){
-
+    public Player choosePlayerToStealFrom(){
+        return PlayersDataBase.getAlivePlayersNotX(this).get(0);
     }
 
 
