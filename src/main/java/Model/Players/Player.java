@@ -81,6 +81,7 @@ public class Player {
 
     public boolean isAlive() {
         if (getAliveCards().size()==0){
+            alive=false;
             return false;
         }
         return alive;

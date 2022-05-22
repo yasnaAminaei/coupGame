@@ -15,6 +15,7 @@ public class Block_revealing extends BlockActions {
         super(dower,action);
         this.cardsTypes= CardsTypes.Contessa;
         this.blockActionKinds=BlockActionKinds.Block_revealing;
+        this.name=blockActionKinds.name();
         new Logging(this);
 
     }

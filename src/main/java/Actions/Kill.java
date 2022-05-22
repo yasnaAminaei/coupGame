@@ -13,6 +13,9 @@ public class Kill extends Action{
         this.name=x.getName();
         x.setAlive(false);
         new Logging(this);
+        if (!dower.isAlive()){
+            Logging.logDeathOfAPlayer(dower);
+        }
     }
 
     @Override

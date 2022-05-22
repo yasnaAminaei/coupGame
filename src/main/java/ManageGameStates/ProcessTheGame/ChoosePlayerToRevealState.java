@@ -8,6 +8,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.*;
 import Actions.Logging;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import GUI.Controller.GameState.ChoosePlayer;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;
@@ -54,34 +55,32 @@ public class ChoosePlayerToRevealState extends Processor{
         if (actionRespond.equals(ActionRespond.blocked)){
             return BlockedByTarget();
         }
+        log.info("is challenged");
         return actionRespond.equals(ActionRespond.challenged);
     }
 
 
 
     public boolean BlockedByTarget() throws IOException {
+
         Block_revealing block_revealing=new Block_revealing(chosenPlayer,mainActionRunning);
 
-        if (block_revealing.isBlocked()){
+        ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_revealing);
 
-            ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_revealing);
+        if(challengeOrAllow.isChallengeResult()){
+            //challenge was ok so blocking not gonna happen
+            log.info("challenge is ok so the block is not happening");
+            return false;
 
-            if(challengeOrAllow.isChallengeResult()){
-                //challenge was ok so blocking not gonna happen
-                log.info("challenge is ok so the block is not happening");
-                return false;
-
-            }
-            else{
-                //challenge was failed
-                log.info("challenge is failed so the block is happening");
-                mainActionRunning.stateOfAction= StateOfAction.failed;
-                return true;
-
-            }
         }
-        log.info("is not blocked");
-        return false;
+        else{
+            //challenge was failed
+            log.info("challenge is failed so the block is happening");
+            new ChooseCardToBurn();
+            mainActionRunning.stateOfAction= StateOfAction.failed;
+            return true;
+
+        }
 
     }
 }

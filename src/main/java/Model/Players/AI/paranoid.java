@@ -7,6 +7,9 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import ManageGameStates.CountingActions;
+import javafx.scene.Parent;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
@@ -18,7 +21,10 @@ public class paranoid extends AI {
      */
 
 
-    public static int turn =-1 ;
+    public static Logger log= LogManager.getLogger(paranoid.class);
+
+
+    public static int turn =0 ;
 
 
 
@@ -29,9 +35,11 @@ public class paranoid extends AI {
     public boolean ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
         if (turn%2==0){
             //new Challenge(this,challengeAbleAction);
+            log.info("challenge in challenge or allow");
             return true;
         }
         turn++;
+        log.info("not challenging");
         //CountingActions.setWhoseTurn(this);
         return false;
     }
@@ -41,9 +49,11 @@ public class paranoid extends AI {
     public ActionRespond blockOrChallengeOrAllow(Action action) throws IOException {
         if (turn%2==0){
             //new Challenge(this, (ChallengeAbleAction) action);
+            log.info("challenge in block or challenge or allow");
             return ActionRespond.challenged;
         }
         turn++;
+        log.info("not challenging");
         return super.blockOrChallengeOrAllow(action);
     }
 

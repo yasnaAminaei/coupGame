@@ -3,6 +3,7 @@ package Actions;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
+import Model.Players.Player;
 
 import java.io.*;
 
@@ -14,6 +15,24 @@ public class Logging {
     public ActionKind actionKind;
     public StateOfAction stateOfAction;
     public String actionId;
+
+
+
+    public static void logDeathOfAPlayer(Player player){
+
+        String name=player.getName();
+        String id= player.getPlayerId();
+        String formattedLog= "player "+name+" with id "+id+" died \n";
+
+
+        try{
+            FileOutputStream fout=new FileOutputStream("src/main/resources/Logs/GameTracker.txt",true);
+            byte b[]=formattedLog.getBytes();//converting string into byte array
+            fout.write(b);
+            fout.close();
+            System.out.println("success...");
+        }catch(Exception e){System.out.println(e);}
+    }
 
 
 

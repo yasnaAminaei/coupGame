@@ -15,6 +15,7 @@ public class Block_foreign_aid extends BlockActions {
         super(dower,action);
         this.cardsTypes= CardsTypes.Duke;
         this.blockActionKinds=BlockActionKinds.Block_foreign_aid;
+        this.name=blockActionKinds.name();
         new Logging(this);
     }
 

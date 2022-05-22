@@ -14,6 +14,7 @@ public class BlockStealingByAmbassador extends Block_stealing {
         super(dower,action);
         this.cardsTypes= CardsTypes.Ambassador;
         this.blockActionKinds=BlockActionKinds.Block_stealing_by_Ambassador;
+        this.name=blockActionKinds.name();
         new Logging(this);
     }
 

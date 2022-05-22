@@ -69,13 +69,30 @@ public class Challenge extends Action {
         super(dower);
         setProperty();
         this.challengedAction=challengedAction;
+
         if (dower instanceof AI){
-            doIfNotBlockAble(dower);
+            if (challengedAction.isBlockAble()){
+                doIfBlockAble(dower);
+            }
+            else{
+                doIfNotBlockAble(dower);
+            }
         }
         else {
             isChallenged=true;
         }
-        new Logging(this);
+        if (isChallenged){
+            new Logging(this);
+        }
+    }
+
+
+    public void doIfBlockAble(Player dower){
+        try {
+            isChallenged =((AI) dower).blockOrChallengeOrAllow(challengedAction).equals(ActionRespond.challenged);
+        }catch (IOException r){
+            log.error("challenge or allow or block an AI doesnt work");
+        }
     }
 
     public void doIfNotBlockAble(Player dower){

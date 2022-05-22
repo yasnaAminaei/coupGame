@@ -16,6 +16,7 @@ public class BlockStealingByCaptain extends Block_stealing{
         super(dower,action);
         this.cardsTypes= CardsTypes.Captain;
         this.blockActionKinds=BlockActionKinds.Block_stealing_by_captain;
+        this.name=blockActionKinds.name();
         new Logging(this);
     }
 }

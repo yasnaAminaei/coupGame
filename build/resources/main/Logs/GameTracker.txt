@@ -1,2 +1,7 @@
-2 : 4 -> BANK : Foreign_aid
-3 : 2 -> 4 : nothing
+2 : 4 -> ATTEMPT : Reveal
+2 : 4 -> 1 : Reveal
+3 : 1 -> 4 : Block_revealing
+4 : 4 -> 1 : Challenge
+5 : 1 -> KILL : Ambassador
+6 : 1 -> KILL : Assassin
+player killer Model.Players.AI with id 1 died 

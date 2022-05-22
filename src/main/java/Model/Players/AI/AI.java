@@ -5,13 +5,16 @@ import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
+import Actions.Kill;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class AI extends Player {
@@ -27,8 +30,9 @@ public class AI extends Player {
     }
 
 
-    public void burnACard(){
-        this.getAliveCards().get(0).setAlive(false);
+    public void burnACard() throws FileNotFoundException, UnsupportedEncodingException {
+        new Kill( this,this.getAliveCards().get(0));
+       // this.getAliveCards().get(0).setAlive(false);
     }
 
     public boolean ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
@@ -49,12 +53,12 @@ public class AI extends Player {
             case "Steal" :
                 return BlockOrAllowStealing(action);
             case "Reveal" :
-                if (BlockOrAllowRevealing(action).equals(ActionRespond.allow)){
+                if (!BlockOrAllowRevealing(action).equals(ActionRespond.allow)){
                     return BlockActionKinds.Block_revealing;
                 }
                 break;
             case "Foreign_aid":
-                if (BlockOrAllowForeignAid(action).equals(ActionRespond.allow)){
+                if (!BlockOrAllowForeignAid(action).equals(ActionRespond.allow)){
                     return BlockActionKinds.Block_foreign_aid;
                 }
                 break;

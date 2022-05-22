@@ -10,6 +10,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_reveali
 import Actions.Logging;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import GUI.Controller.GameState.ChoosePlayer;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;
@@ -34,15 +35,18 @@ public class ChallengeOrBlockOrAllowState {
     }
 
     public boolean challengeByAI(AI p) throws IOException {
+
         Challenge c=new Challenge(p, (ChallengeAbleAction) mainAction);
         if (c.isChallenged()){
+            log.info("it is challenged by "+p.getPlayerId());
             if (c.getChallengeResult()){
                 log.info("challenge was true");
                 mainAction.stateOfAction= StateOfAction.failed;
                 return true;
             }
+            log.info("challenge was not able to be against action");
         }
-        log.info("challenge was not able to be against action");
+        log.info("is not challenged by "+p.getPlayerId());
         return false;
     }
 
@@ -53,18 +57,23 @@ public class ChallengeOrBlockOrAllowState {
     public ActionRespond blockOrChallengeOtAllowByAI(){
 
         try {
+
             Player target = ((NonSoloChallengeAbleAction) mainAction).getTarget();
+            log.info(target.getPlayerId());
             for (Player x : PlayersDataBase.getAliveAIs()){
 
                 if (x.equals(target)){
                      ActionRespond actionRespond =blockOrChallengeOtAllowByTarget((AI) x);
                      if (!actionRespond.equals(ActionRespond.allow)){
+                         log.info("it is not allowed");
+                         log.info(actionRespond.name());
                          return actionRespond;
                      }
                 }
                 else{
                     ActionRespond actionRespond =ChallengeOtAllowByAI((AI) x);
                     if (actionRespond.equals(ActionRespond.challenged)){
+                        log.info("challenged by not targeted ai");
                         return actionRespond;
                     }
                 }
@@ -80,6 +89,8 @@ public class ChallengeOrBlockOrAllowState {
     public  ActionRespond ChallengeOtAllowByAI(AI player) throws IOException {
         boolean challenge = challengeByAI((AI) player);
         if (challenge){
+            log.info("challenged and it was true");
+            new ChooseCardToBurn();
             return ActionRespond.challenged;
         }
         return ActionRespond.allow;

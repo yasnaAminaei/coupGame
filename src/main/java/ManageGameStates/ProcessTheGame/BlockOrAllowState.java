@@ -71,8 +71,8 @@ public class BlockOrAllowState extends Processor {
 
         Block_foreign_aid block_foreign_aid =new Block_foreign_aid(x,mainActionRunning);
 
-
         ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_foreign_aid);
+
 
         if(challengeOrAllow.isChallengeResult()){
             //challenge was ok so blocking not gonna happen

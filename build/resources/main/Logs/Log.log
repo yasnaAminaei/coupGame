@@ -1,15 +1,19 @@
-2022-05-22 12:00:23.654 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-22 12:00:23.856 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-22 12:00:23.874 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-22 12:00:24.334 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-22 12:00:25.271 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-22 12:00:26.924 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - enter function AIRespondsAllowOrBlockedItCorrectly 
-2022-05-22 12:00:26.925 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ForeignAidState - alive ai s are 3
-2022-05-22 12:00:26.928 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - allow
-2022-05-22 12:00:26.929 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - blocked
-2022-05-22 12:00:28.058 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
-2022-05-22 12:00:28.058 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
-2022-05-22 12:00:28.059 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - challenge is failed so the block is happening
-2022-05-22 12:00:28.059 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - foreign aid blocked
-2022-05-22 12:00:28.059 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - foreign aid is not happening
-2022-05-22 12:00:28.773 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 13:24:28.181 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-22 13:24:28.387 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-22 13:24:28.398 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 13:24:28.825 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-22 13:24:29.639 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 13:24:31.335 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - chosen player :1
+2022-05-22 13:24:31.336 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - enter function AIRespondsChallengedOrBlockedItCorrectly 
+2022-05-22 13:24:31.337 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - alive ai s are 3
+2022-05-22 13:24:31.338 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - 1
+2022-05-22 13:24:31.339 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - it is not allowed
+2022-05-22 13:24:31.340 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChallengeOrBlockOrAllowState - blocked
+2022-05-22 13:24:38.528 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
+2022-05-22 13:24:38.531 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
+2022-05-22 13:24:38.532 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Contessa
+2022-05-22 13:24:38.532 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : true
+2022-05-22 13:24:38.533 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is not going to happen
+2022-05-22 13:24:38.533 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - challenge is ok so the block is not happening
+2022-05-22 13:24:38.533 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState - reveal is happening
+2022-05-22 13:24:39.730 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

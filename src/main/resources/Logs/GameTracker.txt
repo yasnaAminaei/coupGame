@@ -1,8 +1,4 @@
-2 : 4 -> ATTEMPT : Steal
-2 : 4 -> 3 : Steal
-3 : 1 -> 4 : Challenge
-4 : 2 -> 4 : Challenge
-5 : 3 -> 4 : nothing
-6 : 4 -> 3 : Challenge
-7 : 4 -> KILL : Ambassador
-8 : 3 -> CARDS : null
+2 : 4 -> ATTEMPT : Reveal
+2 : 4 -> 1 : Reveal
+3 : 2 -> 4 : Challenge
+4 : 4 -> KILL : Captain

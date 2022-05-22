@@ -1,7 +1,9 @@
 package GUI.Controller.GameState.RespondActions;
 
+import Actions.ActionKind;
 import Actions.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
+import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
@@ -23,6 +25,21 @@ public class ChallengeOrAllow {
 
     Player player;
 
+    String headTitle;
+
+
+
+    public void setHeadTitle(ChallengeAbleAction challengeAbleAction){
+        Player dower=challengeAbleAction.getDower();
+        String dowerName=dower.getName();
+        String dowerId=dower.getPlayerId();
+        String actionKind = challengeAbleAction.getName();
+        CardsTypes cardsType=challengeAbleAction.getCardsTypes();
+        String cardType=cardsType.name();
+        this.headTitle="player "+dowerName+" with id "+dowerId+" wants to "+actionKind+" with card "+cardType;
+    }
+
+
     public boolean challengeResult;
 
     public boolean isChallengeResult() {
@@ -35,6 +52,7 @@ public class ChallengeOrAllow {
     public ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
         this.player=PlayersDataBase.getNotAIPlayer();
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
+            setHeadTitle(challengeAbleAction);
             ActionRespond actionRespond=ChallengeOrAllow();
             log.info("action respond : "+actionRespond.name());
             if (actionRespond.equals(ActionRespond.challenged)){
@@ -89,7 +107,10 @@ public class ChallengeOrAllow {
 
 
     public ActionRespond ChallengeOrAllow (){
-        return AskBoxes.allowOrChallenge("");
+        if (headTitle==null){
+            return AskBoxes.allowOrChallenge("");
+        }
+        return AskBoxes.allowOrChallenge(headTitle);
     }
 
 }
