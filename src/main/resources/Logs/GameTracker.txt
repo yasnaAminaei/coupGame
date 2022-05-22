@@ -1,6 +1,10 @@
-2 : 4 -> ATTEMPT : Steal
-2 : 4 -> 1 : Steal
-3 : 1 -> 4 : Block_stealing_by_Ambassador
-4 : 4 -> 1 : Challenge
-5 : 4 -> KILL : Ambassador
-6 : 1 -> CARDS : EXCHANGE
+2 : 4 -> BANK : INCOME
+3 : 4 -> BANK : Foreign_aid
+4 : 2 -> 4 : Block_foreign_aid
+5 : 4 -> 2 : Challenge
+6 : 4 -> KILL : Captain
+7 : 2 -> CARDS : EXCHANGE
+8 : 4 -> CARDS : EXCHANGE
+9 : 4 -> CARDS : Ambassador_Exchange
+9 : 4 -> CARDS : Ambassador_Exchange
+11 : 2 -> 4 : Challenge

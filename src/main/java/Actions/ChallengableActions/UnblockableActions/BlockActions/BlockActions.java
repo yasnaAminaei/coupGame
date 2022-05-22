@@ -6,6 +6,8 @@ import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.N
 import Actions.StateOfAction;
 import Model.Players.AI.AI;
 import Model.Players.Player;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,18 +16,17 @@ import java.io.UnsupportedEncodingException;
 public class BlockActions extends NonSoloChallengeAbleAction {
 
 
-
-
     // they are not block able
 
 
+    public static Logger log= LogManager.getLogger(BlockActions.class);
+
 
     Action blockedAction;
+
     BlockActionKinds blockActionKinds;
 
     public ActionRespond actionRespond;
-
-
 
     public boolean isBlocked;
 

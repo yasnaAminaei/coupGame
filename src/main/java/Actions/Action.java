@@ -1,6 +1,8 @@
 package Actions;
 
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import Model.Cards.CardsTypes;
+import Model.Players.AI.AI;
 import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -89,12 +91,25 @@ public class Action {
 
     }
 
-    public void doIfFailed(){
+    public void doIfFailed(){ //todo
+
+        if (actionDower instanceof AI){
+
+
+        }
+        else{
+
+        }
 
     }
 
-    public void doIfChallenged(Player player){
+    public boolean doIfChallengedTruly() throws FileNotFoundException, UnsupportedEncodingException { // so the dower
 
+        if (actionDower instanceof AI){
+            ((AI) actionDower).burnACard();
+            return true;
+        }
+        return false;
     }
 
 

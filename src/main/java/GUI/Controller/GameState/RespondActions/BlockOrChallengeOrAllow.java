@@ -27,6 +27,10 @@ public class BlockOrChallengeOrAllow {
     public ActionRespond actionRespond;
 
 
+    public ActionRespond getActionRespond() {
+        return actionRespond;
+    }
+
     public static Logger log= LogManager.getLogger(ChallengeOrAllow.class);
 
 
