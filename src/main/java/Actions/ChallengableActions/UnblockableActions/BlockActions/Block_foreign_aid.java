@@ -16,7 +16,6 @@ public class Block_foreign_aid extends BlockActions {
         this.cardsTypes= CardsTypes.Duke;
         this.blockActionKinds=BlockActionKinds.Block_foreign_aid;
         new Logging(this);
-
     }
 
 

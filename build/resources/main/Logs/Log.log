@@ -1,15 +1,15 @@
-2022-05-21 15:37:50.301 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-21 15:37:50.758 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-21 15:37:50.784 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-21 15:37:52.513 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-21 15:37:56.314 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-21 15:37:57.764 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Contessa1 Duke3
-2022-05-21 15:38:00.189 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador2
-2022-05-21 15:38:00.189 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Duke3
-2022-05-21 15:38:00.190 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-21 15:38:00.191 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-21 15:38:00.194 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
-2022-05-21 15:38:00.195 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-21 15:38:00.197 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
-2022-05-21 15:38:00.198 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - exchange is not happening
-2022-05-21 15:38:00.790 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 12:00:23.654 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-22 12:00:23.856 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-22 12:00:23.874 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 12:00:24.334 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-22 12:00:25.271 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-22 12:00:26.924 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - enter function AIRespondsAllowOrBlockedItCorrectly 
+2022-05-22 12:00:26.925 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ForeignAidState - alive ai s are 3
+2022-05-22 12:00:26.928 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - allow
+2022-05-22 12:00:26.929 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - blocked
+2022-05-22 12:00:28.058 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
+2022-05-22 12:00:28.058 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
+2022-05-22 12:00:28.059 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - challenge is failed so the block is happening
+2022-05-22 12:00:28.059 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - foreign aid blocked
+2022-05-22 12:00:28.059 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - foreign aid is not happening
+2022-05-22 12:00:28.773 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

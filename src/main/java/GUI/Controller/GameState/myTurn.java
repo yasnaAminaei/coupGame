@@ -99,7 +99,7 @@ public class myTurn {
     }
 
     @FXML
-    void foreignAidAction(ActionEvent event) throws IOException {//todo
+    void foreignAidAction(ActionEvent event) throws IOException {
         Player human =PlayersDataBase.getNotAIPlayer();
         GameTurns.setAllTurn(human,GameState.BlockOrAllow);
         Foreign_aid foreign_aid =new Foreign_aid(human);

@@ -1,8 +1,2 @@
-2 : 4 -> CARDS : Ambassador_Exchange
-2 : 4 -> CARDS : Ambassador_Exchange
-3 : 1 -> 4 : Challenge
-4 : 2 -> 4 : Challenge
-5 : 3 -> 4 : Challenge
-6 : 1 -> 4 : Challenge
-7 : 2 -> 4 : Challenge
-8 : 3 -> 4 : Challenge
+2 : 4 -> BANK : Foreign_aid
+3 : 2 -> 4 : nothing

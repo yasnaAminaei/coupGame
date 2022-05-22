@@ -1,2 +1,8 @@
-2 : 4 -> BANK : Foreign_aid
-3 : 2 -> 4 : nothing
+2 : 4 -> ATTEMPT : Steal
+2 : 4 -> 3 : Steal
+3 : 1 -> 4 : Challenge
+4 : 2 -> 4 : Challenge
+5 : 3 -> 4 : nothing
+6 : 4 -> 3 : Challenge
+7 : 4 -> KILL : Ambassador
+8 : 3 -> CARDS : null
