@@ -4,8 +4,11 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
+import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
@@ -14,6 +17,8 @@ public class ChallengeOrAllowState {
 
 
     public ChallengeAbleAction mainAction;
+
+    public static Logger log= LogManager.getLogger(ChallengeOrAllowState.class);
 
 
     public ChallengeOrAllowState(ChallengeAbleAction challengeAbleAction) throws IOException {
@@ -36,6 +41,12 @@ public class ChallengeOrAllowState {
                 if (c.getChallengeResult()){
                     mainAction.stateOfAction= StateOfAction.failed;
                     return true;
+                }
+                else{
+                    if (p instanceof AI){
+                        ((AI) p).burnACard();
+                    }
+                    return false;
                 }
             }
 

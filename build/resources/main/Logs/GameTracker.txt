@@ -1,7 +1,9 @@
-2 : 4 -> ATTEMPT : Reveal
-2 : 4 -> 1 : Reveal
-3 : 1 -> 4 : Block_revealing
-4 : 4 -> 1 : Challenge
-5 : 1 -> KILL : Ambassador
-6 : 1 -> KILL : Assassin
-player killer Model.Players.AI with id 1 died 
+2 : 4 -> CARDS : Ambassador_Exchange
+2 : 4 -> CARDS : Ambassador_Exchange
+4 : 2 -> 4 : Challenge
+5 : 2 -> KILL : Duke
+6 : 4 -> CARDS : Ambassador_Exchange
+6 : 4 -> CARDS : Ambassador_Exchange
+8 : 2 -> 4 : Challenge
+9 : 2 -> KILL : Contessa
+player paranoid Model.Players.AI with id 2 died 

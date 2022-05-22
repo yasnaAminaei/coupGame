@@ -33,6 +33,8 @@ public class AmbassadorExchangeState extends Processor {
         this.mainActionRunning=ambassador_exchange;
         ChooseRandomCardsAndAskPlayerToChoose();
         new Logging(ambassador_exchange);
+        AIRespondsChallengedOrBlockedItCorrectly();
+        /*
         if (!AIRespondsChallengedOrBlockedItCorrectly()){
             log.info("exchange is happening");
             mainActionRunning.doIfDone();
@@ -40,6 +42,8 @@ public class AmbassadorExchangeState extends Processor {
         else{
             log.info("exchange is not happening");
         }
+
+         */
     }
 
 
@@ -78,11 +82,11 @@ public class AmbassadorExchangeState extends Processor {
 
 
 
-    public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
+    public void AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
         log.info("enter function AIRespondsChallengedOrBlockedItCorrectly ");
         log.warn("alive ai s are "+ PlayersDataBase.getAliveAIs().size());
         ChallengeOrAllowState state=new ChallengeOrAllowState((ChallengeAbleAction) mainActionRunning);
-        return state.AIRespondsChallengeItCorrectly();
+        //return state.AIRespondsChallengeItCorrectly();
     }
 
 

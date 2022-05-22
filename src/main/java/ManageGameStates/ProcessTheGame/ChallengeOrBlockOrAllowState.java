@@ -42,9 +42,11 @@ public class ChallengeOrBlockOrAllowState {
             if (c.getChallengeResult()){
                 log.info("challenge was true");
                 mainAction.stateOfAction= StateOfAction.failed;
+                new ChooseCardToBurn();
                 return true;
             }
             log.info("challenge was not able to be against action");
+            p.burnACard();
         }
         log.info("is not challenged by "+p.getPlayerId());
         return false;
@@ -90,7 +92,6 @@ public class ChallengeOrBlockOrAllowState {
         boolean challenge = challengeByAI((AI) player);
         if (challenge){
             log.info("challenged and it was true");
-            new ChooseCardToBurn();
             return ActionRespond.challenged;
         }
         return ActionRespond.allow;

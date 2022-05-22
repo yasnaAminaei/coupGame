@@ -1,4 +1,8 @@
-2 : 4 -> ATTEMPT : Reveal
-2 : 4 -> 1 : Reveal
-3 : 2 -> 4 : Challenge
-4 : 4 -> KILL : Captain
+2 : 4 -> CARDS : Ambassador_Exchange
+2 : 4 -> CARDS : Ambassador_Exchange
+4 : 2 -> 4 : Challenge
+5 : 2 -> KILL : Duke
+6 : 4 -> CARDS : Ambassador_Exchange
+6 : 4 -> CARDS : Ambassador_Exchange
+8 : 2 -> 4 : Challenge
+9 : 4 -> KILL : Duke
