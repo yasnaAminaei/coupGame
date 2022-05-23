@@ -37,40 +37,52 @@ public class AIProcessor {
          log.info(whoseTurn.getPlayerId()+" is currently playing");
          Action action = whoseTurn.playTheirTurn();
          if (action instanceof Steal){
+             log.info("entered stealing");
              new ChoosePlayerToStealFromAIState((Steal) action);
+             moveToNexPlayer();
          }
 
          else if (action instanceof Income){
+             log.info("income and move to next player");
              moveToNexPlayer();
          }
 
          else if (action instanceof Tax){
              //can not be blocked
              //can be challenged
+             log.info("enter tax");
              new ChallengeOrAllowState((ChallengeAbleAction) action);
+             moveToNexPlayer();
          }
 
          else if (action instanceof Foreign_aid){//todo
              //can not be challenged
              //can be blocked
+             log.info("enter foreign aid");
              new ForeignAidState((Foreign_aid) action);
+             moveToNexPlayer();
          }
 
          else if (action instanceof Coup){
+             log.info("coup and move to next player");
              moveToNexPlayer();
          }
          else if (action instanceof Exchange){
+             log.info("exchange and move to next player");
              moveToNexPlayer();
          }
 
          else if (action instanceof Ambassador_Exchange){
              //both
+             log.info("enter ambassador exchange state");
              new AmbassadorExchangeState((Ambassador_Exchange) action);
+             moveToNexPlayer();
          }
          else if (action instanceof Reveal){
              //both
-             log.warn("enter reveal");
+             log.warn("enter revealing");
              new ChoosePlayerToRevealAIState((Reveal) action);
+             moveToNexPlayer();
          }
          /*
          else{
