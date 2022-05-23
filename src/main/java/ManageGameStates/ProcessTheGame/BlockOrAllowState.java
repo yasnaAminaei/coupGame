@@ -11,6 +11,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_reveali
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;
 import Model.Players.Player;
@@ -27,6 +28,7 @@ public class BlockOrAllowState extends Processor {
 
     public static Logger log= LogManager.getLogger(BlockOrAllowState.class);
 
+
     public BlockOrAllowState(Foreign_aid mainActionRunning) {
         super();
         this.mainActionRunning=mainActionRunning;
@@ -35,21 +37,32 @@ public class BlockOrAllowState extends Processor {
 
     public ActionRespond blockOrAllowByAI(AI x) throws IOException {
         return x.BlockOrAllowForeignAid(mainActionRunning);
-
     }
 
-    public boolean blockOrAllowByAI(){
+    public ActionRespond blockOrAllowByHuman() throws IOException {
+        BlockOrAllow blockOrAllow=new BlockOrAllow((Foreign_aid) mainActionRunning);
+        return blockOrAllow.getActionRespond();
+    }
+
+    public boolean blockOrAllowByPlayers(){
 
         try {
-            for (Player x : PlayersDataBase.getAliveAIs()){
 
-                ActionRespond actionRespond =blockOrAllowByAI((AI) x);
+            for (Player x : PlayersDataBase.getAlivePlayersNotX(mainActionRunning.getDower())){
+
+                ActionRespond actionRespond;
+                if (x instanceof AI){
+                    actionRespond =blockOrAllowByAI((AI) x);
+                }
+                else{
+                    actionRespond=blockOrAllowByHuman();
+                }
 
                 log.info(actionRespond.name());
 
                 if (actionRespond.equals(ActionRespond.blocked)){
 
-                    if (!BlockedByAI((AI)x)){
+                    if (!BlockedByPlayer(x)){
                         log.info("foreign aid aint blocked");
                     }
                     else{
@@ -66,15 +79,25 @@ public class BlockOrAllowState extends Processor {
 
     }
 
+    public boolean BlockedByHuman(Block_foreign_aid block_foreign_aid) throws IOException {
+        ChallengeOrAllowState challengeOrAllowState =new ChallengeOrAllowState(block_foreign_aid);
+        StateOfAction stateOfAction=block_foreign_aid.getStateOfAction();
+        return logTheChallengeResultToBlockAction(!stateOfAction.equals(StateOfAction.failed));
+    }
 
-    public boolean BlockedByAI(AI x) throws IOException {
+    public boolean BlockedByAI(Block_foreign_aid block_foreign_aid) throws IOException {
+        ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_foreign_aid);
+        return logTheChallengeResultToBlockAction(challengeOrAllow.isChallengeResult());
+    }
+
+    public boolean BlockedByPlayer(Player x) throws IOException {
 
         Block_foreign_aid block_foreign_aid =new Block_foreign_aid(x,mainActionRunning);
 
-        ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_foreign_aid);
-
-        return logTheChallengeResultToBlockAction(challengeOrAllow.isChallengeResult());
-
+        if (x instanceof AI){
+            return BlockedByAI(block_foreign_aid);
+        }
+        return BlockedByHuman(block_foreign_aid);
 
     }
 

@@ -1,4 +1,9 @@
-2022-05-23 15:43:58.000 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-23 15:43:58.385 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-23 15:43:58.403 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-23 15:43:59.095 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-23 16:29:51.583 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-23 16:29:51.926 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-23 16:29:51.944 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-23 16:29:52.662 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-23 16:29:54.488 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-23 16:29:55.740 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
+2022-05-23 16:29:55.743 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
+2022-05-23 16:29:55.744 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
+2022-05-23 16:29:57.438 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

@@ -1,4 +1,4 @@
-2022-05-23 13:57:24.087 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-23 13:57:24.432 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-23 13:57:24.453 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-23 13:57:24.991 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-23 15:43:58.000 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-23 15:43:58.385 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-23 15:43:58.403 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-23 15:43:59.095 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created

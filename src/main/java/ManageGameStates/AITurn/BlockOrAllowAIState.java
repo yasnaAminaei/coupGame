@@ -68,6 +68,7 @@ public class BlockOrAllowAIState extends BlockOrAllowState{
         Block_foreign_aid block_foreign_aid =new Block_foreign_aid(x,mainActionRunning);
         Player dower =mainActionRunning.getDower();
         boolean result;
+
         if (dower instanceof AI){
             result =((AI) dower).ChallengeOrAllow(block_foreign_aid);
         }

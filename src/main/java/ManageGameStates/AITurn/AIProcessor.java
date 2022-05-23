@@ -14,6 +14,7 @@ import ManageGameStates.CountingActions;
 import ManageGameStates.GameTurns;
 import ManageGameStates.ProcessTheGame.AmbassadorExchangeState;
 import ManageGameStates.ProcessTheGame.ChallengeOrAllowState;
+import ManageGameStates.ProcessTheGame.ForeignAidState;
 import ManageGameStates.ProcessTheGame.GameState;
 import Model.Players.AI.AI;
 import Model.Players.Player;
@@ -48,6 +49,7 @@ public class AIProcessor {
          else if (action instanceof Foreign_aid){//todo
              //can not be challenged
              //can be blocked
+             new ForeignAidState((Foreign_aid) action);
          }
          else if (action instanceof Coup){
              moveToNexPlayer();

@@ -42,7 +42,7 @@ public class ForeignAidState extends Processor {
         log.info("enter function AIRespondsAllowOrBlockedItCorrectly ");
         log.warn("alive ai s are "+ PlayersDataBase.getAliveAIs().size());
         BlockOrAllowState state=new BlockOrAllowState((Foreign_aid) mainActionRunning);
-        return state.blockOrAllowByAI();
+        return state.blockOrAllowByPlayers();
     }
 
 
