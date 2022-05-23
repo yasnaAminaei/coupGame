@@ -15,13 +15,13 @@ public class AITurnsState {
 
     AI player;
 
-    public Action playersCurrentActionPerformed;
+ //   public Action playersCurrentActionPerformed;
 
 
 
     public AITurnsState(AI player) throws IOException {
         this.player=player;
-        this.playersCurrentActionPerformed=player.playTheirTurn();
+        //this.playersCurrentActionPerformed=player.playTheirTurn();
     }
 
     public void PlayersRespond() throws IOException {

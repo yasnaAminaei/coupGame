@@ -59,6 +59,21 @@ public class myTurn {
 
 
 
+    public void makeButtonsVisibility(boolean visibility){
+        taxButton.setVisible(visibility);
+        stealButton.setVisible(visibility);
+        revealButton.setVisible(visibility);
+        foreignAidButton.setVisible(visibility);
+        exchangeButton.setVisible(visibility);
+        spesialExchangeButton.setVisible(visibility);
+        incomeBurron.setVisible(visibility);
+        coupButton.setVisible(visibility);
+    }
+
+
+
+
+
 
 
     public static void notEnoughCoinsError(){

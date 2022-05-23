@@ -73,8 +73,13 @@ public class BlockOrAllowState extends Processor {
 
         ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_foreign_aid);
 
+        return logTheChallengeResultToBlockAction(challengeOrAllow.isChallengeResult());
 
-        if(challengeOrAllow.isChallengeResult()){
+
+    }
+
+    public boolean logTheChallengeResultToBlockAction(boolean result){
+        if(result){
             //challenge was ok so blocking not gonna happen
             log.info("challenge is ok so the block is not happening");
             return false;
@@ -87,8 +92,6 @@ public class BlockOrAllowState extends Processor {
             return true;
 
         }
-
-
     }
 
 }

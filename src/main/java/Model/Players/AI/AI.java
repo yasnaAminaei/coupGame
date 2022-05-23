@@ -9,6 +9,7 @@ import Actions.Kill;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
+import Model.Cards.Card;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -98,8 +99,14 @@ public class AI extends Player {
 
 
 
-    public void ChooseCardsToHave(){
-
+    public Card[] ChooseCardsToHave(Card x , Card y , Card z , Card t){
+        Card[] cards=new Card[2];
+        cards[0]=x;
+        cards[1]=y;
+        return cards;
+    }
+    public Card ChooseCardsToHave(Card x , Card y , Card z ){
+        return x;
     }
 
     public void ChoosePlayerToCoup(){

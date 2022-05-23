@@ -6,7 +6,7 @@ import Model.Players.Player;
 public class Processor {
 
 
-    Action mainActionRunning;
+    public Action mainActionRunning;
 
 
     static Player thePlayerWhoIsDoingTheAction;

@@ -17,17 +17,20 @@ import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class ChoosePlayerToRevealState extends Processor{
 
     public static Logger log= LogManager.getLogger(ChoosePlayerToRevealState.class);
 
-    Player chosenPlayer;
+    public Player chosenPlayer;
 
     public ChoosePlayerToRevealState(Reveal reveal) throws IOException {
         this.mainActionRunning=reveal;
-        ChoosePlayer choosePlayer =new ChoosePlayer();
+        //ChoosePlayer choosePlayer =new ChoosePlayer();
+        ChoosePlayer choosePlayer =new ChoosePlayer(mainActionRunning.getDower(),reveal);
         this.chosenPlayer = choosePlayer.getChosenPlayer();
         log.info("chosen player :"+chosenPlayer.getPlayerId());
         ((Reveal) mainActionRunning).setTarget(chosenPlayer);
@@ -47,16 +50,24 @@ public class ChoosePlayerToRevealState extends Processor{
     }
 
 
+    public boolean AIRespondsWhenTheWholeRespondOfMainActionKnown(ActionRespond actionRespond) throws IOException {
+        if (actionRespond.equals(ActionRespond.blocked)){
+            log.info("block respond held");
+            if (chosenPlayer instanceof AI){
+                return BlockedByTarget();
+            }
+        }
+        log.info("is challenged");
+        return actionRespond.equals(ActionRespond.challenged);
+    }
+
+
     public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
         log.info("enter function AIRespondsChallengedOrBlockedItCorrectly ");
         log.warn("alive ai s are "+PlayersDataBase.getAliveAIs().size());
         ChallengeOrBlockOrAllowState state=new ChallengeOrBlockOrAllowState((ChallengeAbleAction) mainActionRunning);
         ActionRespond actionRespond=state.blockOrChallengeOtAllowByAI();
-        if (actionRespond.equals(ActionRespond.blocked)){
-            return BlockedByTarget();
-        }
-        log.info("is challenged");
-        return actionRespond.equals(ActionRespond.challenged);
+        return AIRespondsWhenTheWholeRespondOfMainActionKnown(actionRespond);
     }
 
 
@@ -66,8 +77,13 @@ public class ChoosePlayerToRevealState extends Processor{
         Block_revealing block_revealing=new Block_revealing(chosenPlayer,mainActionRunning);
 
         ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_revealing);
+        return logTheChallengeResultToBlockAction(challengeOrAllow.isChallengeResult());
 
-        if(challengeOrAllow.isChallengeResult()){
+    }
+
+
+    public boolean logTheChallengeResultToBlockAction(boolean result) throws FileNotFoundException, UnsupportedEncodingException {
+        if(result){
             //challenge was ok so blocking not gonna happen
             log.info("challenge is ok so the block is not happening");
             return false;
@@ -76,11 +92,10 @@ public class ChoosePlayerToRevealState extends Processor{
         else{
             //challenge was failed
             log.info("challenge is failed so the block is happening");
-            new ChooseCardToBurn();
+            new ChooseCardToBurn(mainActionRunning.getDower());
             mainActionRunning.stateOfAction= StateOfAction.failed;
             return true;
 
         }
-
     }
 }

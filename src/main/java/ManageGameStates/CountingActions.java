@@ -3,7 +3,9 @@ package ManageGameStates;
 import Actions.Action;
 import Actions.ActionDataBase;
 import Actions.StateOfAction;
+import ManageGameStates.AITurn.AIProcessor;
 import Model.Cards.Card;
+import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 
@@ -23,14 +25,23 @@ public class CountingActions {
     public static Card randomCard2;
 
 
-    public static void setWhoseTurn(Player LastTurn) {
+    public static Player setWhoseTurn(Player LastTurn) throws IOException {
         String id=LastTurn.getPlayerId();
         int idInt= Integer.parseInt(id);
         idInt++;
         if (idInt==5){
             idInt=1;
         }
-        whoseTurn= PlayersDataBase.searchByPlayerId(idInt+"");
+        whoseTurn=PlayersDataBase.searchByPlayerId(idInt+"");
+
+        if (whoseTurn instanceof AI){
+            new AIProcessor((AI) whoseTurn);
+        }
+        else{
+            //human turn
+            //make buttons visible
+        }
+        return PlayersDataBase.searchByPlayerId(idInt+"");
     }
 
     public static Action currentAction() throws IOException {

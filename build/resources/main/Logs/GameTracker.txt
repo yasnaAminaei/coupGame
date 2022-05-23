@@ -1,4 +1,0 @@
-2 : 4 -> ATTEMPT : Steal
-2 : 4 -> 2 : Steal
-4 : 2 -> 4 : Challenge
-5 : 2 -> KILL : Duke

@@ -3,6 +3,7 @@ package GUI.Controller.GameState.CardChoosing;
 import Actions.Kill;
 import GUI.View.Ask.ChooseCardsBoxes;
 import Model.Cards.Card;
+import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
@@ -22,6 +23,25 @@ public class ChooseCardToBurn {
 
 
     public ChooseCardToBurn() throws FileNotFoundException, UnsupportedEncodingException {
+        chooseCardsToBurnForHuman();
+    }
+
+    public ChooseCardToBurn(Player player) throws FileNotFoundException, UnsupportedEncodingException {
+        this.player=player;
+        if (player instanceof AI){
+            chooseCardsToBurnForAI((AI) player);
+        }
+        else{
+            chooseCardsToBurnForHuman();
+        }
+    }
+
+
+    public void chooseCardsToBurnForAI(AI x) throws FileNotFoundException, UnsupportedEncodingException {
+        x.burnACard();
+    }
+
+    public void chooseCardsToBurnForHuman() throws FileNotFoundException, UnsupportedEncodingException {
         this.player=PlayersDataBase.getNotAIPlayer();
         int size=player.getAliveCards().size();
         if (size==2){

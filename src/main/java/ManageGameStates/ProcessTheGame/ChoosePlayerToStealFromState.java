@@ -24,7 +24,10 @@ public class ChoosePlayerToStealFromState extends Processor {
 
     public static Logger log= LogManager.getLogger(ChoosePlayerToStealFromState.class);
 
-    Player chosenPlayer;
+    public Player chosenPlayer;
+
+
+
 
     public ChoosePlayerToStealFromState(Steal steal) throws IOException {
 
@@ -42,26 +45,36 @@ public class ChoosePlayerToStealFromState extends Processor {
         }
     }
 
-    public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
 
-        ChallengeOrBlockOrAllowState state=new ChallengeOrBlockOrAllowState((ChallengeAbleAction) mainActionRunning);
-        log.info("state is ok");
-        ActionRespond actionRespond=state.blockOrChallengeOtAllowByAI();
-        log.info(actionRespond.name());
+    public boolean RespondOfTarget(BlockActionKinds blockActionKinds) throws IOException {
+
+        if (blockActionKinds.equals(BlockActionKinds.Block_stealing_by_captain)){
+            log.info("captain block");
+            return BlockedByTargetByCaptain();
+        }
+        log.info("ambassador block");
+        return BlockedByTargetByAmbassador();
+    }
+
+
+
+    public boolean AIRespondsWhenTheWholeRespondOfMainActionKnown(ActionRespond actionRespond) throws IOException {
         if (actionRespond.equals(ActionRespond.blocked)){
             log.info("block respond held");
             if (chosenPlayer instanceof AI){
                 BlockActionKinds blockActionKinds=((AI) chosenPlayer).BlockOrAllowStealing(mainActionRunning);
-                if (blockActionKinds.equals(BlockActionKinds.Block_stealing_by_captain)){
-                    log.info("captain block");
-                    return BlockedByTargetByCaptain();
-                }
-                log.info("ambassador block");
-                return BlockedByTargetByAmbassador();
-
+                return RespondOfTarget(blockActionKinds);
             }
         }
         return actionRespond.equals(ActionRespond.challenged);
+    }
+
+    public boolean AIRespondsChallengedOrBlockedItCorrectly() throws IOException {
+        ChallengeOrBlockOrAllowState state=new ChallengeOrBlockOrAllowState((ChallengeAbleAction) mainActionRunning);
+        log.info("state is ok");
+        ActionRespond actionRespond=state.blockOrChallengeOtAllowByAI();
+        log.info(actionRespond.name());
+        return AIRespondsWhenTheWholeRespondOfMainActionKnown(actionRespond);
     }
 
     public boolean BlockedByTargetByCaptain() throws IOException {
@@ -79,24 +92,28 @@ public class ChoosePlayerToStealFromState extends Processor {
         if (block_stealing.isBlocked()){
 
             ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_stealing);
-
-            if(challengeOrAllow.isChallengeResult()){
-                //challenge was ok so blocking not gonna happen
-                log.info("challenge is ok so the block is not happening");
-                return false;
-
-            }
-            else{
-                //challenge was failed
-                log.info("challenge is failed so the block is happening");
-                mainActionRunning.stateOfAction=StateOfAction.failed;
-                return true;
-
-            }
+            boolean result=challengeOrAllow.isChallengeResult();
+            return logTheChallengeResultToBlockAction(result);
         }
         log.info("is not blocked");
         return false;
     }
 
+    public boolean logTheChallengeResultToBlockAction(boolean result){
+
+        if(result){
+            //challenge was ok so blocking not gonna happen
+            log.info("challenge is ok so the block is not happening");
+            return false;
+
+        }
+        else{
+            //challenge was failed
+            log.info("challenge is failed so the block is happening");
+            mainActionRunning.stateOfAction=StateOfAction.failed;
+            return true;
+
+        }
+    }
 
 }

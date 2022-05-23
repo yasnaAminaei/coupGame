@@ -31,25 +31,32 @@ public class ChoosePlayer {
 
     public ChoosePlayer(Player player,Action action){
         if (player instanceof  AI){
-            log.info("AI choosing player");
-            if (action instanceof Steal){
-                choosePlayer= ((AI) player).choosePlayerToStealFrom();
-            }
-            else if (action instanceof Reveal){
-                choosePlayer= ((AI) player).ChoosePlayerToAssassinKill();
-            }
+            setChoosePlayerForAI(player,action);
         }
         else{
-            log.info("human choosing player");
-            ArrayList<Player> playerArrayList = PlayersDataBase.getAliveAIs();
-            choosePlayer= ChoosePlayerBoxes.choosePlayer(playerArrayList);
+            setChoosePlayerForHuman();
         }
     }
 
-    public ChoosePlayer(){
+    public void setChoosePlayerForAI(Player player,Action action){
+        log.info("AI choosing player");
+        if (action instanceof Steal){
+            choosePlayer= ((AI) player).choosePlayerToStealFrom();
+        }
+        else if (action instanceof Reveal){
+            choosePlayer= ((AI) player).ChoosePlayerToAssassinKill();
+        }
+    }
+
+    public void setChoosePlayerForHuman(){
         log.info("human choosing player");
         ArrayList<Player> playerArrayList = PlayersDataBase.getAliveAIs();
         choosePlayer= ChoosePlayerBoxes.choosePlayer(playerArrayList);
+    }
+
+
+    public ChoosePlayer(){
+        setChoosePlayerForHuman();
     }
 
 

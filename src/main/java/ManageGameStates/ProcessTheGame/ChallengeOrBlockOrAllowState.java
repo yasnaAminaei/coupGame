@@ -117,6 +117,7 @@ public class ChallengeOrBlockOrAllowState {
             for (Player x : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())){//todo
 
                 if (x.equals(target)){
+
                      ActionRespond actionRespond = blockOrChallengeOtAllowByPlayerWhenIsTarget(x);
                      if (actionRespond!=null){
                          return actionRespond;

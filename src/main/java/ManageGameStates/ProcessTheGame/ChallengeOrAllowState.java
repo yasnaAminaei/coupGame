@@ -24,7 +24,7 @@ public class ChallengeOrAllowState {
     public ChallengeOrAllowState(ChallengeAbleAction challengeAbleAction) throws IOException {
         this.mainAction = challengeAbleAction;
         if (AIRespondsChallengeItCorrectly()) {
-            new ChooseCardToBurn();
+            new ChooseCardToBurn(mainAction.getDower());
         } else {
             mainAction.doIfDone();
         }
@@ -35,7 +35,9 @@ public class ChallengeOrAllowState {
 
 
     public boolean AIRespondsChallengeItCorrectly() throws IOException {
-        for (Player p : PlayersDataBase.AIPlayers()) {
+
+        for (Player p : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())) {//todo
+
             Challenge c=new Challenge(p,mainAction);
             if (c.isChallenged()){
                 if (c.getChallengeResult()){
@@ -45,6 +47,9 @@ public class ChallengeOrAllowState {
                 else{
                     if (p instanceof AI){
                         ((AI) p).burnACard();
+                    }
+                    else{
+                        new ChooseCardToBurn(p);//todo
                     }
                     return false;
                 }
