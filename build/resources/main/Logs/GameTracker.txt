@@ -1,0 +1,5 @@
+2 : 4 -> BANK : INCOME
+3 : 1 -> ATTEMPT : Reveal
+3 : 1 -> 2 : Reveal
+4 : 2 -> 1 : Challenge
+5 : 2 -> KILL : Duke

@@ -1,3 +1,5 @@
-2 : 4 -> BANK : TAX
-4 : 2 -> 4 : Challenge
-5 : 4 -> KILL : Ambassador
+2 : 4 -> BANK : INCOME
+3 : 1 -> CARDS : Ambassador_Exchange
+3 : 1 -> CARDS : Ambassador_Exchange
+4 : 2 -> 1 : Challenge
+5 : 2 -> KILL : Duke

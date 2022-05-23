@@ -112,18 +112,20 @@ public class ChallengeOrBlockOrAllowState {
 
             Player target = ((NonSoloChallengeAbleAction) mainAction).getTarget();
 
-            log.info(target.getPlayerId());
+            log.info("target name : "+target.getPlayerId());
 
             for (Player x : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())){//todo
 
                 if (x.equals(target)){
 
+                    log.info("target is responding");
                      ActionRespond actionRespond = blockOrChallengeOtAllowByPlayerWhenIsTarget(x);
                      if (actionRespond!=null){
                          return actionRespond;
                      }
                 }
                 else{
+                    log.info("other players are responding");
                     ActionRespond actionRespond = blockOrChallengeOtAllowByPlayerWhenIsNotTarget(x);
                     if (actionRespond!=null){
                         return actionRespond;

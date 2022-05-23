@@ -1,5 +1,7 @@
 package GUI.View;
 
+import ManageGameStates.CountingActions;
+import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
@@ -49,9 +51,16 @@ public class MainPageOfGame {
 
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
+        Player player =CountingActions.setWhoseTurn();
         ShowPlayerInfo();
         ShowGameTracker();
-        ShowCurrentStateOfGame();
+        if (player instanceof AI){
+
+        }
+        else{
+            ShowCurrentStateOfGame();
+        }
+
     }
 
     @FXML

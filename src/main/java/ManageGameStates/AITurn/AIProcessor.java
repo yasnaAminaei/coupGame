@@ -34,41 +34,51 @@ public class AIProcessor {
 
     public AIProcessor(AI whoseTurn) throws IOException {
          this.whoseTurn=whoseTurn;
+         log.info(whoseTurn.getPlayerId()+" is currently playing");
          Action action = whoseTurn.playTheirTurn();
          if (action instanceof Steal){
              new ChoosePlayerToStealFromAIState((Steal) action);
          }
+
          else if (action instanceof Income){
              moveToNexPlayer();
          }
+
          else if (action instanceof Tax){
              //can not be blocked
              //can be challenged
              new ChallengeOrAllowState((ChallengeAbleAction) action);
          }
+
          else if (action instanceof Foreign_aid){//todo
              //can not be challenged
              //can be blocked
              new ForeignAidState((Foreign_aid) action);
          }
+
          else if (action instanceof Coup){
              moveToNexPlayer();
          }
          else if (action instanceof Exchange){
              moveToNexPlayer();
          }
+
          else if (action instanceof Ambassador_Exchange){
              //both
              new AmbassadorExchangeState((Ambassador_Exchange) action);
          }
          else if (action instanceof Reveal){
              //both
+             log.warn("enter reveal");
              new ChoosePlayerToRevealAIState((Reveal) action);
          }
+         /*
          else{
              log.error("");
 
          }
+
+          */
     }
 
     public void moveToNexPlayer() throws IOException {

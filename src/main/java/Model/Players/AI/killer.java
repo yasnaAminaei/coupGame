@@ -40,7 +40,7 @@ public class killer extends AI{
     @Override
     public Action playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<CardsTypes>  cardsTypesArrayList = this.getAliveCardsType();
-        if (cardsTypesArrayList.contains(CardsTypes.Assassin)){
+        if (cardsTypesArrayList.contains(CardsTypes.Assassin) && this.getCoins() >=3 ){
             //todo
             return new Reveal(this);
         }

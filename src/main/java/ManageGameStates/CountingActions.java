@@ -8,6 +8,8 @@ import Model.Cards.Card;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +27,31 @@ public class CountingActions {
     public static Card randomCard2;
 
 
+    public static Logger log= LogManager.getLogger(CountingActions.class);
+
+    public static Player setWhoseTurn() throws IOException {
+        if (whoseTurn==null){
+            whoseTurn=PlayersDataBase.getNotAIPlayer();
+        }
+        else{
+            String id=whoseTurn.getPlayerId();
+            int idInt= Integer.parseInt(id);
+            idInt++;
+            if (idInt==5){
+                idInt=1;
+            }
+            whoseTurn=PlayersDataBase.searchByPlayerId(idInt+"");
+        }
+
+        if (whoseTurn instanceof AI){
+            new AIProcessor((AI) whoseTurn);
+        }
+        else{
+            //human turn
+            //make buttons visible
+        }
+        return whoseTurn;
+    }
     public static Player setWhoseTurn(Player LastTurn) throws IOException {
         String id=LastTurn.getPlayerId();
         int idInt= Integer.parseInt(id);
