@@ -33,6 +33,8 @@ public class Exchange extends Action {
         stateOfAction= StateOfAction.done;
         this.randomCard = CardsDataBase.chooseARandomDeadCard();
         this.exchangedCard=dower.getAliveCards().get(0);
+        this.name="EXChANGE";
+        //new Logging(this);
     }
 
 

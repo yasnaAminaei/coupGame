@@ -109,8 +109,15 @@ public class AI extends Player {
         return x;
     }
 
-    public void ChoosePlayerToCoup(){
-
+    public Player ChoosePlayerToCoup(){
+        ArrayList<Player> playerArrayList=PlayersDataBase.getAlivePlayersNotX(this);
+        if (playerArrayList.isEmpty()){
+            log.warn(this.getPlayerId()+" won");
+            return null;
+        }
+        else {
+            return playerArrayList.get(0);
+        }
     }
 
     public Player ChoosePlayerToAssassinKill(){

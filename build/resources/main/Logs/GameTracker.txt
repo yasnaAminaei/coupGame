@@ -5,3 +5,17 @@
 7 : 3 -> BANK : TAX
 9 : 2 -> 3 : Challenge
 10 : 3 -> KILL : Captain
+11 : 4 -> CARDS : Ambassador_Exchange
+11 : 4 -> CARDS : Ambassador_Exchange
+15 : 1 -> CARDS : EXCHANGE
+16 : 2 -> BANK : INCOME
+17 : 3 -> BANK : TAX
+19 : 2 -> 3 : Challenge
+20 : 3 -> KILL : Assassin
+player coupper Model.Players.AI with id 3 died 
+21 : 4 -> BANK : INCOME
+22 : 1 -> CARDS : Ambassador_Exchange
+22 : 1 -> CARDS : Ambassador_Exchange
+24 : 2 -> BANK : INCOME
+25 : 3 -> BANK : TAX
+27 : 2 -> 3 : Challenge

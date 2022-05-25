@@ -66,6 +66,21 @@ public class PlayersDataBase {
     }
 
 
+    public static Player getNexAlivePlayer(Player player){
+        String PlayerId=player.getPlayerId();
+        int IntegerId=Integer.parseInt(PlayerId);
+        IntegerId++;
+        if (IntegerId==5){
+            IntegerId=1;
+        }
+        Player next=PlayersDataBase.searchByPlayerId(IntegerId+"");
+        if (!next.isAlive()){
+            return getNexAlivePlayer(next);
+        }
+        return next;
+    }
+
+
 
 
 }

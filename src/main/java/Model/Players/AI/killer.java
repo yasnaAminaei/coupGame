@@ -5,6 +5,7 @@ import Actions.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
+import Actions.Logging;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Model.Cards.*;
@@ -97,18 +98,25 @@ public class killer extends AI{
      */
     public static Action drawOneAnChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
 
-        Exchange exchange=new Exchange(player);
-        Card random=CardsDataBase.chooseARandomDeadCard();
+        //Exchange exchange=new Exchange(player);
+        //new Logging(exchange);
+
+        //Card random=CardsDataBase.chooseARandomDeadCard();
         ArrayList<Card> c = player.getAliveCards();
-        Card changedCard = null;
         Card otherCard = c.get(0);
+        otherCard.setAlive(false);
+        /*
         if (random.getType().equals(CardsTypes.Assassin)){
             changedCard=random;
         }
         exchange.setExchangedCard(changedCard);
         exchange.setRandomCard(otherCard);
 
+         */
+        Exchange exchange =new Exchange(player,otherCard);
         return exchange;
+
+
         //exchange.doIfDone();
     }
 

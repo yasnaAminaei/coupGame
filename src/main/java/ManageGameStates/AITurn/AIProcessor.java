@@ -69,6 +69,7 @@ public class AIProcessor {
          }
          else if (action instanceof Exchange){
              log.info("exchange and move to next player");
+             //new Exchange(whoseTurn);
              moveToNexPlayer();
          }
 
@@ -95,5 +96,6 @@ public class AIProcessor {
 
     public void moveToNexPlayer() throws IOException {
         Player nextPlayer = CountingActions.setWhoseTurn(whoseTurn);
+        log.info(whoseTurn.getPlayerId()+" is going to playyy");
     }
 }

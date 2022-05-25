@@ -30,9 +30,22 @@ public class CountingActions {
     public static Logger log= LogManager.getLogger(CountingActions.class);
 
     public static Player setWhoseTurn() throws IOException {
+
         if (whoseTurn==null){
             whoseTurn=PlayersDataBase.getNotAIPlayer();
         }
+        else{
+            whoseTurn=PlayersDataBase.getNexAlivePlayer(whoseTurn);
+        }
+        log.info(whoseTurn.getPlayerId()+" is going to play");
+
+        if (whoseTurn instanceof AI){
+            new AIProcessor((AI) whoseTurn);
+        }
+        return whoseTurn;
+
+
+        /*
         else{
             String id=whoseTurn.getPlayerId();
             int idInt= Integer.parseInt(id);
@@ -43,14 +56,17 @@ public class CountingActions {
             whoseTurn=PlayersDataBase.searchByPlayerId(idInt+"");
         }
 
-        if (whoseTurn instanceof AI){
-            new AIProcessor((AI) whoseTurn);
+        if (whoseTurn.isAlive()){
+            if (whoseTurn instanceof AI){
+                new AIProcessor((AI) whoseTurn);
+            }
+            return whoseTurn;
         }
-        else{
-            //human turn
-            //make buttons visible
+        else {
+            return setWhoseTurn();
         }
-        return whoseTurn;
+
+         */
     }
     public static Player setWhoseTurn(Player LastTurn) throws IOException {
         String id=LastTurn.getPlayerId();

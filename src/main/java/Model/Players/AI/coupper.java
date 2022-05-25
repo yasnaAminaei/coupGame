@@ -27,7 +27,7 @@ public class coupper extends AI {
 
         }
         else{
-            Player p =PlayersDataBase.getAliveAIs().get(0);
+            Player p =this.ChoosePlayerToCoup();
             return new Coup(this,p);
         }
         //CountingActions.setWhoseTurn(this);
