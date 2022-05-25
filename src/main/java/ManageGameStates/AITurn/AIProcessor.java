@@ -95,7 +95,7 @@ public class AIProcessor {
     }
 
     public void moveToNexPlayer() throws IOException {
-        Player nextPlayer = CountingActions.setWhoseTurn(whoseTurn);
+        Player nextPlayer = CountingActions.setWhoseTurn();
         log.info(whoseTurn.getPlayerId()+" is going to playyy");
     }
 }

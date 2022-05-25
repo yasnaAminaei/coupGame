@@ -7,6 +7,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKi
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.Kill;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import Model.Cards.Card;
@@ -26,6 +27,7 @@ public class AI extends Player {
         this.alive=true;
     }
 
+
     public Action playTheirTurn() throws IOException {
         return new Income(this);
     }
@@ -39,7 +41,6 @@ public class AI extends Player {
     public boolean ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
         return false;
     }
-
 
     public ActionRespond blockOrChallengeOrAllow(Action action) throws IOException {
        if (BlockOrAllow(action).equals(BlockActionKinds.nothing)){
@@ -95,9 +96,12 @@ public class AI extends Player {
     }
 
 
-
-
-
+    public Card ChooseCardToBurnInExchange() throws FileNotFoundException, UnsupportedEncodingException {
+        ArrayList<Card> aliveCards=this.getAliveCards();
+        Card c =  aliveCards.get(0);
+        c.setAlive(false);
+        return c;
+    }
 
     public Card[] ChooseCardsToHave(Card x , Card y , Card z , Card t){
         Card[] cards=new Card[2];

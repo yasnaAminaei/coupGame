@@ -49,7 +49,7 @@ public class killer extends AI{
             return drawTowCardsAndChange(this);
         }
         else if (this.getCoins()>=1){
-            return drawOneAnChange(this);
+            return drawOneAnChange();
         }
         else{
             return new Foreign_aid(this);
@@ -92,19 +92,15 @@ public class killer extends AI{
         ///ambassador_exchange.doIfDone();
     }
 
-    /**
-     * pay $1 to draw a card and change
-     * @param player is the Model.Players.AI
-     */
-    public static Action drawOneAnChange(Player player) throws FileNotFoundException, UnsupportedEncodingException {
+
+    public Action drawOneAnChange() throws FileNotFoundException, UnsupportedEncodingException {
 
         //Exchange exchange=new Exchange(player);
         //new Logging(exchange);
 
         //Card random=CardsDataBase.chooseARandomDeadCard();
-        ArrayList<Card> c = player.getAliveCards();
-        Card otherCard = c.get(0);
-        otherCard.setAlive(false);
+        //Card otherCard=
+        //otherCard.setAlive(false);
         /*
         if (random.getType().equals(CardsTypes.Assassin)){
             changedCard=random;
@@ -113,10 +109,12 @@ public class killer extends AI{
         exchange.setRandomCard(otherCard);
 
          */
-        Exchange exchange =new Exchange(player,otherCard);
-        return exchange;
+        //Exchange exchange =new Exchange(player,otherCard);
+        //return exchange;
 
 
+        Card c=this.ChooseCardToBurnInExchange();
+        return new Exchange(this,c);
         //exchange.doIfDone();
     }
 
