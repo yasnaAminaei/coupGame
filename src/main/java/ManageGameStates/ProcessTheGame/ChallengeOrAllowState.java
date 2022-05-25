@@ -4,6 +4,7 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
+import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -11,6 +12,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 
 public class ChallengeOrAllowState {
 
@@ -38,7 +40,14 @@ public class ChallengeOrAllowState {
 
         for (Player p : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())) {//todo
 
+            if (p.equals(PlayersDataBase.getNotAIPlayer())){
+                ChallengeOrAllow challengeOrAllow =new ChallengeOrAllow(mainAction);
+                boolean result = challengeOrAllow.isChallengeResult();
+                return result;
+            }
+
             Challenge c=new Challenge(p,mainAction);
+
             if (c.isChallenged()){
                 if (c.getChallengeResult()){
                     mainAction.stateOfAction= StateOfAction.failed;

@@ -33,12 +33,12 @@ public class paranoid extends AI {
 
     @Override
     public boolean ChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
+        turn++;
         if (turn%2==0){
             //new Challenge(this,challengeAbleAction);
             log.info("challenge in challenge or allow");
             return true;
         }
-        turn++;
         log.info("not challenging");
         //CountingActions.setWhoseTurn(this);
         return false;
@@ -47,12 +47,12 @@ public class paranoid extends AI {
 
     @Override
     public ActionRespond blockOrChallengeOrAllow(Action action) throws IOException {
+        turn++;
         if (turn%2==0){
             //new Challenge(this, (ChallengeAbleAction) action);
             log.info("challenge in block or challenge or allow");
             return ActionRespond.challenged;
         }
-        turn++;
         log.info("not challenging");
         return super.blockOrChallengeOrAllow(action);
     }
