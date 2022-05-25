@@ -39,12 +39,12 @@ public class AIProcessor {
          if (action instanceof Steal){
              log.info("entered stealing");
              new ChoosePlayerToStealFromAIState((Steal) action);
-             moveToNexPlayer();
+            // moveToNexPlayer();
          }
 
          else if (action instanceof Income){
              log.info("income and move to next player");
-             moveToNexPlayer();
+             //moveToNexPlayer();
          }
 
          else if (action instanceof Tax){
@@ -52,7 +52,7 @@ public class AIProcessor {
              //can be challenged
              log.info("enter tax");
              new ChallengeOrAllowState((ChallengeAbleAction) action);
-             moveToNexPlayer();
+            // moveToNexPlayer();
          }
 
          else if (action instanceof Foreign_aid){//todo
@@ -60,31 +60,31 @@ public class AIProcessor {
              //can be blocked
              log.info("enter foreign aid");
              new ForeignAidState((Foreign_aid) action);
-             moveToNexPlayer();
+             //moveToNexPlayer();
          }
 
          else if (action instanceof Coup){
              log.info("coup and move to next player");
-             moveToNexPlayer();
+            // moveToNexPlayer();
          }
          else if (action instanceof Exchange){
              log.info("exchange and move to next player");
              //new Exchange(whoseTurn);
-             moveToNexPlayer();
+             //moveToNexPlayer();
          }
 
          else if (action instanceof Ambassador_Exchange){
              //both
              log.info("enter ambassador exchange state");
              new AmbassadorExchangeState((Ambassador_Exchange) action);
-             moveToNexPlayer();
+             //moveToNexPlayer();
          }
          else if (action instanceof Reveal){
              //both
              log.warn("enter revealing");
              new ChoosePlayerToRevealAIState((Reveal) action);
-             moveToNexPlayer();
          }
+        moveToNexPlayer();
          /*
          else{
              log.error("");
