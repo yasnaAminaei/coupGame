@@ -32,11 +32,12 @@ public class CountingActions {
     public static Player setWhoseTurn() throws IOException {
 
         if (whoseTurn==null){
-            whoseTurn=PlayersDataBase.getNotAIPlayer();
+            whoseTurn=PlayersDataBase.searchByPlayerId("1");
         }
         else{
             whoseTurn=PlayersDataBase.getNexAlivePlayer(whoseTurn);
         }
+        assert whoseTurn != null;
         log.info(whoseTurn.getPlayerId()+" is going to play");
 
         if (whoseTurn instanceof AI){

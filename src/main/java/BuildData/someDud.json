@@ -1,6 +1,6 @@
 {
 "name" : "some AI",
-"playerId" : "-",
+"playerId" : "5",
 "coins" : "2",
 "alive" : "true",
 "firstCardId" : "Assassin1",

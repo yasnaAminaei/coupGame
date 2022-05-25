@@ -1,7 +1,7 @@
 {
 
-"playerId" : "",
-"alive" : false,
+"playerId" : "5",
+"alive" : true,
 "cardId" : "Assassin1",
 "name" : "Assassin",
 "type" : "Assassin"
