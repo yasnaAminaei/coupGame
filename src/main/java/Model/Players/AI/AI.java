@@ -7,6 +7,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKi
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.Kill;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import Actions.UnchallengableActions.UnblockableAction.Coup;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
@@ -29,6 +30,12 @@ public class AI extends Player {
 
 
     public Action playTheirTurn() throws IOException {
+
+        if (this.getCoins()>=10){
+            Player p = this.ChoosePlayerToCoup();
+            p=PlayersDataBase.getNotAIPlayer();//todo
+            return new Coup(this,p);
+        }
         return new Income(this);
     }
 

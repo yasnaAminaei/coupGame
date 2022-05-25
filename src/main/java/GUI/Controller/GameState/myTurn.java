@@ -75,6 +75,22 @@ public class myTurn {
 
 
 
+    public static void HaveToCoupError(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("");
+        alert.setHeaderText("attention");
+        alert.setContentText("you have to coup");
+        alert.showAndWait();
+    }
+
+    public static boolean HaveToCoup(){
+        int coins=PlayersDataBase.getNotAIPlayer().getCoins();
+        if (coins>=10){
+            HaveToCoup();
+            return false;
+        }
+        return true;
+    }
 
     public static void notEnoughCoinsError(){
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -106,7 +122,7 @@ public class myTurn {
 
     @FXML
     void exchangeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-        if (haveEnoughCoins(1)){
+        if (haveEnoughCoins(1)&& HaveToCoup()){
             Player human =PlayersDataBase.getNotAIPlayer();
             Card c =ChooseCardsBoxes.chooseCard(human.getAliveCards());
             Exchange exchange = new Exchange(human,c);
@@ -115,22 +131,27 @@ public class myTurn {
 
     @FXML
     void foreignAidAction(ActionEvent event) throws IOException {
-        Player human =PlayersDataBase.getNotAIPlayer();
-        GameTurns.setAllTurn(human,GameState.BlockOrAllow);
-        Foreign_aid foreign_aid =new Foreign_aid(human);
-        ForeignAidState foreignAidState=new ForeignAidState(foreign_aid);
+        if (HaveToCoup()){
+            Player human =PlayersDataBase.getNotAIPlayer();
+            GameTurns.setAllTurn(human,GameState.BlockOrAllow);
+            Foreign_aid foreign_aid =new Foreign_aid(human);
+            ForeignAidState foreignAidState=new ForeignAidState(foreign_aid);
+        }
 
     }
 
     @FXML
     void incomeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-        new Income(PlayersDataBase.getNotAIPlayer());
+        if (HaveToCoup()){
+            new Income(PlayersDataBase.getNotAIPlayer());
+        }
+
 
     }
 
     @FXML
     void revealAction(ActionEvent event) throws IOException {
-        if (haveEnoughCoins(2)){//todo
+        if (haveEnoughCoins(2) && HaveToCoup()){//todo
             Player human =PlayersDataBase.getNotAIPlayer();
             GameTurns.setAllTurn(human,GameState.ChoosePlayer);
             Reveal reveal=new Reveal(human);
@@ -149,18 +170,22 @@ public class myTurn {
 
     @FXML
     void stealAction(ActionEvent event) throws IOException {
-        Player human =PlayersDataBase.getNotAIPlayer();
-        GameTurns.setAllTurn(human,GameState.ChoosePlayer);
-        Steal steal=new Steal(human);
-        ChoosePlayerToStealFromState choosePlayerToStealFromState=new ChoosePlayerToStealFromState(steal);
+        if (HaveToCoup()){
+            Player human =PlayersDataBase.getNotAIPlayer();
+            GameTurns.setAllTurn(human,GameState.ChoosePlayer);
+            Steal steal=new Steal(human);
+            ChoosePlayerToStealFromState choosePlayerToStealFromState=new ChoosePlayerToStealFromState(steal);
+        }
     }
 
     @FXML
     void taxAction(ActionEvent event) throws IOException {
-        Player human =PlayersDataBase.getNotAIPlayer();
-        Tax newTax =new Tax(human);
-        GameTurns.setAllTurn(human, GameState.ChallengeOrAllow);
-        new ChallengeOrAllowState(newTax);
+        if (HaveToCoup()){
+            Player human =PlayersDataBase.getNotAIPlayer();
+            Tax newTax =new Tax(human);
+            GameTurns.setAllTurn(human, GameState.ChallengeOrAllow);
+            new ChallengeOrAllowState(newTax);
+        }
     }
 
 }

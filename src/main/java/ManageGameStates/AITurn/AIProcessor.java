@@ -10,6 +10,7 @@ import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
+import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import ManageGameStates.CountingActions;
 import ManageGameStates.GameTurns;
 import ManageGameStates.ProcessTheGame.AmbassadorExchangeState;
@@ -65,6 +66,9 @@ public class AIProcessor {
 
          else if (action instanceof Coup){
              log.info("coup and move to next player");
+             if (((Coup) action).isHuman()){
+                 new ChooseCardToBurn();
+             }
             // moveToNexPlayer();
          }
          else if (action instanceof Exchange){

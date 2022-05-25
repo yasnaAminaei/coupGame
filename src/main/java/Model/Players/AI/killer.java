@@ -7,6 +7,7 @@ import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKi
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.Logging;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
+import Actions.UnchallengableActions.UnblockableAction.Coup;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Model.Cards.*;
 import ManageGameStates.CountingActions;
@@ -41,7 +42,12 @@ public class killer extends AI{
     @Override
     public Action playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<CardsTypes>  cardsTypesArrayList = this.getAliveCardsType();
-        if (cardsTypesArrayList.contains(CardsTypes.Assassin) && this.getCoins() >=3 ){
+        if (this.getCoins()>=10){
+            Player p = this.ChoosePlayerToCoup();
+            p=PlayersDataBase.getNotAIPlayer();//todo
+            return new Coup(this,p);
+        }
+        else if (cardsTypesArrayList.contains(CardsTypes.Assassin) && this.getCoins() >=3 ){
             //todo
             return new Reveal(this);
         }
