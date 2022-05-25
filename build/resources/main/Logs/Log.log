@@ -1,59 +1,58 @@
-2022-05-25 17:18:43.147 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-25 17:18:43.402 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-25 17:18:43.419 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-25 17:18:43.961 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-25 17:18:44.882 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-25 17:18:44.939 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-25 17:18:46.388 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
-2022-05-25 17:18:47.396 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-25 17:18:47.398 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-25 17:18:47.401 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter ambassador exchange state
-2022-05-25 17:18:47.403 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Contessa1 Duke2
-2022-05-25 17:18:47.403 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Contessa1
-2022-05-25 17:18:47.404 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Duke2
-2022-05-25 17:18:47.405 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-25 17:18:47.406 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-25 17:18:47.409 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
-2022-05-25 17:18:48.391 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
-2022-05-25 17:18:48.391 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
-2022-05-25 17:18:48.391 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
-2022-05-25 17:18:48.391 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 2 is going to play
-2022-05-25 17:18:48.391 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is currently playing
-2022-05-25 17:18:48.392 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
-2022-05-25 17:18:48.392 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - income and move to next player
-2022-05-25 17:18:48.392 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-25 17:18:48.392 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-25 17:18:48.392 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
-2022-05-25 17:18:48.392 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
-2022-05-25 17:18:48.393 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-25 17:18:48.394 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
-2022-05-25 17:18:48.395 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-25 17:18:48.395 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is going to playyy
-2022-05-25 17:18:48.395 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is going to playyy
-2022-05-25 17:18:48.395 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is going to playyy
-2022-05-25 17:18:48.423 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-25 17:18:54.354 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Captain3 Ambassador1
-2022-05-25 17:18:55.963 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador2
-2022-05-25 17:18:55.963 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador1
-2022-05-25 17:18:55.965 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-25 17:18:55.966 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-25 17:18:55.966 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
-2022-05-25 17:18:55.966 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
-2022-05-25 17:18:56.740 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-25 17:18:56.741 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-25 17:18:56.742 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - exchange and move to next player
-2022-05-25 17:18:56.743 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 2 is going to play
-2022-05-25 17:18:56.743 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is currently playing
-2022-05-25 17:18:56.743 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
-2022-05-25 17:18:56.744 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - income and move to next player
-2022-05-25 17:18:56.744 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-25 17:18:56.744 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-25 17:18:56.745 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
-2022-05-25 17:18:56.746 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
-2022-05-25 17:18:56.746 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-25 17:18:56.748 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
-2022-05-25 17:18:56.749 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-25 17:18:56.749 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is going to playyy
-2022-05-25 17:18:56.750 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is going to playyy
-2022-05-25 17:18:56.750 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is going to playyy
-2022-05-25 17:18:56.769 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-25 19:13:36.347 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-25 19:13:36.625 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-25 19:13:36.641 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-25 19:13:37.317 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-25 19:13:38.473 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
+2022-05-25 19:13:38.535 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-25 19:13:39.964 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
+2022-05-25 19:13:41.790 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
+2022-05-25 19:13:41.792 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
+2022-05-25 19:13:41.795 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter ambassador exchange state
+2022-05-25 19:13:41.798 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Duke2 Ambassador3
+2022-05-25 19:13:41.799 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Duke2
+2022-05-25 19:13:41.799 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador3
+2022-05-25 19:13:41.800 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
+2022-05-25 19:13:41.801 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
+2022-05-25 19:13:41.804 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
+2022-05-25 19:13:44.674 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
+2022-05-25 19:13:44.675 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
+2022-05-25 19:13:44.675 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
+2022-05-25 19:13:44.675 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 2 is going to play
+2022-05-25 19:13:44.676 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is currently playing
+2022-05-25 19:13:44.677 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
+2022-05-25 19:13:44.678 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - income and move to next player
+2022-05-25 19:13:44.678 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
+2022-05-25 19:13:44.678 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
+2022-05-25 19:13:44.679 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
+2022-05-25 19:13:44.680 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
+2022-05-25 19:13:49.132 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
+2022-05-25 19:13:49.135 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
+2022-05-25 19:13:49.135 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
+2022-05-25 19:13:49.136 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : true
+2022-05-25 19:13:49.137 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is not going to happen
+2022-05-25 19:13:49.142 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
+2022-05-25 19:13:49.142 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is going to playyy
+2022-05-25 19:13:49.142 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is going to playyy
+2022-05-25 19:13:49.143 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is going to playyy
+2022-05-25 19:13:49.173 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-25 19:14:05.769 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
+2022-05-25 19:14:06.864 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
+2022-05-25 19:14:06.865 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
+2022-05-25 19:14:06.866 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter ambassador exchange state
+2022-05-25 19:14:06.867 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Duke3 Contessa2
+2022-05-25 19:14:06.867 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Duke3
+2022-05-25 19:14:06.867 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Contessa2
+2022-05-25 19:14:06.868 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
+2022-05-25 19:14:06.869 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 2
+2022-05-25 19:14:06.869 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
+2022-05-25 19:14:08.495 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
+2022-05-25 19:14:08.496 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
+2022-05-25 19:14:08.497 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
+2022-05-25 19:14:08.497 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 2 is going to play
+2022-05-25 19:14:08.497 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is currently playing
+2022-05-25 19:14:08.499 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
+2022-05-25 19:14:08.499 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - income and move to next player
+2022-05-25 19:14:08.499 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
+2022-05-25 19:14:08.499 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is going to playyy
+2022-05-25 19:14:08.499 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is going to playyy
+2022-05-25 19:14:08.525 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker

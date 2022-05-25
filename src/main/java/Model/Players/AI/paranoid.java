@@ -24,7 +24,7 @@ public class paranoid extends AI {
     public static Logger log= LogManager.getLogger(paranoid.class);
 
 
-    public static int turn =0 ;
+    public static int turn =1 ;
 
 
 
