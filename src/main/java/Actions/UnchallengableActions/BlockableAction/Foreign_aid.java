@@ -2,6 +2,7 @@ package Actions.UnchallengableActions.BlockableAction;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.SoloAction;
 import Actions.Logging;
+import Actions.StateOfAction;
 import Model.Players.Player;
 
 import java.io.FileNotFoundException;
@@ -17,6 +18,7 @@ public class Foreign_aid extends SoloAction {
         this.ChallengeAble=false;
         this.BlockAble=true;
         this.name="Foreign_aid";
+        this.stateOfAction= StateOfAction.attempted;
         new Logging(this);
     }
 

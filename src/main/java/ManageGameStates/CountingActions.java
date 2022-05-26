@@ -29,6 +29,16 @@ public class CountingActions {
 
     public static Logger log= LogManager.getLogger(CountingActions.class);
 
+
+    public static Player winner(){
+        Player p =PlayersDataBase.getNexAlivePlayer(whoseTurn);
+        if (p.equals(whoseTurn)){
+            return p;
+        }
+        else{
+            return null;
+        }
+    }
     public static Player setWhoseTurn() throws IOException {
 
         if (whoseTurn==null){
@@ -45,50 +55,12 @@ public class CountingActions {
         }
         return whoseTurn;
 
-
-        /*
-        else{
-            String id=whoseTurn.getPlayerId();
-            int idInt= Integer.parseInt(id);
-            idInt++;
-            if (idInt==5){
-                idInt=1;
-            }
-            whoseTurn=PlayersDataBase.searchByPlayerId(idInt+"");
-        }
-
-        if (whoseTurn.isAlive()){
-            if (whoseTurn instanceof AI){
-                new AIProcessor((AI) whoseTurn);
-            }
-            return whoseTurn;
-        }
-        else {
-            return setWhoseTurn();
-        }
-
-         */
     }
-    public static Player setWhoseTurn(Player LastTurn) throws IOException {
-        String id=LastTurn.getPlayerId();
-        int idInt= Integer.parseInt(id);
-        idInt++;
-        if (idInt==5){
-            idInt=1;
-        }
-        whoseTurn=PlayersDataBase.searchByPlayerId(idInt+"");
 
-        if (whoseTurn instanceof AI){
-            new AIProcessor((AI) whoseTurn);
-        }
-        else{
-            //human turn
-            //make buttons visible
-        }
-        return PlayersDataBase.searchByPlayerId(idInt+"");
-    }
+
 
     public static Action currentAction() throws IOException {
+        log.warn("getting current Action");
         ArrayList<Action> notFinishedActions=CurrentAction();
         int MaxId=0;
         for (Action a : notFinishedActions){
@@ -120,20 +92,6 @@ public class CountingActions {
         s.close();
         return arrayList;
     }
-
-/*
-    public void setActionProperties() throws IOException {
-        String actionString=lastAction();
-        //firstPlayerName+" -> "+secondPlayerName+" : "+actionName
-        String[] splitString=actionString.split(" -> ");
-        actionAttenderId=splitString[0];
-        String[] splitAgain=splitString[1].split(" : ");
-        actionTargetId = splitAgain[0];
-        actionName=splitAgain[1];
-    }
-
- */
-
 
 
 

@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import org.apache.log4j.LogManager;
@@ -52,6 +53,10 @@ public class MainPageOfGame {
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
         Player player =CountingActions.setWhoseTurn();
+        Player winner =CountingActions.winner();
+        if (winner!=null){
+            ShowWinner(winner);
+        }
         ShowPlayerInfo();
         ShowGameTracker();
         if (player instanceof AI){
@@ -61,6 +66,14 @@ public class MainPageOfGame {
             ShowCurrentStateOfGame();
         }
 
+    }
+
+    public static void ShowWinner(Player player){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("");
+        alert.setHeaderText("attention");
+        alert.setContentText("Player with Id : "+ player.getPlayerId()+" and name : "+player.getName()+" win the game");
+        alert.showAndWait();
     }
 
     @FXML

@@ -29,6 +29,9 @@ public class BlockOrAllow {
     public ActionRespond actionRespond;
 
 
+    String headTitle;
+
+
     public ActionRespond getActionRespond() {
         return actionRespond;
     }
@@ -38,12 +41,20 @@ public class BlockOrAllow {
     }
 
 
+    public void setHeadTitle(Foreign_aid foreign_aid){
+        Player dower=foreign_aid.getDower();
+        String dowerName=dower.getName();
+        String dowerId=dower.getPlayerId();
+        String actionKind = foreign_aid.getName();
+        this.headTitle="player "+dowerName+" with id "+dowerId+" wants to "+actionKind;
+    }
 
 
     public BlockOrAllow(Foreign_aid foreign_aid) throws IOException {
         this.player= PlayersDataBase.searchByPlayerId("4");
         if (foreign_aid.stateOfAction.equals(StateOfAction.attempted)){
-            ActionRespond actionRespond= AskBoxes.allowOrBlock("");
+            setHeadTitle(foreign_aid);
+            ActionRespond actionRespond= AskBoxes.allowOrBlock(headTitle);
             if (actionRespond.equals(ActionRespond.blocked)){
                 this.actionRespond=actionRespond;
             }

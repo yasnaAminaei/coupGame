@@ -17,10 +17,8 @@ player paranoid Model.Players.AI with id 2 died
 18 : 3 -> BANK : TAX
 20 : 4 -> CARDS : Ambassador_Exchange
 20 : 4 -> CARDS : Ambassador_Exchange
-23 : 1 -> CARDS : Ambassador_Exchange
-23 : 1 -> CARDS : Ambassador_Exchange
-26 : 3 -> KILL : Ambassador
-27 : 4 -> BANK : INCOME
-28 : 1 -> CARDS : EXCHANGE
-30 : 3 -> KILL : Assassin
-player coupper Model.Players.AI with id 3 died 
+23 : 1 -> CARDS : EXCHANGE
+25 : 3 -> KILL : Duke
+26 : 4 -> CARDS : Ambassador_Exchange
+26 : 4 -> CARDS : Ambassador_Exchange
+29 : 1 -> BANK : Foreign_aid

@@ -50,7 +50,8 @@ public class BlockOrAllowState extends Processor {
 
             for (Player x : PlayersDataBase.getAlivePlayersNotX(mainActionRunning.getDower())){
 
-                ActionRespond actionRespond;
+                ActionRespond actionRespond=ActionRespond.allow;
+
                 if (x instanceof AI){
                     actionRespond =blockOrAllowByAI((AI) x);
                 }

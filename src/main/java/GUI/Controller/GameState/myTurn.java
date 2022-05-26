@@ -86,7 +86,7 @@ public class myTurn {
     public static boolean HaveToCoup(){
         int coins=PlayersDataBase.getNotAIPlayer().getCoins();
         if (coins>=10){
-            HaveToCoup();
+            HaveToCoupError();
             return false;
         }
         return true;
