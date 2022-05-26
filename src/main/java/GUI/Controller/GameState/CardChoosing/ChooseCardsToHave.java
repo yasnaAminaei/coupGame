@@ -21,6 +21,7 @@ public class ChooseCardsToHave {
      public ChooseCardsToHave(Player player){
          this.player=player;
          int t = player.getAliveCards().size();
+         log.info("choose from "+t+" cards ");
          if (t==2){
              ChooseTowCardsWhitFourOptions();
          }

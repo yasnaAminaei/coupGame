@@ -52,12 +52,14 @@ public class AmbassadorExchangeState extends Processor {
 
     public void ChooseRandomCardsAndAskPlayerToChoose(){
         Player player= mainActionRunning.getDower();
+        log.info("player is : "+player.getPlayerId());
         ArrayList<Card> aliveCards = player.getAliveCards();
         Card[] ChosenCards= CardsDataBase.chooseTowRandomDeadCard();
         Card card1=ChosenCards[0];
         Card card2=ChosenCards[1];
         log.info("chosen cards :"+card1.getCardId()+" "+card2.getCardId());
         int size=aliveCards.size();
+        log.info("size = "+size);
         if (size==1){
             Card c = chooseCardToHave(player,card1,card2,aliveCards.get(0));
             log.info(c.getCardId());

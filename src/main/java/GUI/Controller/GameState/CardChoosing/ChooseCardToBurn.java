@@ -28,6 +28,7 @@ public class ChooseCardToBurn {
 
     public ChooseCardToBurn(Player player) throws FileNotFoundException, UnsupportedEncodingException {
         this.player=player;
+
         if (player instanceof AI){
             chooseCardsToBurnForAI((AI) player);
         }
