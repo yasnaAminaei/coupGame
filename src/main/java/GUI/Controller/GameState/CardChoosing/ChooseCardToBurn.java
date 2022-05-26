@@ -42,17 +42,20 @@ public class ChooseCardToBurn {
     }
 
     public void chooseCardsToBurnForHuman() throws FileNotFoundException, UnsupportedEncodingException {
+
         this.player=PlayersDataBase.getNotAIPlayer();
         int size=player.getAliveCards().size();
+
         if (size==2){
             Card t= ChooseOneCardToBurn();
             new Kill(player,t);
         }
         else if (size==1){
-            player.getAliveCards().get(0).setAlive(false);
+            Card c= player.getAliveCards().get(0);
+            new Kill(player,c);
         }
         else{
-            log.error("size =0 ");
+            log.error("size ="+size);
         }
     }
 

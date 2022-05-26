@@ -49,8 +49,10 @@ public class Ambassador_Exchange extends SoloAction {
             actionDower.setFirstCard(firstCard);
             actionDower.setSecondCard(secondCard);
             log.info("enter this fo if done ");
+            log.info("both are not null");
         }
         else if (actionDower.getFirstCard().isAlive()){
+            log.info("set first card");
             if (firstCard!=null){
                 actionDower.setFirstCard(firstCard);
             }
@@ -59,6 +61,7 @@ public class Ambassador_Exchange extends SoloAction {
             }
         }
         else{
+            log.info("set second card");
             if (firstCard!=null){
                 actionDower.setSecondCard(firstCard);
             }

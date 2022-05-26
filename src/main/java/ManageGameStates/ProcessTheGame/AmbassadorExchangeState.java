@@ -60,6 +60,7 @@ public class AmbassadorExchangeState extends Processor {
         int size=aliveCards.size();
         if (size==1){
             Card c = chooseCardToHave(player,card1,card2,aliveCards.get(0));
+            log.info(c.getCardId());
             ((Ambassador_Exchange) mainActionRunning).setFirstCard(c);
             ((Ambassador_Exchange) mainActionRunning).setSecondCard(null);
         }
