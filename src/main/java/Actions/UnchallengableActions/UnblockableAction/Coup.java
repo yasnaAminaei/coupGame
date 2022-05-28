@@ -27,15 +27,17 @@ public class Coup extends NonSoloAction {
     public Coup(Player dower, Player target) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower, target);
         this.name="COUP";
+        new Logging(this);
+        dower.addCoins(-7);
         if (target.equals(PlayersDataBase.getNotAIPlayer())){
             isHuman=true;
             log.info("target of coup is human");
-            return;//todo
         }
-        log.info("target is not human");
-        //((AI) target).burnACard();
-        dower.addCoins(-7);
-        new Logging(this);
+        else{
+            isHuman=false;
+            log.info("target is not human");
+            ((AI) target).burnACard();//todo
+        }
     }
 
     @Override

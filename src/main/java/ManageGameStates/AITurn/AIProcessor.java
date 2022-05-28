@@ -67,7 +67,7 @@ public class AIProcessor {
          else if (action instanceof Coup){
              log.info("coup and move to next player");
              if (((Coup) action).isHuman()){
-                 new ChooseCardToBurn(action.getDower());
+                 new ChooseCardToBurn(PlayersDataBase.getNotAIPlayer());//todo
              }
             // moveToNexPlayer();
          }

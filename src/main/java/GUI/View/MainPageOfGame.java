@@ -51,24 +51,28 @@ public class MainPageOfGame {
     @FXML
     private Button startTheGameButton;//todo
 
+
+    public void showGameTrackerAndPlayerInfo() throws IOException {
+        ShowGameTracker();
+        ShowPlayerInfo();
+        log.info("show players info and game tracker");
+    }
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
         log.info("enter start game");
         Player winner =CountingActions.winner();
         if (winner!=null){
             ShowWinner(winner);
+            showGameTrackerAndPlayerInfo();
         }
         else if (PlayersDataBase.getNotAIPlayer().isAlive()){
             log.info("finish check winner");
-            ShowPlayerInfo();
-            ShowGameTracker();
-            log.info("show players info and game tracker");
+            showGameTrackerAndPlayerInfo();
             boolean isAI = AIProcessor.moveToNexPlayer();
             log.info("determine next player");
             if (true){
                 ShowCurrentStateOfGame();
-                ShowGameTracker();
-                ShowPlayerInfo();
+                showGameTrackerAndPlayerInfo();
                 log.info("human turn");
             }
         }
@@ -78,14 +82,11 @@ public class MainPageOfGame {
             if (winnerAI!=null){
                 log.info("AI won");
                 ShowWinner(winnerAI);
-                ShowPlayerInfo();
-                ShowGameTracker();
+                showGameTrackerAndPlayerInfo();
             }
             else{
                 log.info("there are more than 1 Ai Alive");
-                ShowPlayerInfo();
-                ShowGameTracker();
-                log.info("show players info and game tracker");
+                showGameTrackerAndPlayerInfo();
                 boolean isAI = AIProcessor.moveToNexPlayer();
                 log.info("moved to next player");
             }

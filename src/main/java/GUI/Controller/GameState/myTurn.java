@@ -162,7 +162,7 @@ public class myTurn {
     @FXML
     void spesialExchangeAction(ActionEvent event) throws IOException {
         Player human =PlayersDataBase.getNotAIPlayer();
-        GameTurns.setAllTurn(human,GameState.AmbassadorExchange);
+        GameTurns.setAllTurn(human,GameState.AmbassadorExchange);//todo
         Ambassador_Exchange ambassador_exchange=new Ambassador_Exchange(human);
         new AmbassadorExchangeState(ambassador_exchange);
 

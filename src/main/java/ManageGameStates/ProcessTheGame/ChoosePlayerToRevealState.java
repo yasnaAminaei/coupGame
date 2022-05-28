@@ -93,7 +93,7 @@ public class ChoosePlayerToRevealState extends Processor{
         else{
             //challenge was failed
             log.info("challenge is failed so the block is happening");
-            new ChooseCardToBurn(mainActionRunning.getDower());
+            //new ChooseCardToBurn(mainActionRunning.getDower());todo
             mainActionRunning.stateOfAction= StateOfAction.failed;
             return true;
 

@@ -106,8 +106,8 @@ public class AI extends Player {
     public Card ChooseCardToBurnInExchange() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<Card> aliveCards=this.getAliveCards();
         Card c =  aliveCards.get(0);
-        new Kill(this,c);
-        //c.setAlive(false);
+        //new Kill(this,c);todo
+        c.setAlive(false);
         return c;
     }
 
