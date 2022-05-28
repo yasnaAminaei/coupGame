@@ -54,34 +54,24 @@ public class MainPageOfGame {
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
         log.info("enter start game");
-
         Player winner =CountingActions.winner();
         if (winner!=null){
             ShowWinner(winner);
         }
-        log.info("finish check winner");
-        ShowPlayerInfo();
-        ShowGameTracker();
-        log.info("show players info and game tracker");
-        boolean isAI = AIProcessor.moveToNexPlayer();
-        log.info("determine next player");
-        if (true){
-            ShowCurrentStateOfGame();
-            ShowGameTracker();
+        else {
+            log.info("finish check winner");
             ShowPlayerInfo();
-            log.info("human turn");
+            ShowGameTracker();
+            log.info("show players info and game tracker");
+            boolean isAI = AIProcessor.moveToNexPlayer();
+            log.info("determine next player");
+            if (true){
+                ShowCurrentStateOfGame();
+                ShowGameTracker();
+                ShowPlayerInfo();
+                log.info("human turn");
+            }
         }
-        //Player player =CountingActions.setWhoseTurn();
-        /*
-        if (player instanceof AI){
-           // new AIProcessor((AI) player);
-        }
-        else{
-
-        }
-
-         */
-
     }
 
     public static void ShowWinner(Player player){
@@ -134,7 +124,7 @@ public class MainPageOfGame {
         CurrentGamePane.getChildren().add(root);
         CurrentGamePane.setVisible(true);
         CurrentStateOfGame x=loader.getController();
-        x.showCurrentStateOfGame();
+        x.PlayersTurn();
 
     }
 
