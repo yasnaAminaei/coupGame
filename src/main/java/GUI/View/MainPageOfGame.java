@@ -1,5 +1,6 @@
 package GUI.View;
 
+import ManageGameStates.AITurn.AIProcessor;
 import ManageGameStates.CountingActions;
 import Model.Players.AI.AI;
 import Model.Players.Player;
@@ -52,19 +53,34 @@ public class MainPageOfGame {
 
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
-        Player player =CountingActions.setWhoseTurn();
+        log.info("enter start game");
+
         Player winner =CountingActions.winner();
         if (winner!=null){
             ShowWinner(winner);
         }
+        log.info("finish check winner");
         ShowPlayerInfo();
         ShowGameTracker();
+        log.info("show players info and game tracker");
+        boolean isAI = AIProcessor.moveToNexPlayer();
+        log.info("determine next player");
+        if (true){
+            ShowCurrentStateOfGame();
+            ShowGameTracker();
+            ShowPlayerInfo();
+            log.info("human turn");
+        }
+        //Player player =CountingActions.setWhoseTurn();
+        /*
         if (player instanceof AI){
-
+           // new AIProcessor((AI) player);
         }
         else{
-            ShowCurrentStateOfGame();
+
         }
+
+         */
 
     }
 

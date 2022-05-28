@@ -29,7 +29,7 @@ public class BlockOrAllowAIState extends BlockOrAllowState{
 
     }
 
-    public boolean blockOrAllowByAI(){
+    public boolean blockOrAllowByPlayers(){
 
         try {
             for (Player x : PlayersDataBase.getAlivePlayersNotX(mainActionRunning.getDower())){

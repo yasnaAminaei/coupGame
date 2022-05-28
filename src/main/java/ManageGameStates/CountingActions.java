@@ -31,6 +31,9 @@ public class CountingActions {
 
 
     public static Player winner(){
+        if (whoseTurn==null){
+            return null;
+        }
         Player p =PlayersDataBase.getNexAlivePlayer(whoseTurn);
         if (p.equals(whoseTurn)){
             return p;
@@ -48,11 +51,9 @@ public class CountingActions {
             whoseTurn=PlayersDataBase.getNexAlivePlayer(whoseTurn);
         }
         assert whoseTurn != null;
+
         log.info(whoseTurn.getPlayerId()+" is going to play");
 
-        if (whoseTurn instanceof AI){
-            new AIProcessor((AI) whoseTurn);
-        }
         return whoseTurn;
 
     }

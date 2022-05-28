@@ -51,6 +51,7 @@ public class ChoosePlayerToRevealState extends Processor{
 
 
     public boolean AIRespondsWhenTheWholeRespondOfMainActionKnown(ActionRespond actionRespond) throws IOException {
+
         if (actionRespond.equals(ActionRespond.blocked)){
             log.info("block respond held");
             if (chosenPlayer instanceof AI){

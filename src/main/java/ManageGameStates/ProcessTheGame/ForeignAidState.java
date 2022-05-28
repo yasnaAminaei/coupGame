@@ -10,6 +10,7 @@ import Actions.StateOfAction;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import GUI.Controller.GameState.ChoosePlayer;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
+import ManageGameStates.AITurn.BlockOrAllowAIState;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
@@ -41,7 +42,8 @@ public class ForeignAidState extends Processor {
     public boolean AIRespondsAllowOrBlockedItCorrectly() throws IOException {
         log.info("enter function AIRespondsAllowOrBlockedItCorrectly ");
         log.warn("alive ai s are "+ PlayersDataBase.getAliveAIs().size());
-        BlockOrAllowState state=new BlockOrAllowState((Foreign_aid) mainActionRunning);
+       // BlockOrAllowState state=new BlockOrAllowState((Foreign_aid) mainActionRunning);
+        BlockOrAllowAIState state=new BlockOrAllowAIState((Foreign_aid) mainActionRunning);
         return state.blockOrAllowByPlayers();
     }
 

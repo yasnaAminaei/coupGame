@@ -96,7 +96,7 @@ public class ChallengeOrAllow {
         else{
             Player player1 = challengeAbleAction.getDower();
             if (player1 instanceof AI){
-                ((AI) player1).burnACard();
+               // ((AI) player1).burnACard();todo
             }
             /*
             if (Challenge.removeOneCardFromPlayer(player)){

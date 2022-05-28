@@ -4,10 +4,15 @@ import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.N
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Model.Players.Player;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 
 public class Logging {
+
+
+    public static Logger log= LogManager.getLogger(Logging.class);
 
 
     public String dower;
@@ -31,6 +36,7 @@ public class Logging {
             fout.write(b);
             fout.close();
             System.out.println("success...");
+            log.info(formattedLog+" success...");
         }catch(Exception e){System.out.println(e);}
     }
 
@@ -80,6 +86,7 @@ public class Logging {
             fout.write(b);
             fout.close();
             System.out.println("success...");
+            log.info(formattedLog+" success...");
         }catch(Exception e){System.out.println(e);}
         /*
         PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");//todo
