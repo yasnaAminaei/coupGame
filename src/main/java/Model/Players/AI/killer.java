@@ -52,6 +52,7 @@ public class killer extends AI{
             return new Reveal(this);
         }
         else if (cardsTypesArrayList.contains(CardsTypes.Ambassador)){
+            log.info("ambassador exchange");
             return drawTowCardsAndChange(this);
         }
         else if (this.getCoins()>=1){

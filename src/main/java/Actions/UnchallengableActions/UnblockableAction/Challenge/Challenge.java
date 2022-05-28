@@ -1,14 +1,11 @@
 package Actions.UnchallengableActions.UnblockableAction.Challenge;
 
-import Actions.Action;
-import Actions.ActionKind;
-import Actions.ActionRespond;
+import Actions.*;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByCaptain;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_stealing;
-import Actions.Logging;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Cards.CardsTypes;
@@ -131,7 +128,7 @@ public class Challenge extends Action {
         Card random = CardsDataBase.chooseARandomDeadCard();
         random.setAlive(true);
         random.setPlayerId(player.getPlayerId());
-        Card c1=player.getFirstCard();
+        Card c1=player.getFirstCard();//todo
         c1.setAlive(false);
         if (c1.getType().equals(cardsTypes)){
             player.setFirstCard(random);
@@ -147,14 +144,16 @@ public class Challenge extends Action {
      * @return if there is a need of asking which card you wish to burn
      */
 
-    public static boolean removeOneCardFromPlayer(Player player){
+    public static boolean removeOneCardFromPlayer(Player player) throws FileNotFoundException, UnsupportedEncodingException {
+
         ArrayList<Card> playersAliveCards = player.getAliveCards();
         if (playersAliveCards.size()==2){
             return true;
         }
         Card c = playersAliveCards.get(0);
-        c.setAlive(false);
-        player.setAlive(false);
+        new Kill(player,c);//todo
+        //c.setAlive(false);
+        //player.setAlive(false);
         return false;
     }
 

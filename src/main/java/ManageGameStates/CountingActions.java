@@ -34,6 +34,11 @@ public class CountingActions {
         if (whoseTurn==null){
             return null;
         }
+
+        ArrayList<Player> AlivePlayers=PlayersDataBase.getAlivePlayers();
+        if (AlivePlayers.size()==1){
+            return AlivePlayers.get(0);
+        }//todo
         Player p =PlayersDataBase.getNexAlivePlayer(whoseTurn);
         if (p.equals(whoseTurn)){
             return p;

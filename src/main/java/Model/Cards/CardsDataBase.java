@@ -1,5 +1,6 @@
 package Model.Cards;
 
+import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -30,6 +31,7 @@ public class CardsDataBase {
         }
         return null;
     }
+
 
 
     public static ArrayList<Card> returnArrayListOfCardsWithGivenArraylistOfCardIds(ArrayList<String> cardsId){
@@ -70,10 +72,21 @@ public class CardsDataBase {
         ArrayList<Card> deadCards=new ArrayList<>();
         for (Card c : getCards()){
             if (!c.isAlive()){
-                deadCards.add(c);
+                Player player=c.getPlayer();
+                boolean cardIsStillForPlayer=CardIsStillForPlayer(player,c);
+                if (!cardIsStillForPlayer){
+                    deadCards.add(c);//todo
+                }
             }
         }
         return deadCards;
     }
 
+
+    public static boolean CardIsStillForPlayer(Player player , Card card){
+        if (player==null){
+            return false;
+        }
+        return player.getFirstCard().equals(card) || player.getSecondCard().equals(card);
+    }
 }

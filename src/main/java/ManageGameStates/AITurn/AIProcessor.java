@@ -99,6 +99,7 @@ public class AIProcessor {
     }
 
     public static boolean moveToNexPlayer() throws IOException {
+        log.info("enter move to next Player function");
         Player nextPlayer = CountingActions.setWhoseTurn();
         if (nextPlayer instanceof AI){
             new AIProcessor((AI) nextPlayer);
