@@ -57,11 +57,7 @@ public class paranoid extends AI {
         return super.blockOrChallengeOrAllow(action);
     }
 
-    public static boolean isChallengeQuestion() throws IOException {
-        Action action =CountingActions.currentAction();
-        ActionKind actionKind=action.getActionKind();
-        return actionKind.equals(ActionKind.Challenge);
-    }
+
 
 
 

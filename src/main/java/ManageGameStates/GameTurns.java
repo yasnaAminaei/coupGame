@@ -20,25 +20,6 @@ public class GameTurns {
         GameTurns.gameState=state;
     }
 
-    public static Player moveToNextPlayer(Player p){
-        String playerId = p.getPlayerId();
-        int id=Integer.parseInt(playerId);
-        id++;
-        if (id==5){
-            id=1;
-        }
-        return PlayersDataBase.searchByPlayerId(id+"");
-    }
-
-    public static void moveToNextPlayerInSideAction(){
-        whoseTurn=moveToNextPlayer(whoseTurn);
-    }
-
-    public static void moveToNextPlayerInMainAction(){
-        whoseDoingTheMainAction=moveToNextPlayer(whoseDoingTheMainAction);
-    }
-
-
 
 
 
