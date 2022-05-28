@@ -58,7 +58,7 @@ public class MainPageOfGame {
         if (winner!=null){
             ShowWinner(winner);
         }
-        else {
+        else if (PlayersDataBase.getNotAIPlayer().isAlive()){
             log.info("finish check winner");
             ShowPlayerInfo();
             ShowGameTracker();
@@ -70,6 +70,24 @@ public class MainPageOfGame {
                 ShowGameTracker();
                 ShowPlayerInfo();
                 log.info("human turn");
+            }
+        }
+        else {
+            log.info("human died");
+            Player winnerAI =CountingActions.winner();
+            if (winnerAI!=null){
+                log.info("AI won");
+                ShowWinner(winnerAI);
+                ShowPlayerInfo();
+                ShowGameTracker();
+            }
+            else{
+                log.info("there are more than 1 Ai Alive");
+                ShowPlayerInfo();
+                ShowGameTracker();
+                log.info("show players info and game tracker");
+                boolean isAI = AIProcessor.moveToNexPlayer();
+                log.info("moved to next player");
             }
         }
     }

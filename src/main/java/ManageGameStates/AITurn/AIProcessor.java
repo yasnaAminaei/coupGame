@@ -102,8 +102,10 @@ public class AIProcessor {
         log.info("enter move to next Player function");
         Player nextPlayer = CountingActions.setWhoseTurn();
         if (nextPlayer instanceof AI){
-            new AIProcessor((AI) nextPlayer);
-            return true;
+            if (CountingActions.winner()==null){
+                new AIProcessor((AI) nextPlayer);
+                return true;
+            }
         }
         return false;
 
