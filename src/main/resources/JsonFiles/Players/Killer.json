@@ -1,0 +1,8 @@
+{
+"name" : "killer",
+"playerId" : "1",
+"coins" : "2",
+"alive" : "true",
+"firstCardId" : "Ambassador1",
+"secondCardId" : "Assassin2"
+}
