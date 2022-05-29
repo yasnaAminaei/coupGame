@@ -28,6 +28,7 @@ public class ForeignAidState extends Processor {
     public ForeignAidState(Foreign_aid foreign_aid) throws IOException {
 
         this.mainActionRunning=foreign_aid;
+
         if (!AIRespondsAllowOrBlockedItCorrectly()){
             //steal from chosen player
             log.info("foreign aid is happening");

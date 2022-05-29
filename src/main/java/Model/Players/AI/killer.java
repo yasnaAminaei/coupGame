@@ -42,9 +42,9 @@ public class killer extends AI{
     @Override
     public Action playTheirTurn() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<CardsTypes>  cardsTypesArrayList = this.getAliveCardsType();
+
         if (this.getCoins()>=10){
             Player p = this.ChoosePlayerToCoup();
-            p=PlayersDataBase.getNotAIPlayer();//todo
             return new Coup(this,p);
         }
         else if (cardsTypesArrayList.contains(CardsTypes.Assassin) && this.getCoins() >=3 ){
@@ -61,6 +61,8 @@ public class killer extends AI{
         else{
             return new Foreign_aid(this);
         }
+
+
         //CountingActions.setWhoseTurn(this);
     }
 

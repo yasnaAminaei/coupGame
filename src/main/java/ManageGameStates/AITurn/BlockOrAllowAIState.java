@@ -13,7 +13,9 @@ import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 public class BlockOrAllowAIState extends BlockOrAllowState{
 
@@ -51,7 +53,19 @@ public class BlockOrAllowAIState extends BlockOrAllowState{
                     }
                 }
                 else {
-                    BlockOrAllow blockOrAllow =new BlockOrAllow();
+                    BlockOrAllow blockOrAllow =new BlockOrAllow((Foreign_aid) mainActionRunning);
+                    ActionRespond actionRespond = blockOrAllow.getActionRespond();
+                    if (actionRespond.equals(ActionRespond.blocked)){
+                        if (!BlockedByHuman()){
+                            log.info("foreign aid aint blocked by human");
+                        }
+                        else{
+                            log.info("foreign aid blocked by human");
+                            return true;
+                        }
+                    }
+
+
                 }
             }
 
@@ -62,10 +76,26 @@ public class BlockOrAllowAIState extends BlockOrAllowState{
 
     }
 
+    public boolean BlockedByHuman() throws IOException {
+        Player human=PlayersDataBase.getNotAIPlayer();
+        Block_foreign_aid block_foreign_aid=new Block_foreign_aid(human,mainActionRunning);
+        Player dower=mainActionRunning.getDower();
+        boolean result;
+
+        if (dower instanceof AI){
+            result =((AI) dower).ChallengeOrAllow(block_foreign_aid);
+        }
+        else{
+            ChallengeOrAllow challengeOrAllow= new ChallengeOrAllow(block_foreign_aid);
+            result=challengeOrAllow.isChallengeResult();
+        }
+        return logTheChallengeResultToBlockAction(result);
+    }
 
     public boolean BlockedByAI(AI x) throws IOException {
 
         Block_foreign_aid block_foreign_aid =new Block_foreign_aid(x,mainActionRunning);
+
         Player dower =mainActionRunning.getDower();
         boolean result;
 

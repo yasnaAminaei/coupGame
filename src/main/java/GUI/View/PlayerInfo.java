@@ -10,10 +10,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class PlayerInfo {
     //GUI.View.PlayerInfo
 
+
+
+    public static Logger log= LogManager.getLogger(PlayerInfo.class);
 
 
     @FXML
@@ -57,8 +62,9 @@ public class PlayerInfo {
                 secondCard=p.getSecondCard().getNameIfDead();
 
             }
-
             out.add(new InfoClass(name,cash,firstCard,secondCard));
+
+            log.info("\n name : "+name+" coins: "+cash+" first card : "+firstCard+" second card :"+secondCard);
 
         }
         return out;

@@ -4,9 +4,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.View.PlayerInfo">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.View.PlayerInfo">
    <children>
-      <TableView fx:id="playerInfoTableView" prefHeight="141.0" prefWidth="326.0">
+      <TableView fx:id="playerInfoTableView" prefHeight="215.0" prefWidth="326.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
           <TableColumn fx:id="cashColumn" prefWidth="75.0" text="coins" />
