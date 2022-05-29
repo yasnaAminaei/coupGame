@@ -87,12 +87,7 @@ public class Logging {
             System.out.println("success...");
             log.info(formattedLog+" success...");
         }catch(Exception e){System.out.println(e);}
-        /*
-        PrintWriter writer = new PrintWriter("GameTracker.txt", "UTF-8");//todo
-        writer.println(formattedLog);
-        writer.close();
 
-         */
     }
 
 

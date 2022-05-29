@@ -1,5 +1,6 @@
 package Model.Players;
 
+import Model.Players.AI.AI;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -54,7 +55,16 @@ public class PlayersDataBase {
     }
 
     public static Player getNotAIPlayer() {
-        return searchByPlayerId("4");
+        for (Player p : getPlayers()){
+            if (p instanceof AI){
+
+            }
+            else{
+                return p;
+            }
+        }
+        log.error("there is no human in the game");
+        return null;
     }
 
     public static Player searchByPlayerId(String playerId){

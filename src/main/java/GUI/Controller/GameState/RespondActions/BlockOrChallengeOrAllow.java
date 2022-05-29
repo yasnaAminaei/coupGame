@@ -35,7 +35,7 @@ public class BlockOrChallengeOrAllow {
 
 
     public BlockOrChallengeOrAllow(ChallengeAbleAction challengeAbleAction) throws IOException {
-        this.player= PlayersDataBase.searchByPlayerId("4");
+        this.player= PlayersDataBase.getNotAIPlayer();
         if (challengeAbleAction.stateOfAction.equals(StateOfAction.attempted)){
             ActionRespond actionRespond= AskBoxes.allowOrBlockOrChallenge("");
             if (actionRespond.equals(ActionRespond.challenged)){

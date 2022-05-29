@@ -44,10 +44,10 @@ public class PlayerInfo {
 
 
     public ObservableList<InfoClass> settingTableOfPlayersInfo(){
-        this. player=PlayersDataBase.searchByPlayerId("4");
+        this. player=PlayersDataBase.getNotAIPlayer();
         ObservableList<InfoClass> out= FXCollections.observableArrayList();
         for(Player p : PlayersDataBase.getPlayers()){
-            String name=p.getName();
+            String name=p.getName()+" id: "+p.getPlayerId();
             String cash=p.getCoins()+"";
             String firstCard;
             String secondCard;
