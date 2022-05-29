@@ -1,16 +1,12 @@
 package Model.Players.AI;
 
 import Actions.Action;
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.Kill;
-import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
-import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
-import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import Model.Cards.Card;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;

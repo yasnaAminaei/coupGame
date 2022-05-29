@@ -1,20 +1,13 @@
 package ManageGameStates;
 
-import Actions.Action;
-import Actions.ActionDataBase;
-import Actions.StateOfAction;
-import ManageGameStates.AITurn.AIProcessor;
 import Model.Cards.Card;
-import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CountingActions {
 

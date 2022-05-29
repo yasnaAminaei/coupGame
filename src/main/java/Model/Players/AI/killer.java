@@ -1,21 +1,15 @@
 package Model.Players.AI;
 
 import Actions.Action;
-import Actions.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
-import Actions.Logging;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Model.Cards.*;
-import ManageGameStates.CountingActions;
 import Model.Players.Player;
-import Model.Players.PlayersDataBase;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 

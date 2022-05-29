@@ -1,22 +1,16 @@
 package GUI.Controller.GameState;
 
 import Actions.Action;
-import Actions.ActionKind;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
-import Actions.Kill;
 import GUI.View.Ask.ChoosePlayerBoxes;
-import Model.Cards.Card;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class ChoosePlayer {
 

@@ -1,17 +1,11 @@
 package ManageGameStates.ProcessTheGame;
 
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
-import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_revealing;
-import Actions.Logging;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
-import GUI.Controller.GameState.ChoosePlayer;
 import GUI.Controller.GameState.RespondActions.BlockOrChallengeOrAllow;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;
@@ -70,14 +64,6 @@ public class ChallengeOrBlockOrAllowState {
 
 
 
-    public ActionRespond blockOrChallengeOtAllowByPlayer(Player x) throws IOException {
-
-        if (x instanceof AI){
-            return ((AI) x).blockOrChallengeOrAllow(mainAction);
-        }
-        BlockOrChallengeOrAllow blockOrChallengeOrAllow=new BlockOrChallengeOrAllow(mainAction);
-        return  blockOrChallengeOrAllow.getActionRespond();
-    }
 
     /**
      *
@@ -86,7 +72,9 @@ public class ChallengeOrBlockOrAllowState {
      * @throws IOException
      */
     public ActionRespond blockOrChallengeOtAllowByPlayerWhenIsTarget(Player x) throws IOException {
+        log.info("blockOrChallengeOtAllowByPlayerWhenIsTarget");
         ActionRespond actionRespond =blockOrChallengeOtAllowByTarget(x);
+
         if (!actionRespond.equals(ActionRespond.allow)){
             log.info("it is not allowed");
             log.info(actionRespond.name());
@@ -120,6 +108,7 @@ public class ChallengeOrBlockOrAllowState {
 
                     log.info("target is responding");
                      ActionRespond actionRespond = blockOrChallengeOtAllowByPlayerWhenIsTarget(x);
+                     log.info("target responded");
                      if (actionRespond!=null){
                          return actionRespond;
                      }
@@ -172,6 +161,16 @@ public class ChallengeOrBlockOrAllowState {
            return ChallengeOrAllowByPlayer(target);
         }
         return actionRespond;
+    }
+
+
+    public ActionRespond blockOrChallengeOtAllowByPlayer(Player x) throws IOException {
+
+        if (x instanceof AI){
+            return ((AI) x).blockOrChallengeOrAllow(mainAction);
+        }
+        BlockOrChallengeOrAllow blockOrChallengeOrAllow=new BlockOrChallengeOrAllow(mainAction);
+        return  blockOrChallengeOrAllow.getActionRespond();
     }
 
 

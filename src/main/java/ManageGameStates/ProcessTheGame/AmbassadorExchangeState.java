@@ -1,15 +1,9 @@
 package ManageGameStates.ProcessTheGame;
 
 
-import Actions.ActionRespond;
-import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_revealing;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
 import Actions.Logging;
-import Actions.StateOfAction;
-import GUI.Controller.GameState.ChoosePlayer;
-import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import GUI.View.Ask.ChooseCardsBoxes;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;

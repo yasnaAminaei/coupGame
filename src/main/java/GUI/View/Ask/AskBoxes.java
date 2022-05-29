@@ -1,6 +1,6 @@
 package GUI.View.Ask;
 
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 

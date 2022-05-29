@@ -30,6 +30,7 @@ public class Reveal extends NonSoloChallengeAbleAction {
     @Override
     public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
         super.doIfDone();
+        getDower().addCoins(-3);
         if (target instanceof  AI){
             ((AI) target).burnACard();
         }

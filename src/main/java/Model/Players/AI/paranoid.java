@@ -1,13 +1,8 @@
 package Model.Players.AI;
 
 import Actions.Action;
-import Actions.ActionKind;
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
-import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import ManageGameStates.CountingActions;
-import javafx.scene.Parent;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -50,6 +45,11 @@ public class paranoid extends AI {
         turn++;
         if (turn%2==0){
             //new Challenge(this, (ChallengeAbleAction) action);
+            if (this.BlockOrAllowRevealing(action).equals(ActionRespond.blocked)){
+                log.info("it has the card to be against revealing and used it");
+                turn--;
+                return ActionRespond.blocked;//todo
+            }
             log.info("challenge in block or challenge or allow");
             return ActionRespond.challenged;
         }

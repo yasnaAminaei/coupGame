@@ -1,7 +1,7 @@
 package ManageGameStates.ProcessTheGame;
 
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
@@ -12,7 +12,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 public class ChallengeOrAllowState {
 

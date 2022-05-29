@@ -1,16 +1,9 @@
 package ManageGameStates.ProcessTheGame;
 
-import Actions.Action;
-import Actions.ActionRespond;
-import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
-import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_foreign_aid;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_revealing;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
-import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;

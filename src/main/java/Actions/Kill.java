@@ -8,6 +8,8 @@ import java.io.UnsupportedEncodingException;
 
 public class Kill extends Action{
 
+
+
     public Kill(Player dower , Card x) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
         this.name=x.getName();

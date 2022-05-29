@@ -1,8 +1,8 @@
 package GUI.Controller.GameState.RespondActions;
 
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;

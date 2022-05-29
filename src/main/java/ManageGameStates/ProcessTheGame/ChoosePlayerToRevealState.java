@@ -1,14 +1,11 @@
 package ManageGameStates.ProcessTheGame;
 
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
-import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.*;
 import Actions.Logging;
-import Actions.StateOfAction;
-import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
-import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
+import Actions.Enums.StateOfAction;
 import GUI.Controller.GameState.ChoosePlayer;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import Model.Players.AI.AI;

@@ -1,6 +1,7 @@
 package Actions;
 
-import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
+import Actions.Enums.ActionKind;
+import Actions.Enums.StateOfAction;
 import Model.Cards.CardsTypes;
 import Model.Players.AI.AI;
 import Model.Players.Player;
@@ -106,7 +107,7 @@ public class Action {
     public boolean doIfChallengedTruly() throws FileNotFoundException, UnsupportedEncodingException { // so the dower
 
         if (actionDower instanceof AI){
-            ((AI) actionDower).burnACard();
+            ((AI) actionDower).burnACard();//todo
             return true;
         }
         return false;

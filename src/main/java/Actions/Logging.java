@@ -1,8 +1,7 @@
 package Actions;
 
-import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
-import Actions.ChallengableActions.UnblockableActions.SoloActions.Ambassador_Exchange;
-import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
+import Actions.Enums.ActionKind;
+import Actions.Enums.StateOfAction;
 import Model.Players.Player;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

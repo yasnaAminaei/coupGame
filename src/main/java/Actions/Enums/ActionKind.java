@@ -1,4 +1,4 @@
-package Actions;
+package Actions.Enums;
 
 public enum ActionKind {
 

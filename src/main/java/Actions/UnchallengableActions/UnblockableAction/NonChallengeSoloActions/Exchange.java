@@ -1,9 +1,9 @@
 package Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions;
 
 import Actions.Action;
-import Actions.ActionKind;
+import Actions.Enums.ActionKind;
 import Actions.Logging;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Players.Player;

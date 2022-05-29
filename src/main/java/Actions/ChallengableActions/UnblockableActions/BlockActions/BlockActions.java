@@ -1,9 +1,9 @@
 package Actions.ChallengableActions.UnblockableActions.BlockActions;
 
 import Actions.Action;
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.NonSoloChallengeAbleAction;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import org.apache.log4j.LogManager;

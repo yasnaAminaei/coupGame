@@ -1,7 +1,7 @@
 package ManageGameStates;
 
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
 import Model.Players.Player;

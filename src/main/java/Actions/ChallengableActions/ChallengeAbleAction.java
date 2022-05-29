@@ -1,7 +1,7 @@
 package Actions.ChallengableActions;
 
 import Actions.Action;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
 import Model.Cards.CardsTypes;
 import Model.Players.Player;
@@ -23,7 +23,6 @@ public class ChallengeAbleAction extends Action {
     public ChallengeAbleAction(Player dower) throws FileNotFoundException, UnsupportedEncodingException {
         super(dower);
     }
-
 
 
     public void processTheAction(){

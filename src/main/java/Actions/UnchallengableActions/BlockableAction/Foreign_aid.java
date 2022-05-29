@@ -2,7 +2,7 @@ package Actions.UnchallengableActions.BlockableAction;
 
 import Actions.ChallengableActions.UnblockableActions.SoloActions.SoloAction;
 import Actions.Logging;
-import Actions.StateOfAction;
+import Actions.Enums.StateOfAction;
 import Model.Players.Player;
 
 import java.io.FileNotFoundException;

@@ -1,23 +1,19 @@
 package ManageGameStates.ProcessTheGame;
 
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.*;
 import Actions.Logging;
-import Actions.StateOfAction;
-import Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge;
+import Actions.Enums.StateOfAction;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
 import GUI.Controller.GameState.ChoosePlayer;
 import Model.Players.AI.AI;
 import Model.Players.Player;
-import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 public class ChoosePlayerToStealFromState extends Processor {
 

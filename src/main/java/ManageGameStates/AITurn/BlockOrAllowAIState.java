@@ -1,8 +1,7 @@
 package ManageGameStates.AITurn;
 
-import Actions.ActionRespond;
+import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_foreign_aid;
-import Actions.StateOfAction;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
@@ -13,9 +12,7 @@ import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 public class BlockOrAllowAIState extends BlockOrAllowState{
 
@@ -35,13 +32,17 @@ public class BlockOrAllowAIState extends BlockOrAllowState{
 
         try {
             for (Player x : PlayersDataBase.getAlivePlayersNotX(mainActionRunning.getDower())){
+                log.info("is in the loop");
 
                 if (x instanceof AI){
+
+                    log.info("for AI player");
                     ActionRespond actionRespond =blockOrAllowByAI((AI) x);
 
                     log.info(actionRespond.name());
 
                     if (actionRespond.equals(ActionRespond.blocked)){
+                        log.info("target attempt blocking");
 
                         if (!BlockedByAI((AI)x)){
                             log.info("foreign aid aint blocked");
@@ -53,6 +54,8 @@ public class BlockOrAllowAIState extends BlockOrAllowState{
                     }
                 }
                 else {
+                    log.info("for human");
+
                     BlockOrAllow blockOrAllow =new BlockOrAllow((Foreign_aid) mainActionRunning);
                     ActionRespond actionRespond = blockOrAllow.getActionRespond();
                     if (actionRespond.equals(ActionRespond.blocked)){

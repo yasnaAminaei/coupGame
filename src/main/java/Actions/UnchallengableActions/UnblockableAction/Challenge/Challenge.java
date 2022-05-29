@@ -2,10 +2,9 @@ package Actions.UnchallengableActions.UnblockableAction.Challenge;
 
 import Actions.*;
 import Actions.ChallengableActions.ChallengeAbleAction;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByAmbassador;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockStealingByCaptain;
-import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_stealing;
+import Actions.Enums.ActionKind;
+import Actions.Enums.ActionRespond;
 import Model.Cards.Card;
 import Model.Cards.CardsDataBase;
 import Model.Cards.CardsTypes;

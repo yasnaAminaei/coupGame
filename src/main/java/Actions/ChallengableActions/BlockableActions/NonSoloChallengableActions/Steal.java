@@ -22,8 +22,13 @@ public class Steal extends NonSoloChallengeAbleAction {
 
     @Override
     public void doIfDone() throws FileNotFoundException, UnsupportedEncodingException {
-        target.addCoins(-2);
-        actionDower.addCoins(2);
+        int stealingCoins=2;
+        int targetCoins=target.getCoins();
+        if (targetCoins<2){
+            stealingCoins=targetCoins;
+        }
+        target.addCoins(-stealingCoins);
+        actionDower.addCoins(stealingCoins);
         super.doIfDone();
     }
 

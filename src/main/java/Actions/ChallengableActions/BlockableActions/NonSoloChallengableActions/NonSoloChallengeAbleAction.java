@@ -1,6 +1,6 @@
 package Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions;
 
-import Actions.ActionKind;
+import Actions.Enums.ActionKind;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActions;
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Model.Players.Player;
