@@ -57,8 +57,8 @@ public class MainPageOfGame {
         ShowPlayerInfo();
         log.info("show players info and game tracker");
     }
-    @FXML
-    void StatrTheGame(ActionEvent event) throws IOException {
+
+    public void StartAIReacting() throws IOException {
         log.info("enter start game");
         Player winner =CountingActions.winner();
         if (winner!=null){
@@ -93,6 +93,11 @@ public class MainPageOfGame {
         }
     }
 
+    @FXML
+    void StatrTheGame(ActionEvent event) throws IOException {
+       StartAIReacting();
+    }
+
     public static void ShowWinner(Player player){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("");
@@ -104,7 +109,7 @@ public class MainPageOfGame {
     @FXML
     public void initialize() throws IOException {
         this.loadEveryThing();
-        this.player= PlayersDataBase.searchByPlayerId("4");
+        this.player= PlayersDataBase.getNotAIPlayer();
     }
 
     public void ShowCheatSheet() throws IOException {
