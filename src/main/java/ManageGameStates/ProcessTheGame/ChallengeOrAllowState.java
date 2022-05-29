@@ -38,7 +38,7 @@ public class ChallengeOrAllowState {
 
     public boolean AIRespondsChallengeItCorrectly() throws IOException {
 
-        for (Player p : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())) {//todo
+        for (Player p : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())) {
 
             if (p.equals(PlayersDataBase.getNotAIPlayer())){
                 ChallengeOrAllow challengeOrAllow =new ChallengeOrAllow(mainAction);

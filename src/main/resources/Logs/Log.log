@@ -1,517 +1,94 @@
-2022-05-29 10:52:28.599 [JavaFX Application Thread] INFO  Main - Application started
-2022-05-29 10:52:28.817 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
-2022-05-29 10:52:28.830 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:52:29.272 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
-2022-05-29 10:52:30.936 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:52:30.937 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:52:30.941 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:52:30.975 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+2022-05-29 11:03:47.769 [JavaFX Application Thread] INFO  Main - Application started
+2022-05-29 11:03:48.167 [JavaFX Application Thread] INFO  GUI.View.CheatSheet - show cheat sheet (game info)
+2022-05-29 11:03:48.201 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-29 11:03:49.298 [JavaFX Application Thread] INFO  BuildData.ReadDefualtData - default data is created
+2022-05-29 11:03:56.127 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
+2022-05-29 11:03:56.129 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
+2022-05-29 11:03:56.137 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-29 11:03:56.191 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
  name : killer Model.Players.AI coins: 2 first card : Ambassador 
  is alive ?  true second card :Assassin 
  is alive ?  true
-2022-05-29 10:52:30.975 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+2022-05-29 11:03:56.192 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
  name : paranoid Model.Players.AI coins: 2 first card : Duke 
  is alive ?  true second card :Contessa 
  is alive ?  true
-2022-05-29 10:52:30.975 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+2022-05-29 11:03:56.193 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
  name : coupper Model.Players.AI coins: 2 first card : Captain 
  is alive ?  true second card :Assassin 
  is alive ?  true
-2022-05-29 10:52:30.976 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+2022-05-29 11:03:56.193 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
  name : You coins: 2 first card : Ambassador 
  is alive ?  true second card :Captain 
  is alive ?  true
-2022-05-29 10:52:30.976 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:52:30.977 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:52:30.977 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:52:30.977 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:52:30.979 [JavaFX Application Thread] INFO  Model.Players.Player - ambassador exchange
-2022-05-29 10:52:30.981 [JavaFX Application Thread] INFO  Actions.Logging - 2 : 1 -> CARDS : Ambassador_Exchange
+2022-05-29 11:03:56.194 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
+2022-05-29 11:03:56.196 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
+2022-05-29 11:03:56.197 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
+2022-05-29 11:03:56.197 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
+2022-05-29 11:03:56.197 [JavaFX Application Thread] INFO  Model.Players.Player - ambassador exchange
+2022-05-29 11:03:56.206 [JavaFX Application Thread] INFO  Actions.Logging - 2 : 1 -> CARDS : Ambassador_Exchange
  success...
-2022-05-29 10:52:30.981 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter ambassador exchange state
-2022-05-29 10:52:30.982 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - player is : 1
-2022-05-29 10:52:30.983 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Captain1 Assassin1
-2022-05-29 10:52:30.983 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - size = 2
-2022-05-29 10:52:30.983 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Captain1
-2022-05-29 10:52:30.983 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Assassin1
-2022-05-29 10:52:30.984 [JavaFX Application Thread] INFO  Actions.Logging - 2 : 1 -> CARDS : Ambassador_Exchange
+2022-05-29 11:03:56.208 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter ambassador exchange state
+2022-05-29 11:03:56.210 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - player is : 1
+2022-05-29 11:03:56.211 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Assassin1 Ambassador3
+2022-05-29 11:03:56.211 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - size = 2
+2022-05-29 11:03:56.212 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Assassin1
+2022-05-29 11:03:56.212 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador3
+2022-05-29 11:03:56.213 [JavaFX Application Thread] INFO  Actions.Logging - 2 : 1 -> CARDS : Ambassador_Exchange
  success...
-2022-05-29 10:52:30.984 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-29 10:52:30.984 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-29 10:52:30.986 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
-2022-05-29 10:52:30.986 [JavaFX Application Thread] INFO  Actions.Logging - 3 : 2 -> 1 : Challenge
+2022-05-29 11:03:56.213 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
+2022-05-29 11:03:56.214 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
+2022-05-29 11:03:56.218 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
+2022-05-29 11:03:56.219 [JavaFX Application Thread] INFO  Actions.Logging - 3 : 2 -> 1 : Challenge
  success...
-2022-05-29 10:52:30.987 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-29 10:52:30.987 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
-2022-05-29 10:52:30.988 [JavaFX Application Thread] INFO  Actions.Logging - 4 : 2 -> KILL : Duke
+2022-05-29 11:03:56.221 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
+2022-05-29 11:03:56.222 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
+2022-05-29 11:03:56.225 [JavaFX Application Thread] INFO  Actions.Logging - 4 : 2 -> KILL : Duke
  success...
-2022-05-29 10:52:30.989 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
-2022-05-29 10:52:30.989 [JavaFX Application Thread] INFO  Actions.Action - both are not null
-2022-05-29 10:52:30.989 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:52:30.989 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 2 is going to play
-2022-05-29 10:52:30.989 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is currently playing
-2022-05-29 10:52:30.990 [JavaFX Application Thread] INFO  Actions.Logging - 5 : 2 -> BANK : INCOME
+2022-05-29 11:03:56.226 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
+2022-05-29 11:03:56.226 [JavaFX Application Thread] INFO  Actions.Action - both are not null
+2022-05-29 11:03:56.226 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
+2022-05-29 11:03:56.227 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 2 is going to play
+2022-05-29 11:03:56.227 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 2 is currently playing
+2022-05-29 11:03:56.229 [JavaFX Application Thread] INFO  Actions.Logging - 5 : 2 -> BANK : INCOME
  success...
-2022-05-29 10:52:30.990 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
-2022-05-29 10:52:30.990 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - income and move to next player
-2022-05-29 10:52:30.990 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:52:30.990 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-29 10:52:30.990 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-29 10:52:30.991 [JavaFX Application Thread] INFO  Actions.Logging - 6 : 3 -> BANK : TAX
+2022-05-29 11:03:56.230 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income - end
+2022-05-29 11:03:56.230 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - income and move to next player
+2022-05-29 11:03:56.230 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
+2022-05-29 11:03:56.231 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
+2022-05-29 11:03:56.231 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
+2022-05-29 11:03:56.232 [JavaFX Application Thread] INFO  Actions.Logging - 6 : 3 -> BANK : TAX
  success...
-2022-05-29 10:52:30.991 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
-2022-05-29 10:52:30.991 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
-2022-05-29 10:52:34.374 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
-2022-05-29 10:52:34.374 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
-2022-05-29 10:52:34.374 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:52:34.374 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:52:34.375 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:52:34.401 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:52:34.405 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 2 first card : Captain 
- is alive ?  true second card :Assassin 
+2022-05-29 11:03:56.232 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
+2022-05-29 11:03:56.232 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - not challenging
+2022-05-29 11:04:25.724 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
+2022-05-29 11:04:25.726 [JavaFX Application Thread] INFO  Actions.Logging - 9 : 4 -> 3 : Challenge
+ success...
+2022-05-29 11:04:25.726 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
+2022-05-29 11:04:25.726 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
+2022-05-29 11:04:25.727 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : true
+2022-05-29 11:04:25.727 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is not going to happen
+2022-05-29 11:04:25.730 [JavaFX Application Thread] INFO  Actions.Logging - 10 : 3 -> KILL : Captain
+ success...
+2022-05-29 11:04:25.731 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
+2022-05-29 11:04:25.731 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
+2022-05-29 11:04:25.732 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
+2022-05-29 11:04:25.803 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
+2022-05-29 11:04:25.821 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+ name : killer Model.Players.AI coins: 2 first card : Assassin 
+ is alive ?  true second card :Ambassador 
  is alive ?  true
-2022-05-29 10:52:34.405 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+2022-05-29 11:04:25.821 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
  name : paranoid Model.Players.AI coins: 3 first card : Duke 
  is alive ?  false second card :Contessa 
  is alive ?  true
-2022-05-29 10:52:34.405 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 5 first card : Captain 
- is alive ?  true second card :Assassin 
+2022-05-29 11:04:25.823 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+ name : coupper Model.Players.AI coins: 2 first card : Captain 
+ is alive ?  false second card :Assassin 
  is alive ?  true
-2022-05-29 10:52:34.406 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
+2022-05-29 11:04:25.823 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
  name : You coins: 2 first card : Ambassador 
  is alive ?  true second card :Captain 
  is alive ?  true
-2022-05-29 10:52:34.406 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:52:34.406 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:53:09.849 [JavaFX Application Thread] INFO  Actions.Logging - 9 : 4 -> CARDS : Ambassador_Exchange
- success...
-2022-05-29 10:53:09.849 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - player is : 4
-2022-05-29 10:53:09.850 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - chosen cards :Contessa1 Duke2
-2022-05-29 10:53:09.850 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - size = 2
-2022-05-29 10:53:15.220 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Duke2
-2022-05-29 10:53:15.220 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - Ambassador2
-2022-05-29 10:53:15.222 [JavaFX Application Thread] INFO  Actions.Logging - 9 : 4 -> CARDS : Ambassador_Exchange
- success...
-2022-05-29 10:53:15.223 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - enter function AIRespondsChallengedOrBlockedItCorrectly 
-2022-05-29 10:53:15.223 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.AmbassadorExchangeState - alive ai s are 3
-2022-05-29 10:53:15.223 [JavaFX Application Thread] INFO  Model.Players.AI.paranoid - challenge in challenge or allow
-2022-05-29 10:53:15.225 [JavaFX Application Thread] INFO  Actions.Logging - 11 : 2 -> 4 : Challenge
- success...
-2022-05-29 10:53:15.225 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-29 10:53:15.225 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Ambassador
-2022-05-29 10:53:15.226 [JavaFX Application Thread] INFO  Actions.Logging - 12 : 2 -> KILL : Contessa
- success...
-2022-05-29 10:53:15.228 [JavaFX Application Thread] INFO  Actions.Logging - player paranoid Model.Players.AI with id 2 died 
- success...
-2022-05-29 10:53:15.228 [JavaFX Application Thread] INFO  Actions.Action - enter this fo if done 
-2022-05-29 10:53:15.228 [JavaFX Application Thread] INFO  Actions.Action - both are not null
-2022-05-29 10:53:17.162 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:53:17.162 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:53:17.176 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:53:17.182 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 2 first card : Captain 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:53:17.182 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:53:17.182 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 5 first card : Captain 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:53:17.182 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 2 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  true
-2022-05-29 10:53:17.183 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:53:17.183 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:53:17.183 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:53:17.183 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:53:17.184 [JavaFX Application Thread] INFO  Actions.Logging - 13 : 1 -> CARDS : EXCHANGE
- success...
-2022-05-29 10:53:17.184 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - exchange and move to next player
-2022-05-29 10:53:17.184 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:53:17.184 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-29 10:53:17.184 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-29 10:53:17.185 [JavaFX Application Thread] INFO  Actions.Logging - 14 : 3 -> BANK : TAX
- success...
-2022-05-29 10:53:17.185 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
-2022-05-29 10:53:21.111 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : allow
-2022-05-29 10:53:21.111 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is allowed so it is going to happen
-2022-05-29 10:53:21.111 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:53:21.112 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:53:21.112 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:53:21.136 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:53:21.142 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 1 first card : Duke 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:53:21.143 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:53:21.143 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 8 first card : Captain 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:53:21.143 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 2 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  true
-2022-05-29 10:53:21.143 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:53:21.143 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:53:48.635 [JavaFX Application Thread] INFO  Actions.Logging - 16 : 4 -> BANK : TAX
- success...
-2022-05-29 10:53:50.002 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:53:50.003 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:53:50.021 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:53:50.028 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 1 first card : Duke 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:53:50.029 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:53:50.029 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 8 first card : Captain 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:53:50.029 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 5 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  true
-2022-05-29 10:53:50.029 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:53:50.030 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:53:50.030 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:53:50.030 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:53:50.031 [JavaFX Application Thread] INFO  Actions.Logging - 19 : 1 -> CARDS : EXCHANGE
- success...
-2022-05-29 10:53:50.031 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - exchange and move to next player
-2022-05-29 10:53:50.032 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:53:50.032 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-29 10:53:50.032 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-29 10:53:50.034 [JavaFX Application Thread] INFO  Actions.Logging - 20 : 3 -> 4 : COUP
- success...
-2022-05-29 10:53:50.034 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Coup - target of coup is human
-2022-05-29 10:53:50.035 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - coup and move to next player
-2022-05-29 10:54:01.272 [JavaFX Application Thread] INFO  Actions.Logging - 21 : 4 -> KILL : Ambassador
- success...
-2022-05-29 10:54:01.273 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:54:01.273 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:54:01.273 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:54:01.293 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:54:01.296 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:54:01.297 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:54:01.297 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:54:01.297 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 5 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:54:01.297 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:54:01.297 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:54:30.226 [JavaFX Application Thread] INFO  Actions.Logging - 22 : 4 -> BANK : TAX
- success...
-2022-05-29 10:54:31.256 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:54:31.256 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:54:31.279 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:54:31.284 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:54:31.284 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:54:31.284 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:54:31.284 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 8 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:54:31.284 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:54:31.285 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:54:31.285 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:54:31.285 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:54:31.286 [JavaFX Application Thread] INFO  Actions.Logging - 25 : 1 -> BANK : Foreign_aid
- success...
-2022-05-29 10:54:31.286 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter foreign aid
-2022-05-29 10:54:31.287 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - enter function AIRespondsAllowOrBlockedItCorrectly 
-2022-05-29 10:54:31.288 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ForeignAidState - alive ai s are 2
-2022-05-29 10:54:31.290 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.BlockOrAllowAIState - allow
-2022-05-29 10:54:36.847 [JavaFX Application Thread] INFO  Actions.Logging - 26 : 4 -> 1 : Block_foreign_aid
- success...
-2022-05-29 10:54:36.847 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - challenge is failed so the block is happening
-2022-05-29 10:54:36.847 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.BlockOrAllowAIState - foreign aid blocked by human
-2022-05-29 10:54:36.848 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - foreign aid is not happening
-2022-05-29 10:54:36.848 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:54:36.848 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-29 10:54:36.848 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-29 10:54:36.848 [JavaFX Application Thread] INFO  Actions.Logging - 27 : 3 -> BANK : TAX
- success...
-2022-05-29 10:54:36.849 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
-2022-05-29 10:54:40.131 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  Actions.Logging - 29 : 4 -> 3 : Challenge
- success...
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : true
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is not going to happen
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  Actions.Logging - 30 : 3 -> KILL : Captain
- success...
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:54:40.132 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:54:40.151 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:54:40.155 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  true second card :Assassin 
- is alive ?  true
-2022-05-29 10:54:40.156 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:54:40.156 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:54:40.156 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 8 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:54:40.156 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:54:40.156 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:55:09.816 [JavaFX Application Thread] INFO  GUI.Controller.GameState.ChoosePlayer - human choosing player
-2022-05-29 10:55:13.206 [JavaFX Application Thread] INFO  Actions.Logging - 31 : 4 -> 1 : COUP
- success...
-2022-05-29 10:55:13.207 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Coup - target is not human
-2022-05-29 10:55:13.209 [JavaFX Application Thread] INFO  Actions.Logging - 32 : 1 -> KILL : Contessa
- success...
-2022-05-29 10:55:14.872 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:55:14.872 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:55:14.887 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:55:14.893 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:55:14.894 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:55:14.894 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:55:14.894 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 1 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:55:14.894 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:55:14.894 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:55:14.895 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:55:14.895 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:55:14.896 [JavaFX Application Thread] INFO  Actions.Logging - 33 : 1 -> BANK : Foreign_aid
- success...
-2022-05-29 10:55:14.896 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter foreign aid
-2022-05-29 10:55:14.896 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - enter function AIRespondsAllowOrBlockedItCorrectly 
-2022-05-29 10:55:14.897 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ForeignAidState - alive ai s are 2
-2022-05-29 10:55:14.897 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.BlockOrAllowAIState - allow
-2022-05-29 10:55:17.243 [JavaFX Application Thread] INFO  Actions.Logging - 34 : 4 -> 1 : Block_foreign_aid
- success...
-2022-05-29 10:55:17.243 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - challenge is failed so the block is happening
-2022-05-29 10:55:17.244 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.BlockOrAllowAIState - foreign aid blocked by human
-2022-05-29 10:55:17.244 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - foreign aid is not happening
-2022-05-29 10:55:17.244 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:55:17.244 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 3 is going to play
-2022-05-29 10:55:17.244 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 3 is currently playing
-2022-05-29 10:55:17.245 [JavaFX Application Thread] INFO  Actions.Logging - 35 : 3 -> BANK : TAX
- success...
-2022-05-29 10:55:17.245 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter tax
-2022-05-29 10:55:20.024 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action respond : challenged
-2022-05-29 10:55:20.026 [JavaFX Application Thread] INFO  Actions.Logging - 37 : 4 -> 3 : Challenge
- success...
-2022-05-29 10:55:20.026 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - false
-2022-05-29 10:55:20.027 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Challenge.Challenge - Duke
-2022-05-29 10:55:20.027 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - challenge result : true
-2022-05-29 10:55:20.027 [JavaFX Application Thread] INFO  GUI.Controller.GameState.RespondActions.ChallengeOrAllow - action is not going to happen
-2022-05-29 10:55:20.028 [JavaFX Application Thread] INFO  Actions.Logging - 38 : 3 -> KILL : Assassin
- success...
-2022-05-29 10:55:20.029 [JavaFX Application Thread] INFO  Actions.Logging - player coupper Model.Players.AI with id 3 died 
- success...
-2022-05-29 10:55:20.029 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:55:20.029 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:55:20.030 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:55:20.049 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:55:20.052 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:55:20.053 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:55:20.053 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:55:20.053 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 1 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:55:20.053 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:55:20.053 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:56:05.651 [JavaFX Application Thread] INFO  Actions.Logging - 39 : 4 -> BANK : TAX
- success...
-2022-05-29 10:56:06.677 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:56:06.678 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:56:06.693 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:56:06.699 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:56:06.699 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:56:06.700 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:56:06.700 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 4 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:56:06.700 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:56:06.700 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:56:06.700 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:56:06.701 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:56:06.701 [JavaFX Application Thread] INFO  Actions.Logging - 41 : 1 -> BANK : Foreign_aid
- success...
-2022-05-29 10:56:06.702 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter foreign aid
-2022-05-29 10:56:06.702 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - enter function AIRespondsAllowOrBlockedItCorrectly 
-2022-05-29 10:56:06.702 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ForeignAidState - alive ai s are 1
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  Actions.Logging - 42 : 4 -> 1 : Block_foreign_aid
- success...
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - challenge is failed so the block is happening
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.BlockOrAllowAIState - foreign aid blocked by human
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - foreign aid is not happening
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:56:09.168 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:56:09.186 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:56:09.191 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:56:09.192 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:56:09.192 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:56:09.192 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 4 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:56:09.192 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:56:09.192 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:56:13.829 [JavaFX Application Thread] INFO  Actions.Logging - 43 : 4 -> BANK : TAX
- success...
-2022-05-29 10:56:14.891 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:56:14.892 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - finish check winner
-2022-05-29 10:56:14.906 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:56:14.911 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:56:14.911 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:56:14.911 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:56:14.912 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 7 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:56:14.912 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:56:14.912 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:56:14.912 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 1 is going to play
-2022-05-29 10:56:14.913 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - 1 is currently playing
-2022-05-29 10:56:14.913 [JavaFX Application Thread] INFO  Actions.Logging - 45 : 1 -> BANK : Foreign_aid
- success...
-2022-05-29 10:56:14.914 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter foreign aid
-2022-05-29 10:56:14.914 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - enter function AIRespondsAllowOrBlockedItCorrectly 
-2022-05-29 10:56:14.914 [JavaFX Application Thread] WARN  ManageGameStates.ProcessTheGame.ForeignAidState - alive ai s are 1
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  Actions.Logging - 46 : 4 -> 1 : Block_foreign_aid
- success...
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.BlockOrAllowState - challenge is failed so the block is happening
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.BlockOrAllowAIState - foreign aid blocked by human
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  ManageGameStates.ProcessTheGame.ForeignAidState - foreign aid is not happening
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  ManageGameStates.AITurn.AIProcessor - enter move to next Player function
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  ManageGameStates.CountingActions - 4 is going to play
-2022-05-29 10:56:16.042 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - determine next player
-2022-05-29 10:56:16.059 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:56:16.062 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  true
-2022-05-29 10:56:16.062 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:56:16.063 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:56:16.063 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 7 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:56:16.063 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
-2022-05-29 10:56:16.063 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn
-2022-05-29 10:56:20.503 [JavaFX Application Thread] INFO  GUI.Controller.GameState.ChoosePlayer - human choosing player
-2022-05-29 10:56:20.504 [JavaFX Application Thread] INFO  Actions.Logging - 47 : 4 -> 1 : COUP
- success...
-2022-05-29 10:56:20.504 [JavaFX Application Thread] INFO  Actions.UnchallengableActions.UnblockableAction.Coup - target is not human
-2022-05-29 10:56:20.505 [JavaFX Application Thread] INFO  Actions.Logging - 48 : 1 -> KILL : Assassin
- success...
-2022-05-29 10:56:20.506 [JavaFX Application Thread] INFO  Actions.Logging - player killer Model.Players.AI with id 1 died 
- success...
-2022-05-29 10:56:21.590 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - enter start game
-2022-05-29 10:56:22.931 [JavaFX Application Thread] INFO  GUI.View.GameTracker - show game tracker
-2022-05-29 10:56:22.935 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : killer Model.Players.AI coins: 0 first card : Contessa 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:56:22.935 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : paranoid Model.Players.AI coins: 3 first card : Duke 
- is alive ?  false second card :Contessa 
- is alive ?  false
-2022-05-29 10:56:22.935 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : coupper Model.Players.AI coins: 1 first card : Captain 
- is alive ?  false second card :Assassin 
- is alive ?  false
-2022-05-29 10:56:22.935 [JavaFX Application Thread] INFO  GUI.View.PlayerInfo - 
- name : You coins: 0 first card : Duke 
- is alive ?  true second card :Ambassador 
- is alive ?  false
-2022-05-29 10:56:22.936 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
+2022-05-29 11:04:25.826 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - show players info and game tracker
+2022-05-29 11:04:25.827 [JavaFX Application Thread] INFO  GUI.View.MainPageOfGame - human turn

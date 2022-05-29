@@ -114,7 +114,7 @@ public class ChallengeOrBlockOrAllowState {
 
             log.info("target name : "+target.getPlayerId());
 
-            for (Player x : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())){//todo
+            for (Player x : PlayersDataBase.getAlivePlayersNotX(mainAction.getDower())){
 
                 if (x.equals(target)){
 

@@ -151,7 +151,7 @@ public class myTurn {
 
     @FXML
     void revealAction(ActionEvent event) throws IOException {
-        if (haveEnoughCoins(2) && HaveToCoup()){//todo
+        if (haveEnoughCoins(3) && HaveToCoup()){
             Player human =PlayersDataBase.getNotAIPlayer();
             GameTurns.setAllTurn(human,GameState.ChoosePlayer);
             Reveal reveal=new Reveal(human);

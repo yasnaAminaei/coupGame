@@ -33,7 +33,6 @@ public class AI extends Player {
 
         if (this.getCoins()>=10){
             Player p = this.ChoosePlayerToCoup();
-            p=PlayersDataBase.getNotAIPlayer();//todo
             return new Coup(this,p);
         }
         return new Income(this);
@@ -106,7 +105,6 @@ public class AI extends Player {
     public Card ChooseCardToBurnInExchange() throws FileNotFoundException, UnsupportedEncodingException {
         ArrayList<Card> aliveCards=this.getAliveCards();
         Card c =  aliveCards.get(0);
-        //new Kill(this,c);todo
         c.setAlive(false);
         return c;
     }

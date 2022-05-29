@@ -51,7 +51,7 @@ public class PlayerInfo {
             String cash=p.getCoins()+"";
             String firstCard;
             String secondCard;
-            if (true || p.equals(player)){//todo
+            if ( p.equals(player)){
                 Card c1= p.getFirstCard();
                 firstCard=c1.getName()+" \n is alive ?  "+c1.isAlive();
                 Card c2=p.getSecondCard();

@@ -40,12 +40,10 @@ public class AIProcessor {
          if (action instanceof Steal){
              log.info("entered stealing");
              new ChoosePlayerToStealFromAIState((Steal) action);
-            // moveToNexPlayer();
          }
 
          else if (action instanceof Income){
              log.info("income and move to next player");
-             //moveToNexPlayer();
          }
 
          else if (action instanceof Tax){
@@ -53,7 +51,6 @@ public class AIProcessor {
              //can be challenged
              log.info("enter tax");
              new ChallengeOrAllowState((ChallengeAbleAction) action);
-            // moveToNexPlayer();
          }
 
          else if (action instanceof Foreign_aid){//todo
@@ -61,7 +58,6 @@ public class AIProcessor {
              //can be blocked
              log.info("enter foreign aid");
              new ForeignAidState((Foreign_aid) action);
-             //moveToNexPlayer();
          }
 
          else if (action instanceof Coup){
@@ -69,19 +65,16 @@ public class AIProcessor {
              if (((Coup) action).isHuman()){
                  new ChooseCardToBurn(PlayersDataBase.getNotAIPlayer());//todo
              }
-            // moveToNexPlayer();
          }
          else if (action instanceof Exchange){
              log.info("exchange and move to next player");
              //new Exchange(whoseTurn);
-             //moveToNexPlayer();
          }
 
          else if (action instanceof Ambassador_Exchange){
              //both
              log.info("enter ambassador exchange state");
              new AmbassadorExchangeState((Ambassador_Exchange) action);
-             //moveToNexPlayer();
          }
          else if (action instanceof Reveal){
              //both

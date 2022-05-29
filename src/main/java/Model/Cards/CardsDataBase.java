@@ -75,7 +75,7 @@ public class CardsDataBase {
                 Player player=c.getPlayer();
                 boolean cardIsStillForPlayer=CardIsStillForPlayer(player,c);
                 if (!cardIsStillForPlayer){
-                    deadCards.add(c);//todo
+                    deadCards.add(c);
                 }
             }
         }
