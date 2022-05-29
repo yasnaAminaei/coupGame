@@ -2,7 +2,6 @@ package Actions.UnchallengableActions.UnblockableAction;
 
 import Actions.Logging;
 import Actions.NonSoloActions.NonSoloAction;
-import ManageGameStates.AITurn.AIProcessor;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;

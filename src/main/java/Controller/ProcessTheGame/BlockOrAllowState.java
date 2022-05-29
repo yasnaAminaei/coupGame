@@ -1,4 +1,4 @@
-package ManageGameStates.ProcessTheGame;
+package Controller.ProcessTheGame;
 
 import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_foreign_aid;

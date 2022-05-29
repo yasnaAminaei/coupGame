@@ -1,11 +1,11 @@
-package ManageGameStates.AITurn;
+package Controller.AITurn;
 
 
 import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_revealing;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
-import ManageGameStates.ProcessTheGame.ChoosePlayerToRevealState;
+import Controller.ProcessTheGame.ChoosePlayerToRevealState;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import org.apache.log4j.LogManager;

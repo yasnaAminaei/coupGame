@@ -1,11 +1,11 @@
-package ManageGameStates.AITurn;
+package Controller.AITurn;
 
 import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_foreign_aid;
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
 import GUI.Controller.GameState.RespondActions.BlockOrAllow;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
-import ManageGameStates.ProcessTheGame.BlockOrAllowState;
+import Controller.ProcessTheGame.BlockOrAllowState;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;

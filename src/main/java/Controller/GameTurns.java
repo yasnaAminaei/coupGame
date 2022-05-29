@@ -1,8 +1,7 @@
-package ManageGameStates;
+package Controller;
 
-import ManageGameStates.ProcessTheGame.GameState;
+import Controller.ProcessTheGame.GameState;
 import Model.Players.Player;
-import Model.Players.PlayersDataBase;
 
 
 public class GameTurns {

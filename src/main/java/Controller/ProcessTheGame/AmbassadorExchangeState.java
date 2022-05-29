@@ -1,4 +1,4 @@
-package ManageGameStates.ProcessTheGame;
+package Controller.ProcessTheGame;
 
 
 import Actions.ChallengableActions.ChallengeAbleAction;

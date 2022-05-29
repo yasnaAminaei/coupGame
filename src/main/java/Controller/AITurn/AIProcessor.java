@@ -1,4 +1,4 @@
-package ManageGameStates.AITurn;
+package Controller.AITurn;
 
 import Actions.Action;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Reveal;
@@ -11,12 +11,10 @@ import Actions.UnchallengableActions.UnblockableAction.Coup;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Exchange;
 import Actions.UnchallengableActions.UnblockableAction.NonChallengeSoloActions.Income;
 import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
-import ManageGameStates.CountingActions;
-import ManageGameStates.GameTurns;
-import ManageGameStates.ProcessTheGame.AmbassadorExchangeState;
-import ManageGameStates.ProcessTheGame.ChallengeOrAllowState;
-import ManageGameStates.ProcessTheGame.ForeignAidState;
-import ManageGameStates.ProcessTheGame.GameState;
+import Controller.CountingActions;
+import Controller.ProcessTheGame.AmbassadorExchangeState;
+import Controller.ProcessTheGame.ChallengeOrAllowState;
+import Controller.ProcessTheGame.ForeignAidState;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;

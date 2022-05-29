@@ -1,7 +1,7 @@
 package GUI.Controller.GameState.CardChoosing;
 
 import GUI.View.Ask.ChooseCardsBoxes;
-import ManageGameStates.CountingActions;
+import Controller.CountingActions;
 import Model.Cards.Card;
 import Model.Players.Player;
 import org.apache.log4j.LogManager;

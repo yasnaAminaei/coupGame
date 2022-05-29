@@ -1,7 +1,7 @@
-package ManageGameStates.ProcessTheGame;
+package Controller.ProcessTheGame;
 
 import Actions.UnchallengableActions.BlockableAction.Foreign_aid;
-import ManageGameStates.AITurn.BlockOrAllowAIState;
+import Controller.AITurn.BlockOrAllowAIState;
 import Model.Players.PlayersDataBase;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

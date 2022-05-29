@@ -1,4 +1,4 @@
-package ManageGameStates;
+package Controller;
 
 import Model.Cards.Card;
 import Model.Players.Player;

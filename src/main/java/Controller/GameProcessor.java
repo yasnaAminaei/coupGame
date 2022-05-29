@@ -1,4 +1,4 @@
-package ManageGameStates;
+package Controller;
 
 import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.Enums.StateOfAction;

@@ -1,4 +1,4 @@
-package ManageGameStates.AITurn;
+package Controller.AITurn;
 
 import Actions.Enums.ActionRespond;
 import Actions.ChallengableActions.BlockableActions.NonSoloChallengableActions.Steal;
@@ -6,7 +6,7 @@ import Actions.ChallengableActions.ChallengeAbleAction;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.BlockActionKinds;
 import Actions.ChallengableActions.UnblockableActions.BlockActions.Block_stealing;
 import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
-import ManageGameStates.ProcessTheGame.ChoosePlayerToStealFromState;
+import Controller.ProcessTheGame.ChoosePlayerToStealFromState;
 import Model.Players.AI.AI;
 import Model.Players.Player;
 import org.apache.log4j.LogManager;

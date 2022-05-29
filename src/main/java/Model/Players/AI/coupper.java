@@ -3,9 +3,7 @@ package Model.Players.AI;
 import Actions.Action;
 import Actions.ChallengableActions.UnblockableActions.SoloActions.Tax;
 import Actions.UnchallengableActions.UnblockableAction.Coup;
-import ManageGameStates.CountingActions;
 import Model.Players.Player;
-import Model.Players.PlayersDataBase;
 
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;

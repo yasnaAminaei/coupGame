@@ -1,9 +1,7 @@
 package GUI.View;
 
-import GUI.Controller.GameState.myTurn;
-import ManageGameStates.AITurn.AIProcessor;
-import ManageGameStates.CountingActions;
-import Model.Players.AI.AI;
+import Controller.AITurn.AIProcessor;
+import Controller.CountingActions;
 import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;

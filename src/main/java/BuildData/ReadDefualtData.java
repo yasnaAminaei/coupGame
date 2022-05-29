@@ -35,55 +35,63 @@ public class ReadDefualtData {
 
 
     public static void deSerializeALL() throws FileNotFoundException {
+        deSerializePlayers();
+        deSerializeCards();
+        deleteThe4thAI();
+        log.info("default data is created");
+    }
+
+
+    public static void deSerializePlayers() throws FileNotFoundException {
         deSerializeKiller();
         deSerializeParanoid();
         deSerializeCoupper();
         deSerializeUser();
         deSerializeSomeDud();
-        deSerializeCard("src/main/java/BuildData/Ambassador1.json");
-        deSerializeCard("src/main/java/BuildData/Ambassador2.json");
-        deSerializeCard("src/main/java/BuildData/Ambassador3.json");
-        deSerializeCard("src/main/java/BuildData/Assassin1.json");
-        deSerializeCard("src/main/java/BuildData/Assassin2.json");
-        deSerializeCard("src/main/java/BuildData/Assassin3.json");
-        deSerializeCard("src/main/java/BuildData/Captain1.json");
-        deSerializeCard("src/main/java/BuildData/Captain2.json");
-        deSerializeCard("src/main/java/BuildData/Captain3.json");
-        deSerializeCard("src/main/java/BuildData/Contessa1.json");
-        deSerializeCard("src/main/java/BuildData/Contessa2.json");
-        deSerializeCard("src/main/java/BuildData/Contessa3.json");
-        deSerializeCard("src/main/java/BuildData/Duke1.json");
-        deSerializeCard("src/main/java/BuildData/Duke2.json");
-        deSerializeCard("src/main/java/BuildData/Duke3.json");
-        deleteThe4thAI();
+    }
 
-        log.info("default data is created");
+    public static void deSerializeCards() throws FileNotFoundException {
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Ambassador1.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Ambassador2.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Ambassador3.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Assassin1.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Assassin2.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Assassin3.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Captain1.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Captain2.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Captain3.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Contessa1.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Contessa2.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Contessa3.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Duke1.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Duke2.json");
+        deSerializeCard("src/main/resources/JsonFiles/Cards/Duke3.json");
     }
 
 
     public static void deSerializeKiller() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
-        killer killer =gson.fromJson(new FileReader("src/main/java/BuildData/Killer.json"), killer.class);
+        killer killer =gson.fromJson(new FileReader("src/main/resources/JsonFiles/Players/Killer.json"), killer.class);
         PlayersDataBase.players.add(killer);
     }
 
     public static void deSerializeParanoid() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
-        paranoid paranoid =gson.fromJson(new FileReader("src/main/java/BuildData/Paranoid.json"), paranoid.class);
+        paranoid paranoid =gson.fromJson(new FileReader("src/main/resources/JsonFiles/Players/Paranoid.json"), paranoid.class);
         PlayersDataBase.players.add(paranoid);
 
     }
 
     public static void deSerializeCoupper() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
-        coupper coupper =gson.fromJson(new FileReader("src/main/java/BuildData/Coupper.json"), coupper.class);
+        coupper coupper =gson.fromJson(new FileReader("src/main/resources/JsonFiles/Players/Coupper.json"), coupper.class);
         PlayersDataBase.players.add(coupper);
     }
 
 
     public static void deSerializeSomeDud() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
-        SomeDud someDud =gson.fromJson(new FileReader("src/main/java/BuildData/someDud.json"), SomeDud.class);
+        SomeDud someDud =gson.fromJson(new FileReader("src/main/resources/JsonFiles/Players/someDud.json"), SomeDud.class);
         PlayersDataBase.players.add(someDud);
     }
 
@@ -102,7 +110,7 @@ public class ReadDefualtData {
 
     public static void deSerializeUser() throws FileNotFoundException {
         Gson gson=new GsonBuilder().setLenient().create();
-        Player player =gson.fromJson(new FileReader("src/main/java/BuildData/User.json"), Player.class);
+        Player player =gson.fromJson(new FileReader("src/main/resources/JsonFiles/Players/User.json"), Player.class);
         PlayersDataBase.players.add(player);
 
     }

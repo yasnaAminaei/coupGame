@@ -1,17 +1,6 @@
 package GUI.View;
 
-import Actions.Action;
-import Actions.ChallengableActions.ChallengeAbleAction;
-import GUI.Controller.GameState.CardChoosing.ChooseCardToBurn;
-import GUI.Controller.GameState.CardChoosing.ChooseCardsToHave;
-import GUI.Controller.GameState.RespondActions.BlockOrChallengeOrAllow;
-import GUI.Controller.GameState.RespondActions.ChallengeOrAllow;
-import ManageGameStates.CountingActions;
 import GUI.Controller.GameState.*;
-import ManageGameStates.GameTurns;
-import ManageGameStates.ProcessTheGame.GameState;
-import Model.Players.Player;
-import Model.Players.PlayersDataBase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
