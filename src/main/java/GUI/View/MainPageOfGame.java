@@ -1,5 +1,6 @@
 package GUI.View;
 
+import GUI.Controller.GameState.myTurn;
 import ManageGameStates.AITurn.AIProcessor;
 import ManageGameStates.CountingActions;
 import Model.Players.AI.AI;
@@ -71,6 +72,7 @@ public class MainPageOfGame {
             boolean isAI = AIProcessor.moveToNexPlayer();
             log.info("determine next player");
             if (true){
+
                 ShowCurrentStateOfGame();
                 showGameTrackerAndPlayerInfo();
                 log.info("human turn");
@@ -95,7 +97,7 @@ public class MainPageOfGame {
 
     @FXML
     void StatrTheGame(ActionEvent event) throws IOException {
-       StartAIReacting();
+        StartAIReacting();
     }
 
     public static void ShowWinner(Player player){

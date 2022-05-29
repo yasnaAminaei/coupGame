@@ -17,6 +17,8 @@ import Model.Players.Player;
 import Model.Players.PlayersDataBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
@@ -71,6 +73,10 @@ public class myTurn {
     }
 
 
+    @FXML
+    public void initialize() throws IOException {
+        makeButtonsVisibility(true);
+    }
 
 
 
@@ -116,6 +122,7 @@ public class myTurn {
             ChoosePlayer choosePlayer = new ChoosePlayer();
             Player p = choosePlayer.getChosenPlayer();
             new Coup(PlayersDataBase.getNotAIPlayer(),p);
+            makeButtonsVisibility(false);
         }
     }
 
@@ -126,6 +133,7 @@ public class myTurn {
             Player human =PlayersDataBase.getNotAIPlayer();
             Card c =ChooseCardsBoxes.chooseCard(human.getAliveCards());
             Exchange exchange = new Exchange(human,c);
+            makeButtonsVisibility(false);
         }
     }
 
@@ -136,6 +144,7 @@ public class myTurn {
             GameTurns.setAllTurn(human,GameState.BlockOrAllow);
             Foreign_aid foreign_aid =new Foreign_aid(human);
             ForeignAidState foreignAidState=new ForeignAidState(foreign_aid);
+            makeButtonsVisibility(false);
         }
 
     }
@@ -144,6 +153,7 @@ public class myTurn {
     void incomeAction(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
         if (HaveToCoup()){
             new Income(PlayersDataBase.getNotAIPlayer());
+            makeButtonsVisibility(false);
         }
 
 
@@ -156,6 +166,7 @@ public class myTurn {
             GameTurns.setAllTurn(human,GameState.ChoosePlayer);
             Reveal reveal=new Reveal(human);
             ChoosePlayerToRevealState choosePlayerToRevealState=new ChoosePlayerToRevealState(reveal);
+            makeButtonsVisibility(false);
         }
     }
 
@@ -165,6 +176,7 @@ public class myTurn {
         GameTurns.setAllTurn(human,GameState.AmbassadorExchange);//todo
         Ambassador_Exchange ambassador_exchange=new Ambassador_Exchange(human);
         new AmbassadorExchangeState(ambassador_exchange);
+        makeButtonsVisibility(false);
 
     }
 
@@ -175,6 +187,7 @@ public class myTurn {
             GameTurns.setAllTurn(human,GameState.ChoosePlayer);
             Steal steal=new Steal(human);
             ChoosePlayerToStealFromState choosePlayerToStealFromState=new ChoosePlayerToStealFromState(steal);
+            makeButtonsVisibility(false);
         }
     }
 
@@ -185,6 +198,8 @@ public class myTurn {
             Tax newTax =new Tax(human);
             GameTurns.setAllTurn(human, GameState.ChallengeOrAllow);
             new ChallengeOrAllowState(newTax);
+            makeButtonsVisibility(false);
+
         }
     }
 
